@@ -67,17 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CargarDireccion.aspx" />
+    <Content Include="Comprar.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Producto.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargarDireccion.aspx.cs">
+      <DependentUpon>CargarDireccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargarDireccion.aspx.designer.cs">
+      <DependentUpon>CargarDireccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comprar.aspx.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comprar.aspx.designer.cs">
+      <DependentUpon>Comprar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.aspx.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Producto.aspx.designer.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
