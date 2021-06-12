@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Vista\Vista.csproj", "{E05F5F91-0EC0-4085-8BA1-D56C1879C6D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{522D116B-A17C-4CBE-A185-6B87AA413020}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dao", "DAO\Dao.csproj", "{522D116B-A17C-4CBE-A185-6B87AA413020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{27E2D4DD-7032-45E5-B5A0-C3949A553BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{419D24BC-AE41-4C50-AFCE-E87FF65874E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{522D116B-A17C-4CBE-A185-6B87AA413020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522D116B-A17C-4CBE-A185-6B87AA413020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522D116B-A17C-4CBE-A185-6B87AA413020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E2D4DD-7032-45E5-B5A0-C3949A553BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E2D4DD-7032-45E5-B5A0-C3949A553BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E2D4DD-7032-45E5-B5A0-C3949A553BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E2D4DD-7032-45E5-B5A0-C3949A553BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419D24BC-AE41-4C50-AFCE-E87FF65874E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419D24BC-AE41-4C50-AFCE-E87FF65874E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419D24BC-AE41-4C50-AFCE-E87FF65874E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419D24BC-AE41-4C50-AFCE-E87FF65874E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
