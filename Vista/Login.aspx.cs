@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using Entidades;
+using Negocio;
 
 namespace Vista
 {
@@ -19,7 +20,11 @@ namespace Vista
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-
+            NegocioUsuario negocioUsuario = new NegocioUsuario();
+            String username = tbxUser.Text;
+            String pass = tbxPass.Text;
+            Usuario user = negocioUsuario.login(username, pass);
+            labelDebug.Text = user.Email;
         }
     }
 }
