@@ -16,7 +16,7 @@
             <asp:Label ID="lblPass" runat="server" Text="Contraseña"></asp:Label>
             <asp:TextBox ID="tbxPass" runat="server" TextMode="Password"></asp:TextBox>
         </p>
-        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" />
+        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" />
     </form>
 </body>
 </html>
