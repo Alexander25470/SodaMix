@@ -18,6 +18,7 @@ namespace Entidades
         private String _fechaNacimiento;
         private String _pass;
         private String _estado;
+
         public Usuario()
         {
         }
@@ -33,6 +34,4 @@ namespace Entidades
         public string Pass { get => _pass; set => _pass = value; }
         public string Estado { get => _estado; set => _estado = value; }
     }
-    
-
 }

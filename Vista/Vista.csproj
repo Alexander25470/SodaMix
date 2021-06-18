@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CargarDireccion.aspx" />
+    <Content Include="Alteracion_Productos.aspx" />
     <Content Include="Comprar.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
@@ -82,6 +83,13 @@
     </Compile>
     <Compile Include="CargarDireccion.aspx.designer.cs">
       <DependentUpon>CargarDireccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alteracion_Productos.aspx.cs">
+      <DependentUpon>Alteracion_Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alteracion_Productos.aspx.designer.cs">
+      <DependentUpon>Alteracion_Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Comprar.aspx.cs">
       <DependentUpon>Comprar.aspx</DependentUpon>

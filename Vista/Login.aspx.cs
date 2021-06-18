@@ -20,11 +20,19 @@ namespace Vista
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            NegocioUsuario negocioUsuario = new NegocioUsuario();
-            String username = tbxUser.Text;
-            String pass = tbxPass.Text;
-            Usuario user = negocioUsuario.login(username, pass);
-            labelDebug.Text = user.Email;
+            if (tbxUser.Text.Trim().Length == 0 || tbxPass.Text.Trim().Length == 0)
+            {
+                lblUsuario.Text = "No se aceptan campos vacios";
+            }
+            else
+            {
+                NegocioUsuario negocioUsuario = new NegocioUsuario();
+                String username = tbxUser.Text;
+                String pass = tbxPass.Text;
+                Usuario user = negocioUsuario.login(username, pass);
+                Session["usuario"] = user;
+                Response.Redirect("Productos.aspx");
+            }
         }
     }
 }
