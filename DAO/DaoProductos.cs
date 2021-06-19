@@ -39,5 +39,37 @@ namespace Dao
             else
                 return false;
         }
+        public bool AgegarProducto(Producto prod)
+        {
+            string query = $@"
+                INSERT INTO[dbo].[PRODUCTO]
+            ([Nombre]
+          ,[Descripcion]
+          ,[Tipo_Producto]
+          ,[Stock]
+          ,[Precio_Compra]
+          ,[Precio_Venta]
+          ,[Img_URL]
+          ,[Estado])
+    VALUES
+          (< Nombre, varchar(100),>
+           ,< {prod.Nombre1 }, varchar(400),>
+           ,< {prod.Descripcion1}, int,>
+           ,< Stock, int,>
+           ,< Precio_Compra, money,>
+           ,< Precio_Venta, money,>
+           ,< Img_URL, varchar(400),>
+           ,< Estado, bit,>)
+                ";
+            SqlConnection con = ad.ObtenerConexion();
+            int FilasInsertadas = ad.ejecutarConsulta(query, con);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
+
+
+
     }
 }
