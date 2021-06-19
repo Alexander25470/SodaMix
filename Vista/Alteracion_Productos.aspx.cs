@@ -55,7 +55,7 @@ namespace Vista
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            producto prod = new producto();
+            Entidades.Producto prod = new Entidades.Producto();
             
             prod.Nombre1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
             prod.Descripcion1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
@@ -77,7 +77,7 @@ namespace Vista
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            producto prod = new producto();
+            Entidades.Producto prod = new Entidades.Producto();
             prod.ID_Producto1 = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
 
             neg.EliminarProducto(prod);

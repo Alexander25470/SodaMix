@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class producto
+    public class Producto
     {
 		int ID_Producto;
 		String Nombre;
