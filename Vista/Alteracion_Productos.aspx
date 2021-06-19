@@ -6,6 +6,28 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style3 {
+            width: 146px;
+            font-size: x-large;
+            text-align: center;
+        }
+        .auto-style4 {
+            width: 146px;
+            text-align: right;
+        }
+        .auto-style5 {
+            width: 146px;
+            height: 26px;
+            text-align: right;
+        }
+        .auto-style6 {
+            height: 26px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -86,6 +108,57 @@
                     <asp:Label ID="lblIdProducto" runat="server" Text='<%# Bind("ID_Producto") %>'></asp:Label>
                 </EmptyDataTemplate>
             </asp:GridView>
+            <br />
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style3"><strong>Agregar Producto</strong></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Nombre:</td>
+                    <td>
+                        <asp:TextBox ID="txtNombre" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Descripcion:</td>
+                    <td>
+                        <asp:TextBox ID="txtDesc" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Tipo producto:</td>
+                    <td class="auto-style6">
+                        <asp:DropDownList ID="Ddl_TipoProd" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Stock:</td>
+                    <td class="auto-style6">
+                        <asp:TextBox ID="txtStock" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Precio Compra:</td>
+                    <td>
+                        <asp:TextBox ID="txtPrecioCompra" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Precio Venta:</td>
+                    <td>
+                        <asp:TextBox ID="txtPrecioVenta" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Img URL:</td>
+                    <td>
+                        <asp:TextBox ID="txtImgURL" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    </td>
+                </tr>
+            </table>
+            <br />
             <br />
             Id_Producto : </div>
     </form>
