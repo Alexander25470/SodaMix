@@ -7,12 +7,13 @@ using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
 
+
 namespace Vista
 {
     public partial class CargarProductos : System.Web.UI.Page
     {
         NegocioProductos neg = new NegocioProductos();
-
+        
         protected void cargarGridView()
         {
             gvProductos.DataSource = neg.obtenerTablaProductos();
@@ -89,6 +90,25 @@ namespace Vista
 
         protected void TextBox8_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            Entidades.Producto prod = new Entidades.Producto();
+
+            prod.Nombre1 = txtNombre.Text;
+            prod.Descripcion1 = txtDesc.Text;
+            prod.Tipo_Producto1 = 1;
+            prod.Stock1 = Convert.ToInt32(txtStock.Text);
+            prod.Precio_Compra1 = Convert.ToDouble(txtPrecioCompra.Text);
+            prod.Precio_Venta1 = Convert.ToDouble(txtPrecioVenta.Text);
+            prod.Img_URL1 = txtImgURL.Text;
+            prod.Estado1 = 1;
+
+            neg.AgregarProducto(prod);
+
+            cargarGridView();
 
         }
     }

@@ -27,6 +27,9 @@
         .auto-style6 {
             height: 26px;
         }
+        .auto-style7 {
+            margin-left: 148px;
+        }
     </style>
 </head>
 <body>
@@ -160,7 +163,8 @@
             </table>
             <br />
             <br />
-            Id_Producto : </div>
+            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" />
+        </div>
     </form>
 </body>
 </html>
