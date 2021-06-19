@@ -18,37 +18,37 @@
         </div>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
             <AlternatingItemTemplate>
-                <td runat="server" style="background-color: #FFFFFF;color: #284775;">Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Descripcion:
-                    <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' />
-                    <br />
-                    Precio_Venta:
+                <td runat="server" style="">Precio_Venta:
                     <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    <br />
+                    Img_URL:
+                    <asp:Label ID="Img_URLLabel" runat="server" Text='<%# Eval("Img_URL") %>' />
+                    <br />
+                    Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
                 </td>
             </AlternatingItemTemplate>
             <EditItemTemplate>
-                <td runat="server" style="background-color: #999999;">Nombre:
-                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
-                    <br />
-                    Descripcion:
-                    <asp:TextBox ID="DescripcionTextBox" runat="server" Text='<%# Bind("Descripcion") %>' />
-                    <br />
-                    Precio_Venta:
+                <td runat="server" style="">Precio_Venta:
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                    Img_URL:
+                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
                     <br />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                    Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                    <br />
+                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                     <br />
                 </td>
             </EditItemTemplate>
             <EmptyDataTemplate>
-                <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                <table runat="server" style="">
                     <tr>
-                        <td>No se han devuelto datos.</td>
+                        <td>No data was returned.</td>
                     </tr>
                 </table>
             </EmptyDataTemplate>
@@ -61,30 +61,29 @@
                 </tr>
             </GroupTemplate>
             <InsertItemTemplate>
-                <td runat="server" style="">Nombre:
-                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
-                    <br />
-                    Descripcion:
-                    <asp:TextBox ID="DescripcionTextBox" runat="server" Text='<%# Bind("Descripcion") %>' />
-                    <br />
-                    Precio_Venta:
+                <td runat="server" style="">Precio_Venta:
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
-                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                    Img_URL:
+                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
                     <br />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                    Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                    <br />
+                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                     <br />
                 </td>
             </InsertItemTemplate>
             <ItemTemplate>
-                <td runat="server" style="background-color: #E0FFFF;color: #333333;">Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                <td runat="server" style="">
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
                     <br />
-                    Descripcion:
-                    <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' />
-                    <br />
-                    Precio_Venta:
+                    Precio:
                     <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    &nbsp;<br />Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
                 </td>
             </ItemTemplate>
@@ -92,39 +91,32 @@
                 <table runat="server">
                     <tr runat="server">
                         <td runat="server">
-                            <table id="groupPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                            <table id="groupPlaceholderContainer" runat="server" border="0" style="">
                                 <tr id="groupPlaceholder" runat="server">
                                 </tr>
                             </table>
                         </td>
                     </tr>
                     <tr runat="server">
-                        <td runat="server" style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
-                            <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
-                                <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                    <asp:NumericPagerField />
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                                </Fields>
-                            </asp:DataPager>
+                        <td runat="server" style="">
                         </td>
                     </tr>
                 </table>
             </LayoutTemplate>
             <SelectedItemTemplate>
-                <td runat="server" style="background-color: #E2DED6;font-weight: bold;color: #333333;">Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Descripcion:
-                    <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' />
-                    <br />
-                    Precio_Venta:
+                <td runat="server" style="">Precio_Venta:
                     <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    <br />
+                    Img_URL:
+                    <asp:Label ID="Img_URLLabel" runat="server" Text='<%# Eval("Img_URL") %>' />
+                    <br />
+                    Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
                 </td>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [Nombre], [Descripcion], [Precio_Venta] FROM [PRODUCTO]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [Precio_Venta], [Img_URL], [Nombre] FROM [PRODUCTO]"></asp:SqlDataSource>
     </form>
 </body>
 </html>
