@@ -39,7 +39,7 @@ namespace Dao
             else
                 return false;
         }
-        public bool AgegarProducto(Producto prod)
+        public bool AgregarProducto(Producto prod)
         {
             string query = $@"
                 INSERT INTO[dbo].[PRODUCTO]
@@ -50,16 +50,14 @@ namespace Dao
           ,[Precio_Compra]
           ,[Precio_Venta]
           ,[Img_URL]
-          ,[Estado])
     VALUES
-          (< Nombre, varchar(100),>
-           ,< {prod.Nombre1 }, varchar(400),>
-           ,< {prod.Descripcion1}, int,>
-           ,< Stock, int,>
-           ,< Precio_Compra, money,>
-           ,< Precio_Venta, money,>
-           ,< Img_URL, varchar(400),>
-           ,< Estado, bit,>)
+          (< {prod.Nombre1}, varchar(100),>
+           ,< {prod.Descripcion1 }, varchar(400),>
+           ,< {prod.Tipo_Producto1}, int,>
+           ,< {prod.Stock1}, int,>
+           ,< {prod.Precio_Compra1}, money,>
+           ,< {prod.Precio_Venta1}, money,>
+           ,< {prod.Img_URL1}, varchar(400),>
                 ";
             SqlConnection con = ad.ObtenerConexion();
             int FilasInsertadas = ad.ejecutarConsulta(query, con);
