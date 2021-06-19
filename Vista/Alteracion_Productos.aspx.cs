@@ -4,70 +4,89 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
+using Negocio;
 
 namespace Vista
 {
     public partial class CargarProductos : System.Web.UI.Page
     {
+        NegocioProductos neg = new NegocioProductos();
+
+        protected void cargarGridView()
+        {
+            gvProductos.DataSource = neg.obtenerTablaProductos();
+            gvProductos.DataBind();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                cargarGridView();
+            }
         }
 
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            string query = "Select * from PRODUCTO";
+          
 
             gvProductos.PageIndex = e.NewPageIndex;
 
-            con.cargarGridView(gvProductos, query, "Producto");
+            cargarGridView();
         }
 
         protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            string query = "Select IdProducto, NombreProducto, CantidadPorUnidad, PrecioUnidad from Productos";
+           
 
             gvProductos.EditIndex = e.NewEditIndex;
 
-            con.cargarGridView(gvProductos, query, "Producto");
+            cargarGridView();
         }
 
         protected void gvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            string query = "Select IdProducto, NombreProducto, CantidadPorUnidad, PrecioUnidad from Productos";
+            
             gvProductos.EditIndex = -1;
 
-            con.cargarGridView(gvProductos, query, "Producto");
+            cargarGridView();
         }
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            Producto prod = new Producto();
-            prod.NombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_NombreProducto")).Text;
-            prod.CantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_CantidadPorUnidad")).Text;
-            prod.PrecioUnidad = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioUnidad")).Text);
-            prod.IdProducto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_idproducto")).Text);
-            GestionProductos gProd = new GestionProductos();
+            producto prod = new producto();
+            
+            prod.Nombre1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
+            prod.Descripcion1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
+            prod.Tipo_Producto1 = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_TipoProducto")).Text);
+            prod.Stock1 = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
+            prod.Precio_Compra1 = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
+            prod.Precio_Venta1 = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
+            prod.Img_URL1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_imgURL")).Text;
+            prod.Estado1 = Convert.ToInt32(((CheckBox)gvProductos.Rows[e.RowIndex].FindControl("chk_Estado")).Checked);
+            prod.ID_Producto1 = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
 
-            gProd.ActualizarProducto(prod);
+            neg.ActualizarProducto(prod);
 
             gvProductos.EditIndex = -1;
-            string query = "Select IdProducto, NombreProducto, CantidadPorUnidad, PrecioUnidad from Productos";
 
-            con.cargarGridView(gvProductos, query, "Producto");
+            cargarGridView();
+
         }
 
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            Producto prod = new Producto();
-            prod.IdProducto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_idproducto")).Text);
-            GestionProductos gProd = new GestionProductos();
-            gProd.EliminarProducto(prod);
+            producto prod = new producto();
+            prod.ID_Producto1 = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
+
+            neg.EliminarProducto(prod);
 
             gvProductos.EditIndex = -1;
-            string query = "Select IdProducto, NombreProducto, CantidadPorUnidad, PrecioUnidad from Productos";
 
-            con.cargarGridView(gvProductos, query, "Producto");
+            cargarGridView();
         }
+
+       
     }
 }

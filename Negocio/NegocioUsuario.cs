@@ -20,6 +20,8 @@ namespace Negocio
             dao.agregarUsuario(user);
 
         }
+
+        
         public Usuario login(String userName, String pass)
         {
             return dao.obtenerUsuario(userName, pass);

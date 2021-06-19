@@ -42,6 +42,8 @@ namespace Dao
             ad.ejecutarConsulta(agregarSucursal, conexion);
         }
 
+        
+
         public Usuario obtenerUsuario(String userName, String constraseña)
         {
             Usuario user = new Usuario();
