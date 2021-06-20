@@ -27,20 +27,29 @@ namespace Dao
             Usuario user = new Usuario();
             DataTable dt = new DataTable();
             String tabla = "USUARIO";
-            String consulta = $"select * from {tabla} where Username='{userName}' and Pass='{constraseña}'";
+            String consulta = $"select * from {tabla} where Username='{userName}' and Pass='{constraseña}' and Estado='True' ";
             SqlConnection conexion = ad.ObtenerConexion();
-            DataRow tblUsuarios = ad.ObtenerTabla(consulta, tabla, conexion).Rows[0];
-            user.Nombre = tblUsuarios["Nombre"].ToString();
-            user.Apellido = tblUsuarios["Apellido"].ToString();
-            user.UserName = tblUsuarios["Username"].ToString();
-            user.Email = tblUsuarios["Email"].ToString();
-            user.Dni = tblUsuarios["DNI"].ToString();
-            user.TipoUsuario = tblUsuarios["ID_TIPO"].ToString();
-            user.Telefono = tblUsuarios["Telefono"].ToString();
-            user.FechaNacimiento = tblUsuarios["FechaNacimiento"].ToString();
-            user.Pass = tblUsuarios["Pass"].ToString();
-            user.Estado = tblUsuarios["Estado"].ToString();
-            return user;
+            try
+            { 
+                DataRow tblUsuarios = ad.ObtenerTabla(consulta, tabla, conexion).Rows[0];
+                user.Nombre = tblUsuarios["Nombre"].ToString();
+                user.Apellido = tblUsuarios["Apellido"].ToString();
+                user.UserName = tblUsuarios["Username"].ToString();
+                user.Email = tblUsuarios["Email"].ToString();
+                user.Dni = tblUsuarios["DNI"].ToString();
+                user.TipoUsuario = tblUsuarios["ID_TIPO"].ToString();
+                user.Telefono = tblUsuarios["Telefono"].ToString();
+                user.FechaNacimiento = tblUsuarios["FechaNacimiento"].ToString();
+                user.Pass = tblUsuarios["Pass"].ToString();
+                user.Estado = tblUsuarios["Estado"].ToString();
+                return user;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+           
+           
         }
     }
 }
