@@ -116,7 +116,7 @@
                 </td>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [Precio_Venta], [Img_URL], [Nombre] FROM [PRODUCTO]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [Precio_Venta], [Img_URL], [Nombre] FROM [PRODUCTO] WHERE ([Estado] = 'True')"></asp:SqlDataSource>
     </form>
 </body>
 </html>
