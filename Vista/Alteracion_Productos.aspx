@@ -60,7 +60,8 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Tipo_Producto">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_TipoProducto" runat="server" Text='<%# Bind("Tipo_Producto") %>'></asp:TextBox>
+                            <asp:DropDownList ID="ddl_EditTipoProd" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="ID_TipoProducto">
+                            </asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_producto" runat="server" Text='<%# Bind("Tipo_Producto") %>'></asp:Label>

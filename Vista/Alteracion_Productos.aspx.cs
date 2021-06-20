@@ -14,7 +14,7 @@ namespace Vista
     {
         NegocioProductos neg = new NegocioProductos();
         
-        protected void cargarGridView()
+        protected void cargarGridViewProductos()
         {
             gvProductos.DataSource = neg.obtenerTablaProductos();
             gvProductos.DataBind();
@@ -34,7 +34,7 @@ namespace Vista
                     Response.Redirect("Login.aspx");
                 }
 
-                cargarGridView();
+                cargarGridViewProductos();
             }
         }
 
@@ -44,7 +44,7 @@ namespace Vista
 
             gvProductos.PageIndex = e.NewPageIndex;
 
-            cargarGridView();
+            cargarGridViewProductos();
         }
 
         protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
@@ -53,7 +53,7 @@ namespace Vista
 
             gvProductos.EditIndex = e.NewEditIndex;
 
-            cargarGridView();
+            cargarGridViewProductos();
         }
 
         protected void gvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -61,7 +61,7 @@ namespace Vista
             
             gvProductos.EditIndex = -1;
 
-            cargarGridView();
+            cargarGridViewProductos();
         }
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
@@ -70,7 +70,7 @@ namespace Vista
             
             prod.Nombre = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
             prod.Descripcion = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
-            prod.Tipo_Producto = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_TipoProducto")).Text);
+            prod.Tipo_Producto = Convert.ToInt32(((DropDownList)gvProductos.Rows[e.RowIndex].FindControl("Ddl_EditTipoProd")).SelectedValue);
             prod.Stock = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
             prod.Precio_Compra = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
             prod.Precio_Venta = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
@@ -82,7 +82,7 @@ namespace Vista
 
             gvProductos.EditIndex = -1;
 
-            cargarGridView();
+            cargarGridViewProductos();
 
         }
 
@@ -95,7 +95,7 @@ namespace Vista
 
             gvProductos.EditIndex = -1;
 
-            cargarGridView();
+            cargarGridViewProductos();
         }
 
         protected void TextBox8_TextChanged(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace Vista
 
             neg.AgregarProducto(prod);
 
-            cargarGridView();
+            cargarGridViewProductos();
 
         }
     }
