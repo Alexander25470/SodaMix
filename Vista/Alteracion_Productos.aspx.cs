@@ -24,6 +24,16 @@ namespace Vista
         {
             if (!IsPostBack)
             {
+                Usuario usuario = (Usuario)Session["usuario"];
+                if (usuario == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }else if (usuario.TipoUsuario != "0")
+                {
+                    Session.Remove("usuario");
+                    Response.Redirect("Login.aspx");
+                }
+
                 cargarGridView();
             }
         }
