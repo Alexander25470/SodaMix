@@ -8,24 +8,24 @@ namespace Entidades
 {
     public class Producto
     {
-		int ID_Producto;
-		String Nombre;
-		String Descripcion;
-		int Tipo_Producto;
-		int Stock;
-		double Precio_Compra;
-		double Precio_Venta;
-		String Img_URL;
-		int Estado;
+		int _ID_Producto;
+		String _Nombre;
+		String _Descripcion;
+		int _Tipo_Producto;
+		int _Stock;
+		double _Precio_Compra;
+		double _Precio_Venta;
+		String _Img_URL;
+		int _Estado;
 
-        public int ID_Producto1 { get => ID_Producto; set => ID_Producto = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public string Descripcion1 { get => Descripcion; set => Descripcion = value; }
-        public int Tipo_Producto1 { get => Tipo_Producto; set => Tipo_Producto = value; }
-        public int Stock1 { get => Stock; set => Stock = value; }
-        public double Precio_Compra1 { get => Precio_Compra; set => Precio_Compra = value; }
-        public double Precio_Venta1 { get => Precio_Venta; set => Precio_Venta = value; }
-        public string Img_URL1 { get => Img_URL; set => Img_URL = value; }
-        public int Estado1 { get => Estado; set => Estado = value; }
+        public int ID_Producto { get => _ID_Producto; set => _ID_Producto = value; }
+        public string Nombre { get => _Nombre; set => _Nombre = value; }
+        public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
+        public int Tipo_Producto { get => _Tipo_Producto; set => _Tipo_Producto = value; }
+        public int Stock { get => _Stock; set => _Stock = value; }
+        public double Precio_Compra { get => _Precio_Compra; set => _Precio_Compra = value; }
+        public double Precio_Venta { get => _Precio_Venta; set => _Precio_Venta = value; }
+        public string Img_URL { get => _Img_URL; set => _Img_URL = value; }
+        public int Estado { get => _Estado; set => _Estado = value; }
     }
 }
