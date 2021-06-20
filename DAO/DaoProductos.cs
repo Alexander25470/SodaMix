@@ -15,7 +15,7 @@ namespace Dao
         public DataTable obtenerTablaProductos()
         {
             SqlConnection con = ad.ObtenerConexion();
-            return ad.ObtenerTabla("Select * from PRODUCTO", "PRODUCTO", con);
+            return ad.ObtenerTabla("Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto ", "PRODUCTO", con);
         }
 
         public bool ActualizarProducto(Producto prod)

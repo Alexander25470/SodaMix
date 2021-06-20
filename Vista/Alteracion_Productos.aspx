@@ -64,7 +64,7 @@
                             </asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_producto" runat="server" Text='<%# Bind("Tipo_Producto") %>'></asp:Label>
+                            <asp:Label ID="lbl_producto" runat="server" Text='<%# Bind("nombreTipoProducto") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Stock">
