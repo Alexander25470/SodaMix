@@ -58,15 +58,15 @@ namespace Vista
         {
             Entidades.Producto prod = new Entidades.Producto();
             
-            prod.Nombre1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
-            prod.Descripcion1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
-            prod.Tipo_Producto1 = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_TipoProducto")).Text);
-            prod.Stock1 = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
-            prod.Precio_Compra1 = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
-            prod.Precio_Venta1 = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
-            prod.Img_URL1 = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_imgURL")).Text;
-            prod.Estado1 = Convert.ToInt32(((CheckBox)gvProductos.Rows[e.RowIndex].FindControl("chk_Estado")).Checked);
-            prod.ID_Producto1 = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
+            prod.Nombre = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
+            prod.Descripcion = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
+            prod.Tipo_Producto = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_TipoProducto")).Text);
+            prod.Stock = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
+            prod.Precio_Compra = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
+            prod.Precio_Venta = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
+            prod.Img_URL = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_imgURL")).Text;
+            prod.Estado = Convert.ToInt32(((CheckBox)gvProductos.Rows[e.RowIndex].FindControl("chk_Estado")).Checked);
+            prod.ID_Producto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
 
             neg.ActualizarProducto(prod);
 
@@ -79,7 +79,7 @@ namespace Vista
         protected void gvProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             Entidades.Producto prod = new Entidades.Producto();
-            prod.ID_Producto1 = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
+            prod.ID_Producto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
 
             neg.EliminarProducto(prod);
 
@@ -97,14 +97,14 @@ namespace Vista
         {
             Entidades.Producto prod = new Entidades.Producto();
 
-            prod.Nombre1 = txtNombre.Text;
-            prod.Descripcion1 = txtDesc.Text;
-            prod.Tipo_Producto1 = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
-            prod.Stock1 = Convert.ToInt32(txtStock.Text);
-            prod.Precio_Compra1 = Convert.ToDouble(txtPrecioCompra.Text);
-            prod.Precio_Venta1 = Convert.ToDouble(txtPrecioVenta.Text);
-            prod.Img_URL1 = txtImgURL.Text;
-            prod.Estado1 = 1;
+            prod.Nombre = txtNombre.Text;
+            prod.Descripcion = txtDesc.Text;
+            prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
+            prod.Stock = Convert.ToInt32(txtStock.Text);
+            prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
+            prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+            prod.Img_URL = txtImgURL.Text;
+            prod.Estado = 1;
 
             neg.AgregarProducto(prod);
 
