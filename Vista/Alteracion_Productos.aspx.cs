@@ -99,7 +99,7 @@ namespace Vista
 
             prod.Nombre1 = txtNombre.Text;
             prod.Descripcion1 = txtDesc.Text;
-            prod.Tipo_Producto1 = 1;
+            prod.Tipo_Producto1 = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
             prod.Stock1 = Convert.ToInt32(txtStock.Text);
             prod.Precio_Compra1 = Convert.ToDouble(txtPrecioCompra.Text);
             prod.Precio_Venta1 = Convert.ToDouble(txtPrecioVenta.Text);

@@ -132,8 +132,9 @@
                 <tr>
                     <td class="auto-style5">Tipo producto:</td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="Ddl_TipoProd" runat="server">
+                        <asp:DropDownList ID="Ddl_TipoProd" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="ID_TipoProducto">
                         </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [ID_TipoProducto], [Nombre] FROM [TIPO_PRODUCTO]"></asp:SqlDataSource>
                     </td>
                 </tr>
                 <tr>
