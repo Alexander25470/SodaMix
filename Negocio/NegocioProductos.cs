@@ -27,5 +27,11 @@ namespace Negocio
         {
             return dao.obtenerTablaProductos();
         }
+
+        public bool AgregarProducto(Producto prod)
+        {
+            return dao.AgregarProducto(prod);
+        }
+
     }
 }

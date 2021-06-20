@@ -27,6 +27,9 @@
         .auto-style6 {
             height: 26px;
         }
+        .auto-style7 {
+            margin-left: 148px;
+        }
     </style>
 </head>
 <body>
@@ -117,50 +120,52 @@
                 <tr>
                     <td class="auto-style4">Nombre:</td>
                     <td>
-                        <asp:TextBox ID="txtNombre" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Descripcion:</td>
                     <td>
-                        <asp:TextBox ID="txtDesc" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">Tipo producto:</td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="Ddl_TipoProd" runat="server">
+                        <asp:DropDownList ID="Ddl_TipoProd" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nombre" DataValueField="ID_TipoProducto">
                         </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [ID_TipoProducto], [Nombre] FROM [TIPO_PRODUCTO]"></asp:SqlDataSource>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">Stock:</td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtStock" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Compra:</td>
                     <td>
-                        <asp:TextBox ID="txtPrecioCompra" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtPrecioCompra" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Venta:</td>
                     <td>
-                        <asp:TextBox ID="txtPrecioVenta" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtPrecioVenta" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Img URL:</td>
                     <td>
-                        <asp:TextBox ID="txtImgURL" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtImgURL" runat="server"></asp:TextBox>
                     </td>
                 </tr>
             </table>
             <br />
             <br />
-            Id_Producto : </div>
+            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" />
+        </div>
     </form>
 </body>
 </html>
