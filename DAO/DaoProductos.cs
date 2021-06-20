@@ -41,24 +41,7 @@ namespace Dao
         }
         public bool AgregarProducto(Producto prod)
         {
-            string query = $@"
-                INSERT INTO[dbo].[PRODUCTO]
-            ([Nombre]
-          ,[Descripcion]
-          ,[Tipo_Producto]
-          ,[Stock]
-          ,[Precio_Compra]
-          ,[Precio_Venta]
-          ,[Img_URL]
-    VALUES
-          (< {prod.Nombre1}, varchar(100),>
-           ,< {prod.Descripcion1 }, varchar(400),>
-           ,< {prod.Tipo_Producto1}, int,>
-           ,< {prod.Stock1}, int,>
-           ,< {prod.Precio_Compra1}, money,>
-           ,< {prod.Precio_Venta1}, money,>
-           ,< {prod.Img_URL1}, varchar(400),>
-                ";
+            string query = $@"INSERT INTO PRODUCTO(Nombre,Descripcion,Tipo_Producto,Stock,Precio_Compra,Precio_Venta,Img_URL)VALUES('{prod.Nombre1}','{prod.Descripcion1 }','{prod.Tipo_Producto1}','{prod.Stock1}','{prod.Precio_Compra1}','{prod.Precio_Venta1}','{prod.Img_URL1}')";
             SqlConnection con = ad.ObtenerConexion();
             int FilasInsertadas = ad.ejecutarConsulta(query, con);
             if (FilasInsertadas == 1)

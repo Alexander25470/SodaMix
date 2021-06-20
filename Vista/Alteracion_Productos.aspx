@@ -120,13 +120,13 @@
                 <tr>
                     <td class="auto-style4">Nombre:</td>
                     <td>
-                        <asp:TextBox ID="txtNombre" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Descripcion:</td>
                     <td>
-                        <asp:TextBox ID="txtDesc" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -139,25 +139,25 @@
                 <tr>
                     <td class="auto-style5">Stock:</td>
                     <td class="auto-style6">
-                        <asp:TextBox ID="txtStock" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Compra:</td>
                     <td>
-                        <asp:TextBox ID="txtPrecioCompra" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtPrecioCompra" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Venta:</td>
                     <td>
-                        <asp:TextBox ID="txtPrecioVenta" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtPrecioVenta" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Img URL:</td>
                     <td>
-                        <asp:TextBox ID="txtImgURL" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtImgURL" runat="server"></asp:TextBox>
                     </td>
                 </tr>
             </table>
