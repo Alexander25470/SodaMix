@@ -34,6 +34,7 @@ namespace Vista
                     Response.Redirect("Login.aspx");
                 }
 
+                lblNombreUsuario.Text = usuario.Nombre;
                 cargarGridViewUsuarios();
 
             }

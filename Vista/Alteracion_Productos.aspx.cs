@@ -28,11 +28,13 @@ namespace Vista
                 if (usuario == null)
                 {
                     Response.Redirect("Login.aspx");
-                }else if (usuario.TipoUsuario != "0")
+                }
+                else if (usuario.TipoUsuario != "0")
                 {
                     Session.Remove("usuario");
                     Response.Redirect("Login.aspx");
                 }
+                lblNombreUsuario.Text = usuario.Nombre;
 
                 cargarGridViewProductos();
             }
@@ -121,6 +123,16 @@ namespace Vista
         {
             gvProductos.DataSource = neg.obtenerTablaProductos(tbx_buscarProducto.Text);
             gvProductos.DataBind();
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdministrarClientes.aspx");
+        }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx");
         }
     }
 }
