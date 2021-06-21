@@ -15,12 +15,12 @@ namespace Dao
         AccesoDatos ad = new AccesoDatos();
         public void agregarUsuario(Usuario user)
         {
-           string agregarSucursal = $@"INSERT INTO USUARIO (ID_TIPO, Nombre, Apellido, DNI, Telefono, FechaNacimiento, Email, Username, Pass, Estado)VALUES('{1}', '{user.Nombre}', '{user.Apellido}', '{user.Dni}', '{user.Telefono}', '{user.FechaNacimiento}', '{user.Email}', '{user.UserName}', '{user.Pass}', '{user.Estado}')";
+            string agregarSucursal = $@"INSERT INTO USUARIO (ID_TIPO, Nombre, Apellido, DNI, Telefono, FechaNacimiento, Email, Username, Pass, Estado)VALUES('{1}', '{user.Nombre}', '{user.Apellido}', '{user.Dni}', '{user.Telefono}', '{user.FechaNacimiento}', '{user.Email}', '{user.UserName}', '{user.Pass}', '{user.Estado}')";
             SqlConnection conexion = ad.ObtenerConexion();
             ad.ejecutarConsulta(agregarSucursal, conexion);
         }
 
-        
+
 
         public Usuario obtenerUsuario(String userName, String constraseña)
         {
@@ -30,7 +30,7 @@ namespace Dao
             String consulta = $"select * from {tabla} where Username='{userName}' and Pass='{constraseña}' and Estado='True' ";
             SqlConnection conexion = ad.ObtenerConexion();
             try
-            { 
+            {
                 DataRow tblUsuarios = ad.ObtenerTabla(consulta, tabla, conexion).Rows[0];
                 user.Nombre = tblUsuarios["Nombre"].ToString();
                 user.Apellido = tblUsuarios["Apellido"].ToString();
@@ -50,7 +50,7 @@ namespace Dao
             }
 
 
-          
+
 
 
         }
@@ -58,8 +58,10 @@ namespace Dao
         public DataTable obtenerTablaUsuarios(string coso = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select * from Usuario" + coso == null ? "" : $" where id = { coso }";
+            string query = "select * from Usuario" + (coso == null ? "" : $" where id_usuario = { coso }");
             return ad.ObtenerTabla(query, "Usuario", con);
         }
 
     }
+
+}

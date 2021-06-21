@@ -124,7 +124,8 @@ namespace Vista
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
-
+            gvProductos.DataSource = neg.obtenerTablaProductos(tbx_buscarProducto.Text);
+            gvProductos.DataBind();
         }
     }
 }
