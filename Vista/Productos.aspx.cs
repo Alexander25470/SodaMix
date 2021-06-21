@@ -22,7 +22,8 @@ namespace Vista
             {
                 if (usuario.TipoUsuario != "0")
                 {
-                btnAdmin.Style.Add("display", "none");
+                    btnAdminProductos.Style.Add("display", "none");
+                    btnAdminUsuarios.Style.Add("display", "none");
                 }
             }
         }
@@ -35,6 +36,11 @@ namespace Vista
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
             Response.Redirect("Alteracion_Productos.aspx");
+        }
+
+        protected void btnAdminUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdministrarClientes.aspx");
         }
     }
 }

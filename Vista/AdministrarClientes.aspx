@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AministrarClientes.aspx.cs" Inherits="Vista.AministrarClientes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrarClientes.aspx.cs" Inherits="Vista.AdministrarClientes" %>
 
 <!DOCTYPE html>
 

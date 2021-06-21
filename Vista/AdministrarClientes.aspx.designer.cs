@@ -11,7 +11,7 @@ namespace Vista
 {
 
 
-    public partial class AministrarClientes
+    public partial class AdministrarClientes
     {
 
         /// <summary>

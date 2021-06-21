@@ -67,7 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AministrarClientes.aspx" />
+    <Content Include="AdministrarClientes.aspx" />
     <Content Include="CargarDireccion.aspx" />
     <Content Include="Alteracion_Productos.aspx" />
     <Content Include="Comprar.aspx" />
@@ -78,12 +78,12 @@
     <Content Include="CargarCliente.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AministrarClientes.aspx.cs">
-      <DependentUpon>AministrarClientes.aspx</DependentUpon>
+    <Compile Include="AdministrarClientes.aspx.cs">
+      <DependentUpon>AdministrarClientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AministrarClientes.aspx.designer.cs">
-      <DependentUpon>AministrarClientes.aspx</DependentUpon>
+    <Compile Include="AdministrarClientes.aspx.designer.cs">
+      <DependentUpon>AdministrarClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="CargarDireccion.aspx.cs">
       <DependentUpon>CargarDireccion.aspx</DependentUpon>

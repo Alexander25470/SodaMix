@@ -5,12 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using Entidades;
 
 namespace Vista
 {
-    public partial class AministrarClientes : System.Web.UI.Page
+    public partial class AdministrarClientes : System.Web.UI.Page
     {
-        NegocioUsuario Neg = new NegocioUsuario();
+        NegocioUsuario neg = new NegocioUsuario();
+        protected void cargarGridViewUsuarios()
+        {
+            GVClientes.DataSource = neg.obtenerTablaUsuario();
+            GVClientes.DataBind();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +34,7 @@ namespace Vista
                     Response.Redirect("Login.aspx");
                 }
 
-               
+                cargarGridViewUsuarios();
 
             }
         }

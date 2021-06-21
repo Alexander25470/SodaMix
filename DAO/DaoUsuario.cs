@@ -58,7 +58,7 @@ namespace Dao
         public DataTable obtenerTablaUsuarios()
         {
             SqlConnection con = ad.ObtenerConexion();
-            return ad.ObtenerTabla("$select * from Usuario ", "Usuario", con);
+            return ad.ObtenerTabla("select * from Usuario", "Usuario", con);
         }
     }
 
