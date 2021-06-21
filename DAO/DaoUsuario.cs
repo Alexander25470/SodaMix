@@ -55,11 +55,11 @@ namespace Dao
 
         }
 
-        public DataTable obtenerTablaUsuarios()
+        public DataTable obtenerTablaUsuarios(string coso = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            return ad.ObtenerTabla("select * from Usuario", "Usuario", con);
+            string query = "select * from Usuario" + coso == null ? "" : $" where id = { coso }";
+            return ad.ObtenerTabla(query, "Usuario", con);
         }
-    }
 
-}
+    }

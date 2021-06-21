@@ -121,5 +121,10 @@ namespace Vista
             cargarGridViewProductos();
 
         }
+
+        protected void btn_buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,5 +33,11 @@ namespace Negocio
 
         }
 
+        public DataTable obtenerTablaUsuarioBusqueda(string id)
+        {
+            return dao.obtenerTablaUsuarios(id);
+
+        }
+
     }
 }

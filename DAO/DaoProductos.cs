@@ -12,10 +12,11 @@ namespace Dao
     public class DaoProductos
     {
         AccesoDatos ad = new AccesoDatos();
-        public DataTable obtenerTablaProductos()
+        public DataTable obtenerTablaProductos(string id = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            return ad.ObtenerTabla("Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto ", "PRODUCTO", con);
+            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ id == null ?"":$" where ID = {id} ";
+            return ad.ObtenerTabla(query, "PRODUCTO", con);
         }
 
         public bool ActualizarProducto(Producto prod)

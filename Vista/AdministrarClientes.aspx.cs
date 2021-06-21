@@ -38,5 +38,11 @@ namespace Vista
 
             }
         }
+
+        protected void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            GVClientes.DataSource = neg.obtenerTablaUsuarioBusqueda(tbx_busqueda.Text);
+            GVClientes.DataBind();
+        }
     }
 }
