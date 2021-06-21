@@ -58,7 +58,7 @@ namespace Dao
         public DataTable obtenerTablaUsuarios(string coso = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select * from Usuario" + (coso == null ? "" : $" where id_usuario = { coso }");
+            string query = "select * from Usuario" + (coso == null ? "" : $" where DNI = '{ coso }'");
             return ad.ObtenerTabla(query, "Usuario", con);
         }
 
