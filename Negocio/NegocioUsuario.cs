@@ -39,5 +39,10 @@ namespace Negocio
 
         }
 
+        public bool actualizarUsuario(Usuario usuario)
+        {
+            return dao.ActualizarUsuario(usuario);
+
+        }
     }
 }

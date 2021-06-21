@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class Usuario
     {
+        private String _id;
         private String _nombre;
         private String _apellido;
         private String _userName;
@@ -23,6 +24,7 @@ namespace Entidades
         {
         }
 
+        public string Id { get => _id; set => _id = value; }
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Apellido { get => _apellido; set => _apellido = value; }
         public string UserName { get => _userName; set => _userName = value; }
@@ -33,8 +35,5 @@ namespace Entidades
         public string FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
         public string Pass { get => _pass; set => _pass = value; }
         public string Estado { get => _estado; set => _estado = value; }
-
-
-
     }
 }

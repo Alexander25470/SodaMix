@@ -48,20 +48,25 @@ namespace Dao
             {
                 return null;
             }
-
-
-
-
-
         }
 
-        public DataTable obtenerTablaUsuarios(string coso = null)
+        public DataTable obtenerTablaUsuarios(string dni = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select * from Usuario" + (coso == null ? "" : $" where DNI = '{ coso }'");
+            string query = "select * from Usuario" + (dni == null ? "" : $" where DNI Like '%{ dni }%'");
             return ad.ObtenerTabla(query, "Usuario", con);
         }
 
+        public bool ActualizarUsuario(Usuario usuario)
+        {
+            string query = $"UPDATE [USUARIO] SET [ID_TIPO] = '{usuario.TipoUsuario}',[Nombre] = '{usuario.Nombre}',[Apellido] = '{usuario.Apellido}',[DNI] = '{usuario.Dni}',[Telefono] = '{usuario.Telefono}',[FechaNacimiento] = '{usuario.FechaNacimiento}',[Email] = '{usuario.Email}',[Username] = '{usuario.UserName}',[Pass] = '{usuario.Pass}',[Estado] = '{usuario.Estado}' WHERE ID_Usuario = '{usuario.Id}'";
+            SqlConnection con = ad.ObtenerConexion();
+            int FilasInsertadas = ad.ejecutarConsulta(query, con);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
     }
 
 }

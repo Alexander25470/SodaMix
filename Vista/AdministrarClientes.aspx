@@ -12,6 +12,9 @@
         .auto-style2 {
             margin-left: 24px;
         }
+        .auto-style3 {
+            margin-right: 0px;
+        }
     </style>
 </head>
 <body>
@@ -19,7 +22,97 @@
         <div>
             Buscar Cliente:<asp:TextBox ID="tbx_busqueda" runat="server" CssClass="auto-style1"></asp:TextBox>
             <asp:Button ID="btn_Buscar" runat="server" CssClass="auto-style2" OnClick="btn_Buscar_Click" Text="Buscar" Width="84px" />
-            <asp:GridView ID="GVClientes" runat="server">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+        <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+        <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
+            <asp:GridView ID="GVClientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CssClass="auto-style3" OnRowCancelingEdit="GVClientes_RowCancelingEdit" OnRowEditing="GVClientes_RowEditing" OnRowUpdating="GVClientes_RowUpdating">
+                <Columns>
+                    <asp:TemplateField HeaderText="ID_Usuario">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_IDUsuario" runat="server" Text='<%# Bind("ID_Usuario") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="TIPO_USUARIO">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxTipo_Usuario" runat="server" Text='<%# Bind("ID_Tipo") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Id_Tipo") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxNombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Apellido">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxApellido" runat="server" Text='<%# Bind("Apellido") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("Apellido") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="DNI">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxDNI" runat="server" Text='<%# Bind("DNI") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("DNI") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Telefono">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxTelefono" runat="server" Text='<%# Bind("Telefono") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label5" runat="server" Text='<%# Bind("Telefono") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="FechaNacimiento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxFechaNacimiento" runat="server" Text='<%# Bind("FechaNacimiento") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("FechaNacimiento") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Email">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxEmail" runat="server" Text='<%# Bind("Email") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label7" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre_Usuario">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxUsername" runat="server" Text='<%# Bind("Username") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label8" runat="server" Text='<%# Bind("Username") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Contraseña">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="tbxpassword" runat="server" Text='<%# Bind("Pass") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label9" runat="server" Text='<%# Bind("Pass") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Estado">
+                        <EditItemTemplate>
+                            <asp:CheckBox ID="cbxEditarEstado" runat="server" Checked='<%# Bind("Estado") %>' />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox ID="cbxEstado" runat="server" Checked='<%# Bind("Estado") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
             </asp:GridView>
         </div>
     </form>

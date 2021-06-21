@@ -98,11 +98,6 @@ namespace Vista
             cargarGridViewProductos();
         }
 
-        protected void TextBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btn_aceptar_Click(object sender, EventArgs e)
         {
             Entidades.Producto prod = new Entidades.Producto();

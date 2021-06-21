@@ -44,5 +44,53 @@ namespace Vista
             GVClientes.DataSource = neg.obtenerTablaUsuarioBusqueda(tbx_busqueda.Text);
             GVClientes.DataBind();
         }
+
+        protected void GVClientes_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            Usuario usu = new Usuario();
+
+            usu.Id= ((Label)GVClientes.Rows[e.RowIndex].FindControl("lbl_IDUsuario")).Text;
+            usu.TipoUsuario = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxTipo_Usuario")).Text;
+            usu.Nombre = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxNombre")).Text;
+            usu.Apellido = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxApellido")).Text;
+            usu.Dni = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxDNI")).Text;
+            usu.Telefono = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxTelefono")).Text;
+            usu.FechaNacimiento = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxFechaNacimiento")).Text;
+            usu.Email = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxEmail")).Text;
+            usu.UserName = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxUsername")).Text;
+            usu.Pass = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxpassword")).Text;
+            usu.Estado = Convert.ToString(((CheckBox)GVClientes.Rows[e.RowIndex].FindControl("cbxEditarEstado")).Checked);
+
+            neg.actualizarUsuario(usu);
+
+            GVClientes.EditIndex = -1;
+
+            cargarGridViewUsuarios();
+
+        }
+
+        protected void GVClientes_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GVClientes.EditIndex = e.NewEditIndex;
+
+            cargarGridViewUsuarios();
+        }
+
+        protected void GVClientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GVClientes.EditIndex = -1;
+
+            cargarGridViewUsuarios();
+        }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Alteracion_Productos.aspx");
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace Dao
         public DataTable obtenerTablaProductos(string id = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ (id == null ?"":$" where p.Nombre = '{id}' ");
+            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ (id == null ?"":$" where p.Nombre Like '%{id}%' ");
             return ad.ObtenerTabla(query, "PRODUCTO", con);
         }
 
@@ -50,8 +50,5 @@ namespace Dao
             else
                 return false;
         }
-
-
-
     }
 }
