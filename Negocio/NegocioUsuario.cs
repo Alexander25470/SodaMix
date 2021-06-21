@@ -27,5 +27,11 @@ namespace Negocio
             return dao.obtenerUsuario(userName, pass);
         }
 
+        public DataTable obtenerTablaUsuario()
+        {
+            return dao.obtenerTablaUsuarios();
+
+        }
+
     }
 }

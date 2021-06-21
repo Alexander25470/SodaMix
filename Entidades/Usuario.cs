@@ -33,5 +33,8 @@ namespace Entidades
         public string FechaNacimiento { get => _fechaNacimiento; set => _fechaNacimiento = value; }
         public string Pass { get => _pass; set => _pass = value; }
         public string Estado { get => _estado; set => _estado = value; }
+
+
+
     }
 }

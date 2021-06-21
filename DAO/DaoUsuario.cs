@@ -48,8 +48,18 @@ namespace Dao
             {
                 return null;
             }
-           
-           
+
+
+          
+
+
+        }
+
+        public DataTable obtenerTablaUsuarios()
+        {
+            SqlConnection con = ad.ObtenerConexion();
+            return ad.ObtenerTabla("$select * from Usuario ", "Usuario", con);
         }
     }
+
 }
