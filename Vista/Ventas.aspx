@@ -19,11 +19,11 @@
     <form id="form1" runat="server">
         <div>
             Buscar:<asp:TextBox ID="tbx_buscarProducto" runat="server" CssClass="auto-style8"></asp:TextBox>
-            <asp:Button ID="btn_buscar" runat="server" CssClass="auto-style9" OnClick="btn_buscar_Click" Text="Buscar" Width="74px" />
+            <asp:Button ID="btn_buscar" runat="server" CssClass="auto-style9" Text="Buscar" Width="74px" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-        <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Administrar Clientes" />
-        <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
+        <asp:Button ID="btnAdmin" runat="server" Text="Administrar Clientes" />
+        <asp:Button ID="btnInicio" runat="server"  Text="Inicio" />
             <br />
             <asp:GridView ID="gvVentas" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
