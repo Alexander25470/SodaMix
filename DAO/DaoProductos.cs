@@ -12,10 +12,10 @@ namespace Dao
     public class DaoProductos
     {
         AccesoDatos ad = new AccesoDatos();
-        public DataTable obtenerTablaProductos(string id = null)
+        public DataTable obtenerTablaProductos(string nombreProducto = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ (id == null ?"":$" where p.Nombre Like '%{id}%' ");
+            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ (nombreProducto == null ?"":$" where p.Nombre Like '%{nombreProducto}%' ");
             return ad.ObtenerTabla(query, "PRODUCTO", con);
         }
 
@@ -49,6 +49,32 @@ namespace Dao
                 return true;
             else
                 return false;
+        }
+        public Producto obtenerProducto(int id)
+        {
+            Usuario user = new Usuario();
+            Producto prod = new Producto();
+            String tabla = "PRODUCTO";
+            String consulta = $"select * from {tabla} where ID_Producto='{id}' and Estado='True' ";
+            SqlConnection conexion = ad.ObtenerConexion();
+            try
+            {
+                DataRow tblUsuarios = ad.ObtenerTabla(consulta, tabla, conexion).Rows[0];
+                prod.ID_Producto= Convert.ToInt32(tblUsuarios["ID_Producto"]);
+                prod.Nombre = tblUsuarios["Nombre"].ToString();
+                prod.Descripcion = tblUsuarios["Descripcion"].ToString();
+                prod.Tipo_Producto = Convert.ToInt32(tblUsuarios["Tipo_Producto"]);
+                prod.Stock = Convert.ToInt32(tblUsuarios["Stock"]);
+                prod.Precio_Compra = Convert.ToInt32(tblUsuarios["Precio_Compra"]);
+                prod.Precio_Venta = Convert.ToInt32(tblUsuarios["Precio_venta"]);
+                prod.Img_URL = tblUsuarios["Img_URL"].ToString();
+                prod.Estado = Convert.ToInt32(tblUsuarios["Estado"]);
+                return prod;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

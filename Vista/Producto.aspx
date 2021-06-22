@@ -9,9 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Nombre producto"></asp:Label>
+            <asp:Label ID="lblTitulo" runat="server" Text="Nombre producto"></asp:Label>
         </div>
-        <asp:Image ID="Image1" runat="server" Height="200px" />
+        <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>
             <asp:Button ID="Button3" runat="server" Text="-" />
             <asp:Label ID="Label5" runat="server" Text="50"></asp:Label>
@@ -19,14 +19,15 @@
         </p>
         <asp:Button ID="Button1" runat="server" Text="Añadir" />
         <p>
-            <asp:Label ID="Label2" runat="server" Text="Nombre producto"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Nombre producto:"></asp:Label>
+            <asp:Label ID="lblNombreProducto" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="Label3" runat="server" Text="Descripcion"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Descripcion:"></asp:Label>
+            <asp:Label ID="lblDescripcionProducto" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            <asp:Label ID="Label4" runat="server" Text="info extra"></asp:Label>
-        </p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

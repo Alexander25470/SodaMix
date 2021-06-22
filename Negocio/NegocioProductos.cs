@@ -23,9 +23,9 @@ namespace Negocio
             return dao.EliminarProducto(prod);
         }
 
-        public DataTable obtenerTablaProductos(string idProducto = null)
+        public DataTable obtenerTablaProductos(string nombreProducto = null)
         {
-            return dao.obtenerTablaProductos(idProducto);
+            return dao.obtenerTablaProductos(nombreProducto);
         }
 
         public bool AgregarProducto(Producto prod)
@@ -33,5 +33,9 @@ namespace Negocio
             return dao.AgregarProducto(prod);
         }
 
+        public Producto obtenerProducto(int id)
+        {
+            return dao.obtenerProducto(id);
+        }
     }
 }
