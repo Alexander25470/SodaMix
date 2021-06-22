@@ -74,6 +74,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Productos.aspx" />
+    <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
     <Content Include="CargarCliente.aspx" />
   </ItemGroup>
@@ -134,6 +135,13 @@
     </Compile>
     <Compile Include="CargarCliente.aspx.designer.cs">
       <DependentUpon>CargarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
