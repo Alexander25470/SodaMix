@@ -116,7 +116,7 @@
                             <asp:CheckBox ID="chk_Estado" runat="server" Checked="True" Text='<%# Bind("Estado") %>' />
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("Estado") %>' />
+                            <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("Estado") %>' Enabled="False" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
