@@ -19,11 +19,11 @@
         </div>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
             <AlternatingItemTemplate>
-                <td runat="server" style="">Precio_Venta:
-                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                <td runat="server" style="">
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
                     <br />
-                    Img_URL:
-                    <asp:Label ID="Img_URLLabel" runat="server" Text='<%# Eval("Img_URL") %>' />
+                    Precio_Venta:
+                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
