@@ -124,6 +124,7 @@
                     <asp:Label ID="lblIdProducto" runat="server" Text='<%# Bind("ID_Producto") %>'></asp:Label>
                 </EmptyDataTemplate>
             </asp:GridView>
+            <asp:Label ID="lblErrorEditarProducto" runat="server"></asp:Label>
             <br />
             <table class="auto-style1">
                 <tr>
@@ -175,7 +176,7 @@
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="lblErrorAgregarProducto" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblErrorAgregarProducto" runat="server"></asp:Label>
             <br />
             <br />
             <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" />

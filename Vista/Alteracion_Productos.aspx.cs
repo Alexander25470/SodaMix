@@ -64,27 +64,50 @@ namespace Vista
             gvProductos.EditIndex = -1;
 
             cargarGridViewProductos();
+            lblErrorEditarProducto.Text = "";
         }
 
         protected void gvProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             Entidades.Producto prod = new Entidades.Producto();
-            
             prod.Nombre = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Nombre")).Text;
             prod.Descripcion = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Descripcion")).Text;
-            prod.Tipo_Producto = Convert.ToInt32(((DropDownList)gvProductos.Rows[e.RowIndex].FindControl("Ddl_EditTipoProd")).SelectedValue);
-            prod.Stock = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
-            prod.Precio_Compra = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
-            prod.Precio_Venta = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
             prod.Img_URL = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_imgURL")).Text;
-            prod.Estado = Convert.ToInt32(((CheckBox)gvProductos.Rows[e.RowIndex].FindControl("chk_Estado")).Checked);
+
+            if (prod.Nombre == "" ||
+                prod.Descripcion == "" ||
+                prod.Img_URL == "" ||
+                (((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text =="") ||
+                 (((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text == "") 
+                )
+            {
+                lblErrorEditarProducto.Text = "Campos vacios";
+                return;
+            }
+
+            try
+            {
+                prod.Stock = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
+                prod.Precio_Venta = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
+                prod.Precio_Compra = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
+                
+            }
+            catch
+            {
+                lblErrorEditarProducto.Text = "Algun campo numerico tiene letras";
+                return;
+            }
+
+            prod.Tipo_Producto = Convert.ToInt32(((DropDownList)gvProductos.Rows[e.RowIndex].FindControl("Ddl_EditTipoProd")).SelectedValue);
             prod.ID_Producto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_IdProducto")).Text);
+            prod.Estado = Convert.ToInt32(((CheckBox)gvProductos.Rows[e.RowIndex].FindControl("chk_Estado")).Checked);
 
             neg.ActualizarProducto(prod);
 
             gvProductos.EditIndex = -1;
 
             cargarGridViewProductos();
+            lblErrorEditarProducto.Text = "";
 
         }
 
@@ -116,7 +139,6 @@ namespace Vista
 
             try
             {
-                prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
                 prod.Stock = Convert.ToInt32(txtStock.Text);
                 prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
                 prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
@@ -128,14 +150,14 @@ namespace Vista
             }
             prod.Nombre = txtNombre.Text;
             prod.Descripcion = txtDesc.Text;
-            
+            prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
             prod.Img_URL = txtImgURL.Text;
             prod.Estado = 1;
 
             neg.AgregarProducto(prod);
 
             cargarGridViewProductos();
-            lblErrorAgregarProducto.Text=""
+            lblErrorAgregarProducto.Text="";
 
         }
 
