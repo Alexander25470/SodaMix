@@ -103,13 +103,32 @@ namespace Vista
         protected void btn_aceptar_Click(object sender, EventArgs e)
         {
             Entidades.Producto prod = new Entidades.Producto();
+            if(txtNombre.Text =="" ||
+                txtDesc.Text == "" ||
+                txtStock.Text == "" ||
+                txtPrecioCompra.Text == "" ||
+                txtPrecioVenta.Text == "" ||
+                txtImgURL.Text == ""
+                ){
+                lblErrorAgregarProducto.Text = "Campos vacios";
+                return;
+            }
 
+            try
+            {
+                prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
+                prod.Stock = Convert.ToInt32(txtStock.Text);
+                prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
+                prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+            }
+            catch
+            {
+                lblErrorAgregarProducto.Text = "Algun campo numerico tiene letras";
+                return;
+            }
             prod.Nombre = txtNombre.Text;
             prod.Descripcion = txtDesc.Text;
-            prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
-            prod.Stock = Convert.ToInt32(txtStock.Text);
-            prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
-            prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
+            
             prod.Img_URL = txtImgURL.Text;
             prod.Estado = 1;
 
