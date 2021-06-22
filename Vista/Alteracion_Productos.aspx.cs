@@ -135,6 +135,7 @@ namespace Vista
             neg.AgregarProducto(prod);
 
             cargarGridViewProductos();
+            lblErrorAgregarProducto.Text=""
 
         }
 
