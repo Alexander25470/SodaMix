@@ -108,8 +108,8 @@ insert into TIPO_USER values (1, 'user')
 
 SET IDENTITY_INSERT [USUARIO] ON
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(0,0,'admin','admin','11111111','11 1111-1111','01-01-1999','admin@admin.com','admin','123456','1')
-INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,0,'userTest','userTest','11111112','11 1111-1112','01-01-1999','user@test.com','userTest','123456','0')
-INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,0,'user','user','11111113','11 1111-1113','01-01-1999','user@test.com','user','123456','1')
+INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,1,'userTest','userTest','11111112','11 1111-1112','01-01-1999','user@test.com','userTest','123456','0')
+INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111113','11 1111-1113','01-01-1999','user@test.com','user','123456','1')
 SET IDENTITY_INSERT USUARIO OFF
 
 insert into TIPO_PRODUCTO values (0, 'tipo 1', 'producto tipo 1')
