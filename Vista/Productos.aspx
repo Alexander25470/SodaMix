@@ -5,6 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 86px;
+        }
+        .auto-style2 {
+            height: 80px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,28 +25,32 @@
         <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
         <div>
         </div>
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
+        <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" DataKeyNames="ID_Producto">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
-                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
-                    <br />
-                    Precio_Venta:
-                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
                     <br />
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
+                    Precio_Venta:&nbsp;<asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    <br />
+                    <asp:Button ID="Button1" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Button" />
+                    <br />
                 </td>
             </AlternatingItemTemplate>
             <EditItemTemplate>
-                <td runat="server" style="">Precio_Venta:
+                <td runat="server" style="">ID_Producto:
+                    <asp:Label ID="ID_ProductoLabel1" runat="server" Text='<%# Eval("ID_Producto") %>' />
+                    <br />
+                    Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    Precio_Venta:
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
                     <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
-                    <br />
-                    Nombre:
-                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
                     <br />
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <br />
@@ -62,14 +74,14 @@
                 </tr>
             </GroupTemplate>
             <InsertItemTemplate>
-                <td runat="server" style="">Precio_Venta:
+                <td runat="server" style="">Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    Precio_Venta:
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
                     <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
-                    <br />
-                    Nombre:
-                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
                     <br />
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <br />
@@ -78,20 +90,22 @@
                 </td>
             </InsertItemTemplate>
             <ItemTemplate>
-                <td runat="server" style="">
-                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
+                <td runat="server" class="auto-style2">
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
                     <br />
-                    Precio:
-                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
-                    &nbsp;<br />Nombre:
+                    Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <br />
+                    Precio_Venta:&nbsp;<asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    <br />
+                    <asp:Button ID="Button1" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Button" />
                     <br />
                 </td>
             </ItemTemplate>
             <LayoutTemplate>
                 <table runat="server">
                     <tr runat="server">
-                        <td runat="server">
+                        <td runat="server" class="auto-style1">
                             <table id="groupPlaceholderContainer" runat="server" border="0" style="">
                                 <tr id="groupPlaceholder" runat="server">
                                 </tr>
@@ -100,24 +114,28 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server" style="">
-                        </td>
+                            &nbsp;</td>
                     </tr>
                 </table>
             </LayoutTemplate>
             <SelectedItemTemplate>
-                <td runat="server" style="">Precio_Venta:
+                <td runat="server" style="">ID_Producto:
+                    <asp:Label ID="ID_ProductoLabel" runat="server" Text='<%# Eval("ID_Producto") %>' />
+                    <br />
+                    Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <br />
+                    Precio_Venta:
                     <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
                     Img_URL:
                     <asp:Label ID="Img_URLLabel" runat="server" Text='<%# Eval("Img_URL") %>' />
                     <br />
-                    Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
                 </td>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [Precio_Venta], [Img_URL], [Nombre] FROM [PRODUCTO] WHERE ([Estado] = 'True')"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [ID_Producto], [Nombre], [Precio_Venta], [Img_URL] FROM [PRODUCTO]"></asp:SqlDataSource>
+        <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

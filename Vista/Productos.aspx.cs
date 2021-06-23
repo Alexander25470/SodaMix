@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
+using Negocio;
 
 namespace Vista
 {
     public partial class Productos : System.Web.UI.Page
     {
+        NegocioProductos neg = new NegocioProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usuario=(Usuario)Session["usuario"];
@@ -25,6 +27,8 @@ namespace Vista
                     btnAdminProductos.Style.Add("display", "none");
                     btnAdminUsuarios.Style.Add("display", "none");
                 }
+                //lvProductos.DataSource = neg.obtenerTablaProductos();
+                //lvProductos.DataBind();
             }
         }
 
@@ -41,6 +45,12 @@ namespace Vista
         protected void btnAdminUsuarios_Click(object sender, EventArgs e)
         {
             Response.Redirect("AdministrarClientes.aspx");
+        }
+
+        protected void Button1_Command(object sender, CommandEventArgs e)
+        {
+            string id = ((Button)sender).CommandArgument;
+            Response.Redirect("Producto.aspx?id=" + id);
         }
     }
 }

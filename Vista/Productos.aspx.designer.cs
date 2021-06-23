@@ -78,13 +78,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.Button btnAdminUsuarios;
 
         /// <summary>
-        /// ListView1 control.
+        /// lvProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ListView lvProductos;
 
         /// <summary>
         /// SqlDataSource1 control.
@@ -94,5 +94,14 @@ namespace Vista
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// lblTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTest;
     }
 }
