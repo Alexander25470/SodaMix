@@ -52,5 +52,10 @@ namespace Vista
             string id = ((Button)sender).CommandArgument;
             Response.Redirect("Producto.aspx?id=" + id);
         }
+
+        protected void btn_Ventas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ventas.aspx");
+        }
     }
 }

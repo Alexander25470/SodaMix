@@ -23,6 +23,7 @@
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
         <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
         <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
         <div>
         </div>
         <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" DataKeyNames="ID_Producto">

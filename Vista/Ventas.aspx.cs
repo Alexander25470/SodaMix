@@ -42,5 +42,15 @@ namespace Vista
         {
 
         }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx");
+        }
+
+        protected void btnAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdministrarClientes.aspx");
+        }
     }
 }

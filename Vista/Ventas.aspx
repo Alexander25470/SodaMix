@@ -22,8 +22,8 @@
             <asp:Button ID="btn_buscar" runat="server" CssClass="auto-style9" Text="Buscar" Width="74px" />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-        <asp:Button ID="btnAdmin" runat="server" Text="Administrar Clientes" />
-        <asp:Button ID="btnInicio" runat="server"  Text="Inicio" />
+        <asp:Button ID="btnAdmin" runat="server" Text="Administrar Clientes" OnClick="btnAdmin_Click" />
+        <asp:Button ID="btnInicio" runat="server"  Text="Inicio" OnClick="btnInicio_Click" />
             <br />
             <asp:GridView ID="gvVentas" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
