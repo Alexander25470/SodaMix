@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Negocio;
+
+
 namespace Vista
 {
     public partial class Producto : System.Web.UI.Page
@@ -24,6 +26,16 @@ namespace Vista
                 lblNombreProducto.Text = prod.Descripcion;
             }
 
+        }
+
+        protected void btn_Inicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Productos.aspx");
+        }
+
+        protected void btn_Sumar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

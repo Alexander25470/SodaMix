@@ -10,12 +10,14 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lblTitulo" runat="server" Text="Nombre producto"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" />
         </div>
         <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>
-            <asp:Button ID="Button3" runat="server" Text="-" />
-            <asp:Label ID="Label5" runat="server" Text="50"></asp:Label>
-            <asp:Button ID="Button2" runat="server" Text="+" />
+            <asp:Button ID="btn_Restar" runat="server" Text="-" />
+            <asp:Label ID="lbl_Cantidad" runat="server" Text="1"></asp:Label>
+            <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
         </p>
         <asp:Button ID="Button1" runat="server" Text="Añadir" />
         <p>
