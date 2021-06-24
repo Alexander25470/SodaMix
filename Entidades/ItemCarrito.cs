@@ -9,15 +9,15 @@ namespace Entidades
     public class ItemCarrito
     {
         int _cant;
-        string _id;
+        Producto _producto;
 
-        public ItemCarrito(string id)
+        public ItemCarrito(Producto producto)
         {
-            _id = id;
             _cant = 0;
+            Producto = producto;
         }
 
         public int Cant { get => _cant; set => _cant = value; }
-        public string Id { get => _id; set => _id = value; }
+        public Producto Producto { get => _producto; set => _producto = value; }
     }
 }

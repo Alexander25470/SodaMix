@@ -13,6 +13,7 @@ namespace Vista
     public partial class Producto : System.Web.UI.Page
     {
         NegocioProductos neg = new NegocioProductos();
+        Entidades.Producto prod;
         string idProducto="";
         int posInCarrito;
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace Vista
             }
             lblNombreUsuario.Text = usuario.Nombre;
 
-            Entidades.Producto prod = new Entidades.Producto();
+            //Entidades.Producto prod = new Entidades.Producto();
             idProducto = Request.QueryString["id"];
             if(idProducto != "" && idProducto != null) { 
                 prod=neg.obtenerProducto(Convert.ToInt32(idProducto));
@@ -44,17 +45,17 @@ namespace Vista
                 Carrito car = (Carrito)Session["carrito"];
                 if(car._articulos.Count==0)
                 {
-                    car._articulos.Add(new ItemCarrito(idProducto));
+                    car._articulos.Add(new ItemCarrito(prod));
                 }
                 else
                 {
-                    posInCarrito = car._articulos.FindIndex((ItemCarrito it) =>  it.Id == idProducto);
+                    posInCarrito = car._articulos.FindIndex((ItemCarrito it) =>  it.Producto.ID_Producto.ToString() == idProducto);
                     if (posInCarrito == -1)
                     {
-                        car._articulos.Add(new ItemCarrito(idProducto));
-                        posInCarrito = car._articulos.FindIndex((ItemCarrito it) => it.Id == idProducto);
+                        car._articulos.Add(new ItemCarrito(prod));
+                        posInCarrito = car._articulos.FindIndex((ItemCarrito it) => it.Producto.ID_Producto.ToString() == idProducto);
                     }
-                    lblTest.Text = car._articulos.FindIndex((ItemCarrito it) => it.Id == idProducto).ToString();
+                    lblTest.Text = car._articulos.FindIndex((ItemCarrito it) => it.Producto.ID_Producto.ToString() == idProducto).ToString();
                 }
 
                 
