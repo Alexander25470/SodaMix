@@ -34,5 +34,10 @@ namespace Vista
                 Response.Redirect("Productos.aspx");
             }
         }
+
+        protected void btn_Registrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CargarCliente.aspx");
+        }
     }
 }
