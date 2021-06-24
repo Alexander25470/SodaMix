@@ -51,16 +51,18 @@
                     <td class="auto-style7"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Nombre:</td>
-                    <td>
+                    <td class="auto-style8">Nombre:</td>
+                    <td class="auto-style9">
                         <asp:TextBox ID="tbx_Nombre" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="tbx_Nombre" ErrorMessage="Ingrese el nombre" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Apellido</td>
                     <td>
                         <asp:TextBox ID="tbx_Apellido" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre0" runat="server" ControlToValidate="tbx_Apellido" ErrorMessage="Ingrese el apellido" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -68,6 +70,7 @@
                     <td class="auto-style2">Dni:</td>
                     <td>
                         <asp:TextBox ID="tbx_Dni" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre1" runat="server" ControlToValidate="tbx_Dni" ErrorMessage="Ingrese el DNI" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -75,6 +78,7 @@
                     <td class="auto-style3">Telefono:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tbx_Telefono" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="rg_numeros" runat="server" ControlToValidate="tbx_Telefono" ErrorMessage="Telefono no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style4"></td>
                 </tr>
@@ -89,6 +93,7 @@
                     <td class="auto-style8">Mail:</td>
                     <td class="auto-style9">
                         <asp:TextBox ID="tbx_Mail" runat="server"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbx_Mail" ErrorMessage="Mail no valido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>
@@ -96,6 +101,7 @@
                     <td class="auto-style3">Usuario</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tbx_Usuario" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre2" runat="server" ControlToValidate="tbx_Usuario" ErrorMessage="Ingrese el usuario" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style4"></td>
                 </tr>
@@ -103,6 +109,7 @@
                     <td class="auto-style3">Contraseña:</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tbx_Pass" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre3" runat="server" ControlToValidate="tbx_Pass" EnableTheming="True" ErrorMessage="Ingrese contraseña" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style4"></td>
                 </tr>
@@ -110,7 +117,7 @@
                     <td class="auto-style2">Repetir Contraseña:</td>
                     <td>
                         <asp:TextBox ID="tbx_PassRepetida" runat="server"></asp:TextBox>
-                        <asp:Label ID="lbl_PassNoCoincide" runat="server"></asp:Label>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="tbx_Pass" ControlToValidate="tbx_PassRepetida" ErrorMessage="Las password no coinciden" ValidationGroup="grupo2"></asp:CompareValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -119,7 +126,7 @@
                         <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" />
                     </td>
                     <td>
-                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" />
+                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>

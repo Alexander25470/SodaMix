@@ -33,6 +33,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_Nombre;
 
         /// <summary>
+        /// Control rfvNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
         /// Control tbx_Apellido.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_Apellido;
+
+        /// <summary>
+        /// Control rfvNombre0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre0;
 
         /// <summary>
         /// Control tbx_Dni.
@@ -51,6 +69,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_Dni;
 
         /// <summary>
+        /// Control rfvNombre1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre1;
+
+        /// <summary>
         /// Control tbx_Telefono.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_Telefono;
+
+        /// <summary>
+        /// Control rg_numeros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_numeros;
 
         /// <summary>
         /// Control tbx_FechaNacimiento.
@@ -78,6 +114,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_Mail;
 
         /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+
+        /// <summary>
         /// Control tbx_Usuario.
         /// </summary>
         /// <remarks>
@@ -85,6 +130,15 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_Usuario;
+
+        /// <summary>
+        /// Control rfvNombre2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre2;
 
         /// <summary>
         /// Control tbx_Pass.
@@ -96,6 +150,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_Pass;
 
         /// <summary>
+        /// Control rfvNombre3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre3;
+
+        /// <summary>
         /// Control tbx_PassRepetida.
         /// </summary>
         /// <remarks>
@@ -105,13 +168,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_PassRepetida;
 
         /// <summary>
-        /// Control lbl_PassNoCoincide.
+        /// Control CompareValidator1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_PassNoCoincide;
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
 
         /// <summary>
         /// Control btn_Inicio.

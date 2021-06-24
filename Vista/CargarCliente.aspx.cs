@@ -13,7 +13,7 @@ namespace Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
         }
 
         protected void btn_Aceptar_Click(object sender, EventArgs e)
@@ -34,10 +34,7 @@ namespace Vista
                 negocio.registrarUsuario(user);
                 Response.Write("<script language=javascript>alert('Te has registrado con exito.')</script>");
             }
-            else
-            {
-                lbl_PassNoCoincide.Text = "Las password no coinciden.";
-            }
+            
             
 
         }
