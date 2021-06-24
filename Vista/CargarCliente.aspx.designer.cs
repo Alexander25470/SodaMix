@@ -69,13 +69,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_Dni;
 
         /// <summary>
-        /// Control rfvNombre1.
+        /// Control rg_numeros0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_numeros0;
 
         /// <summary>
         /// Control tbx_Telefono.
