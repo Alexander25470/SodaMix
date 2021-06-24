@@ -9,6 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            Usuario:&nbsp;
+        <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+        <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+        <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
+            <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
+            <br />
             <asp:Label ID="Label3" runat="server" Text="Productos elegidos"></asp:Label>
             <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>

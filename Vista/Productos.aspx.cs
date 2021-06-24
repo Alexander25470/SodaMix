@@ -31,6 +31,7 @@ namespace Vista
                 {
                     btnAdminProductos.Style.Add("display", "none");
                     btnAdminUsuarios.Style.Add("display", "none");
+                    btn_Ventas.Style.Add("display", "none");
                 }
                 //lvProductos.DataSource = neg.obtenerTablaProductos();
                 //lvProductos.DataBind();
@@ -61,6 +62,11 @@ namespace Vista
         protected void btn_Ventas_Click(object sender, EventArgs e)
         {
             Response.Redirect("Ventas.aspx");
+        }
+
+        protected void btnCarrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Comprar.aspx");
         }
     }
 }

@@ -52,5 +52,16 @@ namespace Vista
         {
             Response.Redirect("AdministrarClientes.aspx");
         }
+
+        protected void btnAdminUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdministrarClientes.aspx");
+        }
+
+
+        protected void btn_Carrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Comprar.aspx");
+        }
     }
 }

@@ -176,5 +176,15 @@ namespace Vista
         {
             Response.Redirect("Productos.aspx");
         }
+
+        protected void btnVentas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ventas.aspx");
+        }
+
+        protected void btnCarrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Comprar.aspx");
+        }
     }
 }

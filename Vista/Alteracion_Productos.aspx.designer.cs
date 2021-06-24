@@ -51,6 +51,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
         /// <summary>
+        /// btnVentas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVentas;
+
+        /// <summary>
         /// btnAdmin control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace Vista
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnInicio;
+
+        /// <summary>
+        /// btnCarrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCarrito;
 
         /// <summary>
         /// gvProductos control.
