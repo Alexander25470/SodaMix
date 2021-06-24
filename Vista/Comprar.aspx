@@ -17,9 +17,12 @@
             <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Productos elegidos"></asp:Label>
-            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="gvCompra" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
         </div>
+        <asp:Label ID="lblPrecioTotalTexto" runat="server" Text="Precio total:"></asp:Label>
+        <asp:Label ID="lblPrecioTotal" runat="server"></asp:Label>
+        <br />
         <asp:Label ID="Label2" runat="server" Text="Enviar a"></asp:Label>
         <asp:DropDownList ID="DropDownList1" runat="server">
         </asp:DropDownList>

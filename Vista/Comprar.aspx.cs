@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,11 +12,16 @@ namespace Vista
 {
     public partial class Comprar : System.Web.UI.Page
     {
+        Carrito carrito;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["carrito"] == null)
             {
                 Session["carrito"] = new Carrito();
+            }
+            else
+            {
+                carrito = (Carrito)Session["carrito"];
             }
 
             Usuario usuario = (Usuario)Session["usuario"];
@@ -35,6 +41,34 @@ namespace Vista
                 //lvProductos.DataSource = neg.obtenerTablaProductos();
                 //lvProductos.DataBind();
             }
+
+            DataTable table = new DataTable();
+            table.Columns.Add("producto");
+            table.Columns.Add("cantidad");
+            table.Columns.Add("precio");
+            table.Columns.Add("subtotal");
+
+            if (carrito._articulos.Count > -1)
+            {
+                double total = 0;
+                foreach(ItemCarrito ic in carrito._articulos)
+                {
+                    double subtotal = ic.Producto.Precio_Venta * ic.Cant;
+                    total += subtotal;
+                    DataRow row;
+                    row = table.NewRow();
+                    row["producto"] = ic.Producto.Nombre;
+                    row["cantidad"] = ic.Cant;
+                    row["precio"] = ic.Producto.Precio_Venta;
+                    row["subtotal"] = subtotal;
+                    table.Rows.Add(row);
+                }
+                lblPrecioTotal.Text = total.ToString();
+            }
+            gvCompra.DataSource = table;
+            gvCompra.DataBind();
+
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
