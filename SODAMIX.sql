@@ -163,7 +163,6 @@ insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Preci
 SET IDENTITY_INSERT [DETALLE_VENTA] OFF
 
 
-
 create procedure SP_RegistrarUsuario
 @nombre as varchar(255),
 @apellido as varchar(255),

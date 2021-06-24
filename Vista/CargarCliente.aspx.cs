@@ -33,6 +33,14 @@ namespace Vista
                 user.Pass = tbx_Pass.Text;
                 negocio.registrarUsuario(user);
                 Response.Write("<script language=javascript>alert('Te has registrado con exito.')</script>");
+                tbx_Nombre.Text = "";
+                tbx_Apellido.Text = "";
+                tbx_Dni.Text = "";
+                tbx_FechaNacimiento.Text="";
+                tbx_Mail.Text = "";
+                tbx_Usuario.Text = "";
+                tbx_Telefono.Text = "";
+                tbx_Pass.Text = "";
             }
             
             

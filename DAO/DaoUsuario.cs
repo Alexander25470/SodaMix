@@ -13,11 +13,29 @@ namespace Dao
     public class DaoUsuario
     {
         AccesoDatos ad = new AccesoDatos();
+        //public void agregarUsuario(Usuario user)
+        //{
+        //    string agregarSucursal = $@"INSERT INTO USUARIO (ID_TIPO, Nombre, Apellido, DNI, Telefono, FechaNacimiento, Email, Username, Pass, Estado)VALUES('{1}', '{user.Nombre}', '{user.Apellido}', '{user.Dni}', '{user.Telefono}', '{user.FechaNacimiento}', '{user.Email}', '{user.UserName}', '{user.Pass}', '{user.Estado}')";
+        //    SqlConnection conexion = ad.ObtenerConexion();
+        //    ad.ejecutarConsulta(agregarSucursal, conexion);
+        //}
+
         public void agregarUsuario(Usuario user)
         {
-            string agregarSucursal = $@"INSERT INTO USUARIO (ID_TIPO, Nombre, Apellido, DNI, Telefono, FechaNacimiento, Email, Username, Pass, Estado)VALUES('{1}', '{user.Nombre}', '{user.Apellido}', '{user.Dni}', '{user.Telefono}', '{user.FechaNacimiento}', '{user.Email}', '{user.UserName}', '{user.Pass}', '{user.Estado}')";
             SqlConnection conexion = ad.ObtenerConexion();
-            ad.ejecutarConsulta(agregarSucursal, conexion);
+            SqlCommand cmd = new SqlCommand("SP_RegistrarUsuario", conexion);
+            cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 255).Value = user.Nombre;
+            cmd.Parameters.Add("@apellido", SqlDbType.VarChar, 255).Value = user.Apellido;
+            cmd.Parameters.Add("@dni", SqlDbType.VarChar, 20).Value = user.Dni;
+            cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 20).Value = user.Telefono;
+            cmd.Parameters.Add("@fechaNacimiento", SqlDbType.Date).Value = user.FechaNacimiento;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 30).Value = user.Email;
+            cmd.Parameters.Add("@username", SqlDbType.VarChar, 30).Value = user.UserName;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 30).Value = user.Pass;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
         }
 
 
