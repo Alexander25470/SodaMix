@@ -123,7 +123,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" />
+                        <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Login" />
                     </td>
                     <td>
                         <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" />
