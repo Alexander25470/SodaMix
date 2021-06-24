@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Carrito
+    public class Carrito
     {
-        List<ItemCarrito> _Carrito = new List<ItemCarrito>();
+        public List<ItemCarrito> _articulos = new List<ItemCarrito>();
     }
 }

@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class ItemCarrito
+    public class ItemCarrito
     {
         int _cant;
-        int _id;
+        string _id;
 
-        public ItemCarrito()
+        public ItemCarrito(string id)
         {
+            _id = id;
             _cant = 0;
         }
 
         public int Cant { get => _cant; set => _cant = value; }
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
     }
 }

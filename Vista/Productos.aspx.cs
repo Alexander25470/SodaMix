@@ -14,6 +14,11 @@ namespace Vista
         NegocioProductos neg = new NegocioProductos();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["carrito"] == null)
+            {
+                Session["carrito"] = new Carrito();
+            }
+
             Usuario usuario=(Usuario)Session["usuario"];
             if (usuario == null)
             {
