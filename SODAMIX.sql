@@ -20,9 +20,9 @@ CREATE TABLE USUARIO
     DNI varchar(20)not null,
     Telefono varchar(20)not null,
     FechaNacimiento date not null,
-    Email varchar(30)not null,
-    Username VARCHAR(50) not null,
-    Pass varchar (30)not null,
+    Email varchar(100)not null,
+    Username VARCHAR(100) not null,
+    Pass varchar (100)not null,
     Estado bit default (1)not null,
 )
 GO
@@ -161,4 +161,23 @@ insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Preci
 insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(2,0,1,2,100)
 insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(3,1,1,2,100)
 SET IDENTITY_INSERT [DETALLE_VENTA] OFF
+
+
+
+create procedure SP_RegistrarUsuario
+@nombre as varchar(255),
+@apellido as varchar(255),
+@dni as varchar(20),
+@telefono as varchar(20),
+@fechaNacimiento as date,
+@email as varchar(30),
+@username as varchar(30),
+@pass as varchar(30)
+as
+begin
+	INSERT INTO
+		USUARIO([ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])
+	VALUES
+		(1,@nombre,@apellido,@dni,@telefono,@fechaNacimiento,@email,@username,@pass,1)
+end
 
