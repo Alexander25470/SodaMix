@@ -5,12 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 0px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lblTitulo" runat="server" Text="Nombre producto"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btn_VerCarrito" runat="server" CssClass="auto-style1" OnClick="btn_VerCarrito_Click" Text="Ver Carrito" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Usuario:&nbsp;
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
         <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
@@ -26,6 +32,7 @@
             <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
         </p>
         <asp:Button ID="Button1" runat="server" Text="Añadir" />
+        <asp:Label ID="lbl_Agregado" runat="server"></asp:Label>
         <p>
             <asp:Label ID="Label2" runat="server" Text="Nombre producto:"></asp:Label>
             <asp:Label ID="lblNombreProducto" runat="server" Text="Label"></asp:Label>

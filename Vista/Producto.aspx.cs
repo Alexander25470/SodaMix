@@ -18,7 +18,7 @@ namespace Vista
         int posInCarrito;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             Usuario usuario = (Usuario)Session["usuario"];
             if (usuario == null)
             {
@@ -70,9 +70,11 @@ namespace Vista
 
         protected void btn_Sumar_Click(object sender, EventArgs e)
         {
+            lbl_Agregado.Text = "";
             Carrito car = (Carrito)Session["carrito"];
             car._articulos[posInCarrito].Cant += 1;
             lbl_Cantidad.Text = car._articulos[posInCarrito].Cant.ToString();
+            lbl_Agregado.Text = "Has agregado "+ car._articulos[posInCarrito].Cant.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre +" al carrito";
         }
 
         protected void btnAdmin_Click(object sender, EventArgs e)
@@ -91,14 +93,29 @@ namespace Vista
         }
 
         protected void btn_Restar_Click(object sender, EventArgs e)
-        {
+        {            
             Carrito car = (Carrito)Session["carrito"];
             if(car._articulos[posInCarrito].Cant > 0)
             {
                 car._articulos[posInCarrito].Cant -= 1;
                 lbl_Cantidad.Text = car._articulos[posInCarrito].Cant.ToString();
+                lbl_Agregado.Text = "Has quitado " + car._articulos[posInCarrito].Cant.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre + " del carrito";
+            }
+            else
+            {
+                lbl_Agregado.Text = "Todavia no has agregado de este producto al carrito.";
             }
             
+        }
+
+        protected void btn_VerCarrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Comprar.aspx");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

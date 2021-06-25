@@ -71,11 +71,6 @@ namespace Vista
 
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnInicio_Click(object sender, EventArgs e)
         {
             Response.Redirect("Productos.aspx");

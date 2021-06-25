@@ -17,7 +17,7 @@
             <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Productos elegidos"></asp:Label>
-            <asp:GridView ID="gvCompra" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="gvCompra" runat="server" >
             </asp:GridView>
         </div>
         <asp:Label ID="lblPrecioTotalTexto" runat="server" Text="Precio total:"></asp:Label>
