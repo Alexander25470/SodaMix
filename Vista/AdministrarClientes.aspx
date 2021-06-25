@@ -36,11 +36,8 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="TIPO_USUARIO">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="tbxTipo_Usuario" runat="server" Text='<%# Bind("ID_Tipo") %>'></asp:TextBox>
-                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("Id_Tipo") %>'></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("TipoUsuario") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">

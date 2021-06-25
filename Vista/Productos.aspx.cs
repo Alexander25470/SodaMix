@@ -40,7 +40,8 @@ namespace Vista
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            
+            SqlDataSource1.SelectCommand = "SELECT [ID_Producto],[Nombre], [Precio_Venta],[Img_URL] FROM [PRODUCTO] where [Nombre] LIKE ('%" + tbxSearch.Text + "%')";
+            tbxSearch.Text = null;
         }
 
         protected void btnAdmin_Click(object sender, EventArgs e)

@@ -26,14 +26,25 @@ namespace Vista
             }
             lblNombreUsuario.Text = usuario.Nombre;
 
+            if (!IsPostBack)
+            {
+                if (usuario.TipoUsuario != "0")
+                {
+                    btnAdminProductos.Style.Add("display", "none");
+                    btnAdminUsuarios.Style.Add("display", "none");
+                    btn_Ventas.Style.Add("display", "none");
+                }
+              
+            }
+
             //Entidades.Producto prod = new Entidades.Producto();
             idProducto = Request.QueryString["id"];
             if(idProducto != "" && idProducto != null) { 
                 prod=neg.obtenerProducto(Convert.ToInt32(idProducto));
                 imgProducto.ImageUrl = prod.Img_URL;
                 lblTitulo.Text= prod.Nombre;
-                lblDescripcionProducto.Text = prod.Nombre;
-                lblNombreProducto.Text = prod.Descripcion;
+                lblDescripcionProducto.Text = prod.Descripcion;
+                lblNombreProducto.Text = prod.Nombre;
             }
 
             if (Session["carrito"] == null)

@@ -71,7 +71,7 @@ namespace Dao
         public DataTable obtenerTablaUsuarios(string dni = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select * from Usuario" + (dni == null ? "" : $" where DNI Like '%{ dni }%'");
+            string query = "select u.*, t.NOMBRE as TipoUsuario from Usuario u inner join TIPO_USER t on t.ID_TIPO = u.ID_TIPO" + (dni == null ? "" : $" where DNI Like '%{ dni }%'");
             return ad.ObtenerTabla(query, "Usuario", con);
         }
 
