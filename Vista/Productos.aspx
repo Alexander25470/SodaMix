@@ -28,7 +28,7 @@
         <asp:Button ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
         <div>
         </div>
-        <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" DataKeyNames="ID_Producto">
+        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataKeyNames="ID_Producto">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
                     <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
@@ -137,8 +137,6 @@
                 </td>
             </SelectedItemTemplate>
         </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SODAMIXConnectionString %>" SelectCommand="SELECT [ID_Producto], [Nombre], [Precio_Venta], [Img_URL] FROM [PRODUCTO]"></asp:SqlDataSource>
-        <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

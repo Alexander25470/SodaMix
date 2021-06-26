@@ -33,14 +33,16 @@ namespace Vista
                     btnAdminUsuarios.Style.Add("display", "none");
                     btn_Ventas.Style.Add("display", "none");
                 }
-                //lvProductos.DataSource = neg.obtenerTablaProductos();
-                //lvProductos.DataBind();
+                lvProductos.DataSource = neg.obtenerTablaProductos();
+                lvProductos.DataBind();
             }
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlDataSource1.SelectCommand = "SELECT [ID_Producto],[Nombre], [Precio_Venta],[Img_URL] FROM [PRODUCTO] where [Nombre] LIKE ('%" + tbxSearch.Text + "%')";
+            //SqlDataSource1.SelectCommand = "SELECT [ID_Producto],[Nombre], [Precio_Venta],[Img_URL] FROM [PRODUCTO] where [Nombre] LIKE ('%" + tbxSearch.Text + "%')";
+            lvProductos.DataSource = neg.obtenerTablaProductos(tbxSearch.Text);
+            lvProductos.DataBind();
             tbxSearch.Text = null;
         }
 

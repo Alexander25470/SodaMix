@@ -35,9 +35,10 @@
             <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
             <asp:Label ID="lblSumar" runat="server"></asp:Label>
         </p>
-        <asp:Button ID="btnQuitar" runat="server" OnClick="btnQuitar_Click" Text="Quitar" />
         <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" />
         <asp:Label ID="lbl_Agregado" runat="server"></asp:Label>
+        <br />
+        <asp:Button ID="btnQuitar" runat="server" OnClick="btnQuitar_Click" Text="Quitar del carrito" />
         <p>
             <asp:Label ID="Label2" runat="server" Text="Nombre producto:"></asp:Label>
             <asp:Label ID="lblNombreProducto" runat="server" Text="Label"></asp:Label>
