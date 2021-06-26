@@ -28,8 +28,11 @@
         <asp:DropDownList ID="DropDownList1" runat="server">
         </asp:DropDownList>
         <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" />
+        <br />
+        <br />
+        <asp:Button ID="btnVaciarCarrito" runat="server" OnClick="btnVaciarCarrito_Click" Text="Vaciar Carrito" onClientClick="return confirmarVaciarCarrito();"/>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Comprar" onClientClick="return confirmarCompra();"/>
+            <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
         </p>
         <p>
             &nbsp;</p>

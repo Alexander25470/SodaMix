@@ -17,11 +17,11 @@
             <asp:Label ID="lblPass" runat="server" Text="Contraseña"></asp:Label>
             <asp:TextBox ID="tbxPass" runat="server" TextMode="Password"></asp:TextBox>
         </p>
-        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" onClientClick="return confirmarLogin();" />
+        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" />
         <asp:Label ID="lblUsuario" runat="server"></asp:Label>
         <br />
         <asp:Label ID="lbl_Registrarse" runat="server" Text="No posees cuenta?. REGISTRATE!" ></asp:Label>
-        <asp:Button ID="btn_Registrarse" runat="server" OnClick="btn_Registrarse_Click" Text="Registrarse" onClientClick="return confirmarIrRegistro('asdsd');" />
+        <asp:Button ID="btn_Registrarse" runat="server" OnClick="btn_Registrarse_Click" Text="Registrarse" />
     </form>
 </body>
 </html>

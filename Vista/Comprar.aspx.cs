@@ -50,11 +50,13 @@ namespace Vista
 
             if (carrito._articulos.Count > 0)
             {
+                int Items = 0;
                 double total = 0;
                 foreach(ItemCarrito ic in carrito._articulos)
                 {
                     if (ic.Cant > 0)
                     {
+                        Items++;
                         double subtotal = ic.Producto.Precio_Venta * ic.Cant;
                         total += subtotal;
                         DataRow row;
@@ -67,15 +69,19 @@ namespace Vista
                     }
                 }
                 lblPrecioTotal.Text = total.ToString();
-                lbl_productosElegidos.Text = "Productos Elegidos.";
+                if (Items > 0)
+                {
+                    lbl_productosElegidos.Text = "Productos Elegidos.";
+                }
+                else
+                {
+                    lbl_productosElegidos.Text = "Aun no has agregado productos.";
+                }
             }
             else
             {
                 lbl_productosElegidos.Text = "Aun no has agregado productos.";
             }
-
-            
-            
             gvCompra.DataSource = table;
             gvCompra.DataBind();
 
@@ -99,6 +105,16 @@ namespace Vista
         protected void btn_Ventas_Click(object sender, EventArgs e)
         {
             Response.Redirect("Ventas.aspx");
+        }
+
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVaciarCarrito_Click(object sender, EventArgs e)
+        {
+            Session["carrito"] = null;
         }
     }
 }

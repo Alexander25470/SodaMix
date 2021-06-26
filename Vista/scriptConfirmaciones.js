@@ -1,4 +1,4 @@
-﻿let textoRelleno = "¿Está seguro de que desea ";
+﻿let textoRelleno = "¿Estás seguro de que desea ";
 
 let confirmarRegistro = () => confirm(textoRelleno + "registrarse en SODAMIX?");
 let confirmarLogin = () => confirm(textoRelleno + "logearse?");
@@ -11,3 +11,4 @@ let confirmarIrInicio = () => confirm(textoRelleno + "volver al inicio?");
 let confirmarIrCarrito = () => confirm(textoRelleno + "ver el carrito?");
 let confirmarIrLogin = () => confirm(textoRelleno + "ir al login?");
 let confirmarIrRegistro = () => confirm(textoRelleno + "ir al registro?");
+let confirmarVaciarCarrito = () => confirm(textoRelleno + "vaciar el carrito?");
