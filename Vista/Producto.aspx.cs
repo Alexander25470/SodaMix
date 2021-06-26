@@ -16,6 +16,7 @@ namespace Vista
         Entidades.Producto prod;
         string idProducto="";
         int posInCarrito;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -58,6 +59,7 @@ namespace Vista
                 if(car._articulos.Count==0)
                 {
                     car._articulos.Add(new ItemCarrito(prod));
+                    posInCarrito = car._articulos.FindIndex((ItemCarrito it) => it.Producto.ID_Producto.ToString() == idProducto);
                 }
                 else
                 {
@@ -67,11 +69,14 @@ namespace Vista
                         car._articulos.Add(new ItemCarrito(prod));
                         posInCarrito = car._articulos.FindIndex((ItemCarrito it) => it.Producto.ID_Producto.ToString() == idProducto);
                     }
-                    lblTest.Text = car._articulos.FindIndex((ItemCarrito it) => it.Producto.ID_Producto.ToString() == idProducto).ToString();
                 }
 
                 
-                lbl_Cantidad.Text = car._articulos[posInCarrito].Cant.ToString();
+                if (!IsPostBack)
+                {
+                    ((Carrito)Session["carrito"])._articulos[posInCarrito].CantAgregar = 0;
+                }
+                lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
             }
         }
 
@@ -80,22 +85,6 @@ namespace Vista
             Response.Redirect("Productos.aspx");
         }
 
-        protected void btn_Sumar_Click(object sender, EventArgs e)
-        {
-            Carrito car = (Carrito)Session["carrito"];
-            if (car._articulos[posInCarrito].Cant < prod.Stock)
-            {
-                lbl_Agregado.Text = "";
-                car._articulos[posInCarrito].Cant += 1;
-                lbl_Cantidad.Text = car._articulos[posInCarrito].Cant.ToString();
-                lbl_Agregado.Text = "Has agregado " + car._articulos[posInCarrito].Cant.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre + " al carrito";
-                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
-            }
-            else
-            {
-                lbl_Agregado.Text = "No se puede añadir mas de este producto.";
-            }
-        }
 
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -111,22 +100,34 @@ namespace Vista
         {
             Response.Redirect("Ventas.aspx");
         }
-
-        protected void btn_Restar_Click(object sender, EventArgs e)
-        {            
+        protected void btn_Sumar_Click(object sender, EventArgs e)
+        {
             Carrito car = (Carrito)Session["carrito"];
-            if(car._articulos[posInCarrito].Cant > 0)
+            int total = car._articulos[posInCarrito].CantAgregar + car._articulos[posInCarrito].Cant;
+            if (total < prod.Stock)
             {
-                car._articulos[posInCarrito].Cant -= 1;
-                lbl_Cantidad.Text = car._articulos[posInCarrito].Cant.ToString();
-                lbl_Agregado.Text = "Has quitado " + car._articulos[posInCarrito].Cant.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre + " del carrito";
-                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
+                car._articulos[posInCarrito].CantAgregar += 1;
+                lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
             }
             else
             {
-                lbl_Agregado.Text = "Todavia no has agregado de este producto al carrito.";
+                lblSumar.Text = "No se puede sumar mas de este producto.";
             }
-            
+        }
+
+        protected void btn_Restar_Click(object sender, EventArgs e)
+        {
+            Carrito car = (Carrito)Session["carrito"];
+            if (car._articulos[posInCarrito].CantAgregar > 0)
+            {
+                car._articulos[posInCarrito].CantAgregar -= 1;
+                lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
+            }
+            else
+            {
+                lbl_Agregado.Text = "Todavia no has agregado de este producto.";
+            }
+            lblSumar.Text = lbl_Agregado.Text;
         }
 
         protected void btn_VerCarrito_Click(object sender, EventArgs e)
@@ -134,8 +135,37 @@ namespace Vista
             Response.Redirect("Comprar.aspx");
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected void btnAñadir_Click(object sender, EventArgs e)
         {
+            Carrito car = (Carrito)Session["carrito"];
+            int total = car._articulos[posInCarrito].CantAgregar + car._articulos[posInCarrito].Cant;
+            if (total <= prod.Stock)
+            {
+                lbl_Agregado.Text = "";
+                car._articulos[posInCarrito].Cant += car._articulos[posInCarrito].CantAgregar;
+                lbl_Agregado.Text = "Has agregado " + car._articulos[posInCarrito].CantAgregar.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre + " al carrito";
+                car._articulos[posInCarrito].CantAgregar =0;
+                lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
+                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
+                lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
+            }
+            else
+            {
+                lbl_Agregado.Text = "No se puede añadir mas de este producto.";
+            }
+        }
+
+        protected void btnQuitar_Click(object sender, EventArgs e)
+        {
+            Carrito car = (Carrito)Session["carrito"];
+            lbl_Agregado.Text = "";
+            car._articulos[posInCarrito].Cant=0;
+            car._articulos[posInCarrito].CantAgregar = 0;
+            lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
+            lbl_Agregado.Text = "Has quitado todos los " + car._articulos[posInCarrito].Producto.Nombre + " del carrito";
+            lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
+            lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
 
         }
     }

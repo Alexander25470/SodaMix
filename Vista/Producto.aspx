@@ -26,12 +26,17 @@
         </div>
         <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>
-            <asp:Button ID="btn_Restar" runat="server" Text="-" OnClick="btn_Restar_Click" />
-            <asp:Label ID="lbl_Cantidad" runat="server" Text="1"></asp:Label>
-            <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
-            <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Cantidad en el carrito: "></asp:Label>
+            <asp:Label ID="lblCantidadActual" runat="server" Text="0"></asp:Label>
         </p>
-        <asp:Button ID="Button1" runat="server" Text="Añadir" />
+        <p>
+            <asp:Button ID="btn_Restar" runat="server" Text="-" OnClick="btn_Restar_Click" />
+            <asp:Label ID="lbl_Cantidad" runat="server" Text="0"></asp:Label>
+            <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
+            <asp:Label ID="lblSumar" runat="server"></asp:Label>
+        </p>
+        <asp:Button ID="btnQuitar" runat="server" OnClick="btnQuitar_Click" Text="Quitar" />
+        <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" />
         <asp:Label ID="lbl_Agregado" runat="server"></asp:Label>
         <p>
             <asp:Label ID="Label2" runat="server" Text="Nombre producto:"></asp:Label>
