@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
+    <title>Login</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,11 +17,11 @@
             <asp:Label ID="lblPass" runat="server" Text="Contraseña"></asp:Label>
             <asp:TextBox ID="tbxPass" runat="server" TextMode="Password"></asp:TextBox>
         </p>
-        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" />
+        <asp:Button ID="btnLogin" runat="server" Text="Iniciar sesión" OnClick="btnLogin_Click" onClientClick="return confirmarLogin();" />
         <asp:Label ID="lblUsuario" runat="server"></asp:Label>
         <br />
-        <asp:Label ID="lbl_Registrarse" runat="server" Text="No posees cuenta?. REGISTRATE!"></asp:Label>
-        <asp:Button ID="btn_Registrarse" runat="server" OnClick="btn_Registrarse_Click" Text="Registrarse" />
+        <asp:Label ID="lbl_Registrarse" runat="server" Text="No posees cuenta?. REGISTRATE!" ></asp:Label>
+        <asp:Button ID="btn_Registrarse" runat="server" OnClick="btn_Registrarse_Click" Text="Registrarse" onClientClick="return confirmarIrRegistro('asdsd');" />
     </form>
 </body>
 </html>

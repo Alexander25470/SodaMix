@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
+    <title>Carrito</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,7 +29,7 @@
         </asp:DropDownList>
         <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" />
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Comprar" />
+            <asp:Button ID="Button1" runat="server" Text="Comprar" onClientClick="return confirmarCompra();"/>
         </p>
         <p>
             &nbsp;</p>

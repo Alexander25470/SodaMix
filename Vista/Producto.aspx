@@ -4,16 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Producto</title>
+    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
     <style type="text/css">
         .auto-style1 {
             margin-left: 0px;
         }
     </style>
-    <script language="javascript" type="text/javascript">
-        let confirmarAñadir = () => confirm("¿desea añadir los productos?");
-        let confirmarQuitar= () => confirm("¿desea quitar los productos?");
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -39,7 +36,7 @@
             <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
             <asp:Label ID="lblSumar" runat="server"></asp:Label>
         </p>
-        <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" onClientClick="return confirmarAñadir();" />
+        <asp:Button ID="btnAñadir" runat="server" Text="Añadir" OnClick="btnAñadir_Click" onClientClick="return confirmarAgregar();" />
         <asp:Label ID="lbl_Agregado" runat="server"></asp:Label>
         <br />
         <asp:Button ID="btnQuitar" runat="server" OnClick="btnQuitar_Click" Text="Quitar del carrito" onClientClick="return confirmarQuitar();"/>

@@ -108,6 +108,8 @@ namespace Vista
             {
                 car._articulos[posInCarrito].CantAgregar += 1;
                 lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
+                lblSumar.Text = "";
+                lbl_Agregado.Text = "";
             }
             else
             {
