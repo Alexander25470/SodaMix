@@ -74,6 +74,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Productos.aspx" />
+    <Content Include="scriptConfirmaciones.js" />
     <Content Include="Ventas.aspx" />
     <Content Include="Web.config" />
     <Content Include="CargarCliente.aspx" />

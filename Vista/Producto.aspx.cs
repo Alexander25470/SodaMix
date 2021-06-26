@@ -159,13 +159,20 @@ namespace Vista
         protected void btnQuitar_Click(object sender, EventArgs e)
         {
             Carrito car = (Carrito)Session["carrito"];
-            lbl_Agregado.Text = "";
-            car._articulos[posInCarrito].Cant=0;
-            car._articulos[posInCarrito].CantAgregar = 0;
-            lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
-            lbl_Agregado.Text = "Has quitado todos los " + car._articulos[posInCarrito].Producto.Nombre + " del carrito";
-            lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
-            lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
+            if (car._articulos[posInCarrito].Cant > 0)
+            {
+                lbl_Agregado.Text = "";
+                car._articulos[posInCarrito].Cant=0;
+                car._articulos[posInCarrito].CantAgregar = 0;
+                lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
+                lbl_Agregado.Text = "Has quitado todos los " + car._articulos[posInCarrito].Producto.Nombre + " del carrito";
+                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
+                lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
+            }else
+            {
+                lbl_Agregado.Text = "No tienes " + car._articulos[posInCarrito].Producto.Nombre + " en el carrito";
+            }
+            
 
         }
     }

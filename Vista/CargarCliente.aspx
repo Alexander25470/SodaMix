@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
     <title></title>
     <style type="text/css">
         .auto-style1 {
@@ -123,10 +124,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Login" />
+                        <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Login"  onClientClick="return confirmarIrLogin();"/>
                     </td>
                     <td>
-                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" />
+                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" onClientClick="return confirmarRegistro();"/>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
