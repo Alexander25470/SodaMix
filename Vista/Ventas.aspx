@@ -27,9 +27,9 @@
         <asp:Button ID="btn_Carrito" runat="server" OnClick="btn_Carrito_Click" Text="Ver carrito" />
             <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <br />
-            <asp:GridView ID="gvVentas" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
+            <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:TemplateField HeaderText="ID_venta">
+                    <asp:TemplateField HeaderText="Numero venta">
                         <ItemTemplate>
                             <asp:Label ID="lbl_venta" runat="server" Text='<%# Bind("ID_Venta") %>'></asp:Label>
                         </ItemTemplate>
@@ -54,9 +54,9 @@
                             <asp:Label ID="lbl_usuario" runat="server" Text='<%# Bind("DNIUsuario") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Direccion">
+                    <asp:TemplateField HeaderText="DetalleVenta">
                         <ItemTemplate>
-                            <asp:Label ID="lbl_Direccion" runat="server" Text='<%# Bind("Direccion") %>'></asp:Label>
+                            <asp:Button ID="btnVerDetalle" runat="server" CommandArgument='<%# bind("id_venta") %>' OnCommand="btnVerDetalle_Command" Text="Ver Detalle" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

@@ -23,5 +23,10 @@ namespace Negocio
             return dao.agregarVenta(carrito, idusuario);
 
         }
+
+        public DataTable obtenerTablaFactura(string ID = null)
+        {
+            return dao.obtenerTablaFactura(ID);
+        }
     }
 }

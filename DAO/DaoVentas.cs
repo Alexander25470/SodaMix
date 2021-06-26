@@ -48,7 +48,13 @@ namespace Dao
             SqlConnection con = ad.ObtenerConexion();
             string query = "select v.*,U.DNI as DNIUsuario, D.Direccion as Direccion, M.Descripcion as MetodoPago from Venta v inner join USUARIO U on U.ID_Usuario = v.ID_Usuario inner join DIRECCIONES D on D.ID_Direccion = v.ID_Direccion inner join METODO_PAGO M on M.ID_Metodo_Pago = v.ID_Metodo_Pago" + (ID == null ? "" : $" where ID_Venta Like '%{ ID }%'");
             return ad.ObtenerTabla(query, "Venta", con);
+        }
 
+        public DataTable obtenerTablaFactura(string ID = null)
+        {
+            SqlConnection con = ad.ObtenerConexion();
+            string query = "select * from DETALLE_VENTA" + (ID == null ? "" : $" where ID_Venta =${ID}");
+            return ad.ObtenerTabla(query, "Venta", con);
         }
 
         public int agregarVenta(Carrito carrito, string idusuario)

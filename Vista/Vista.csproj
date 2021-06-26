@@ -71,6 +71,7 @@
     <Content Include="CargarDireccion.aspx" />
     <Content Include="Alteracion_Productos.aspx" />
     <Content Include="Comprar.aspx" />
+    <Content Include="Factura.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="Productos.aspx" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Comprar.aspx.designer.cs">
       <DependentUpon>Comprar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

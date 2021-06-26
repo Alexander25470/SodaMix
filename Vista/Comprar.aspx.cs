@@ -111,14 +111,15 @@ namespace Vista
         {
             NegocioVentas venta = new NegocioVentas();
             Usuario user = (Usuario)Session["usuario"];
-            
-
-            labela.Text = venta.cargarVenta(carrito, user.Id).ToString();
+            Session["carrito"] = new Carrito();
+            Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
+            Response.Redirect("Productos.aspx");
         }
 
         protected void btnVaciarCarrito_Click(object sender, EventArgs e)
         {
             Session["carrito"] = new Carrito();
+            Response.Redirect("Comprar.aspx");
         }
     }
 }

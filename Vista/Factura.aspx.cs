@@ -9,12 +9,12 @@ using Negocio;
 
 namespace Vista
 {
-    public partial class Ventas : System.Web.UI.Page
+    public partial class Factura : System.Web.UI.Page
     {
-        NegocioVentas neg = new NegocioVentas();
-       
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioVentas neg = new NegocioVentas();
+
             if (!IsPostBack)
             {
                 Usuario usuario = (Usuario)Session["usuario"];
@@ -29,9 +29,10 @@ namespace Vista
                 }
                 lblNombreUsuario.Text = usuario.Nombre;
 
-                gvVentas.DataSource = neg.obtenerTablaVentas();
-                gvVentas.DataBind();
-                
+                string idFactura = Request.QueryString["id"];
+
+                gvFactura.DataSource = neg.obtenerTablaFactura(idFactura);
+                gvFactura.DataBind();
             }
 
         }
@@ -55,18 +56,6 @@ namespace Vista
         protected void btn_Carrito_Click(object sender, EventArgs e)
         {
             Response.Redirect("Comprar.aspx");
-        }
-
-        protected void btn_buscar_Click(object sender, EventArgs e)
-        {
-            gvVentas.DataSource = neg.obtenerTablaVentas(tbx_buscarProducto.Text);
-            gvVentas.DataBind();
-        }
-
-        protected void btnVerDetalle_Command(object sender, CommandEventArgs e)
-        {
-            string id = ((Button)sender).CommandArgument;
-            Response.Redirect("Factura.aspx?id=" + id);
         }
     }
 }
