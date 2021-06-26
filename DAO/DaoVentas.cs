@@ -53,7 +53,7 @@ namespace Dao
         public DataTable obtenerTablaFactura(string ID = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select * from DETALLE_VENTA" + (ID == null ? "" : $" where ID_Venta =${ID}");
+            string query = "select p.Nombre as [Nombre Producto], DV.Cantidad, DV.Precio from DETALLE_VENTA as DV inner join Producto as p on p.ID_Producto = DV.ID_Producto" + (ID == null ? "" : $" where DV.ID_Venta =${ID}");
             return ad.ObtenerTabla(query, "Venta", con);
         }
 
