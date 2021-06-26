@@ -112,6 +112,7 @@ namespace Vista
             NegocioVentas venta = new NegocioVentas();
             Usuario user = (Usuario)Session["usuario"];
             Session["carrito"] = new Carrito();
+            venta.cargarVenta(carrito, user.Id);
             Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
             Response.Redirect("Productos.aspx");
         }
