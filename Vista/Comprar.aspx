@@ -35,7 +35,8 @@
             <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
         </p>
         <p>
-            &nbsp;</p>
+            <asp:Label ID="labela" runat="server" Text="Label"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

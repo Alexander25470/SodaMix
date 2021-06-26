@@ -18,6 +18,10 @@ namespace Negocio
             return dao.obtenerTablaVenta(id);
 
         }
+        public int cargarVenta(Carrito carrito, string idusuario)
+        {
+            return dao.agregarVenta(carrito, idusuario);
 
+        }
     }
 }

@@ -109,12 +109,16 @@ namespace Vista
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
+            NegocioVentas venta = new NegocioVentas();
+            Usuario user = (Usuario)Session["usuario"];
+            
 
+            labela.Text = venta.cargarVenta(carrito, user.Id).ToString();
         }
 
         protected void btnVaciarCarrito_Click(object sender, EventArgs e)
         {
-            Session["carrito"] = null;
+            Session["carrito"] = new Carrito();
         }
     }
 }
