@@ -9,13 +9,13 @@ using Entidades;
 
 namespace Dao
 {
-   public class DaoVentas
+    public class DaoVentas
     {
         AccesoDatos ad = new AccesoDatos();
 
         public Venta obtenerVentas()
         {
-           Venta venta = new Venta();
+            Venta venta = new Venta();
             DataTable dt = new DataTable();
             String tabla = "Venta";
             String consulta = $"select * from {tabla}";
@@ -29,7 +29,7 @@ namespace Dao
                 venta.FechaVenta = tblUsuarios["Fecha_venta"].ToString();
                 venta.IdUsuario = tblUsuarios["id_usuario"].ToString();
                 venta.IdDirecion = tblUsuarios["id_direcion"].ToString();
-                
+
                 return venta;
             }
             catch (Exception e)
@@ -57,7 +57,8 @@ namespace Dao
             SqlConnection conexion = ad.ObtenerConexion();
             SqlCommand cmd = new SqlCommand("SP_AGREGAR_VENTA", conexion);
             double total = 0;
-            foreach (ItemCarrito i in carrito._articulos) {
+            foreach (ItemCarrito i in carrito._articulos)
+            {
                 total += i.Cant * i.Producto.Precio_Venta;
             }
             cmd.Parameters.Add("@IDMETODOPAGO", SqlDbType.Int).Value = 0;
@@ -70,8 +71,23 @@ namespace Dao
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
             conexion.Close();
-            idVenta= Convert.ToInt32(cmd.Parameters["@IDVENTA"].Value);
+            idVenta = Convert.ToInt32(cmd.Parameters["@IDVENTA"].Value);
+            foreach (ItemCarrito ic in carrito._articulos)
+            {
+                agregarDetalleVenta(ic, idVenta);
+            }
             return idVenta;
+        }
+        public void agregarDetalleVenta(ItemCarrito item, int idVenta)
+        {
+            SqlConnection conexion = ad.ObtenerConexion();
+            SqlCommand cmd = new SqlCommand("SP_AGREGAR_DETALLEVENTA", conexion);
+            cmd.Parameters.Add("@IDPRODUCTO", SqlDbType.Int).Value = item.Producto.ID_Producto;
+            cmd.Parameters.Add("@IDVENTA", SqlDbType.Money).Value = idVenta;
+            cmd.Parameters.Add("@CANTIDAD", SqlDbType.Money).Value = item.Cant;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            conexion.Close();
         }
     }
 }
