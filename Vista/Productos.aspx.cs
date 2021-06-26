@@ -69,5 +69,11 @@ namespace Vista
         {
             Response.Redirect("Comprar.aspx");
         }
+
+        protected void btn_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session["usuario"] = null;
+            Response.Redirect("Login.aspx");
+        }
     }
 }

@@ -63,5 +63,11 @@ namespace Vista
         {
             Response.Redirect("Comprar.aspx");
         }
+
+        protected void btn_buscar_Click(object sender, EventArgs e)
+        {
+            gvVentas.DataSource = neg.obtenerTablaVentas(tbx_buscarProducto.Text);
+            gvVentas.DataBind();
+        }
     }
 }

@@ -42,7 +42,12 @@
             <asp:Label ID="lblDescripcionProducto" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            &nbsp;</p>
+            Precio:<asp:Label ID="lbl_precio" runat="server" Text="Label"></asp:Label>
+        </p>
+        <p>
+            Subtotal:
+            <asp:Label ID="lbl_SubTotal" runat="server"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

@@ -16,7 +16,7 @@
         <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
             <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Productos elegidos"></asp:Label>
+            <asp:Label ID="lbl_productosElegidos" runat="server"></asp:Label>
             <asp:GridView ID="gvCompra" runat="server" >
             </asp:GridView>
         </div>

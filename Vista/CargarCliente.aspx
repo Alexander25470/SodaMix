@@ -85,7 +85,7 @@
                 <tr>
                     <td class="auto-style8">Fecha de Nacimiento:</td>
                     <td class="auto-style9">
-                        <asp:TextBox ID="tbx_FechaNacimiento" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tbx_FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>

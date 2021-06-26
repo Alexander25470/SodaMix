@@ -69,13 +69,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.Button btnInicio;
 
         /// <summary>
-        /// Control Label3.
+        /// Control lbl_productosElegidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lbl_productosElegidos;
 
         /// <summary>
         /// Control gvCompra.

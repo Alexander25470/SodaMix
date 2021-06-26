@@ -48,23 +48,34 @@ namespace Vista
             table.Columns.Add("precio");
             table.Columns.Add("subtotal");
 
-            if (carrito._articulos.Count > -1)
+            if (carrito._articulos.Count > 0)
             {
                 double total = 0;
                 foreach(ItemCarrito ic in carrito._articulos)
                 {
-                    double subtotal = ic.Producto.Precio_Venta * ic.Cant;
-                    total += subtotal;
-                    DataRow row;
-                    row = table.NewRow();
-                    row["producto"] = ic.Producto.Nombre;
-                    row["cantidad"] = ic.Cant;
-                    row["precio"] = ic.Producto.Precio_Venta;
-                    row["subtotal"] = subtotal;
-                    table.Rows.Add(row);
+                    if (ic.Cant > 0)
+                    {
+                        double subtotal = ic.Producto.Precio_Venta * ic.Cant;
+                        total += subtotal;
+                        DataRow row;
+                        row = table.NewRow();
+                        row["producto"] = ic.Producto.Nombre;
+                        row["cantidad"] = ic.Cant;
+                        row["precio"] = ic.Producto.Precio_Venta;
+                        row["subtotal"] = subtotal;
+                        table.Rows.Add(row);
+                    }
                 }
                 lblPrecioTotal.Text = total.ToString();
+                lbl_productosElegidos.Text = "Productos Elegidos.";
             }
+            else
+            {
+                lbl_productosElegidos.Text = "Aun no has agregado productos.";
+            }
+
+            
+            
             gvCompra.DataSource = table;
             gvCompra.DataBind();
 

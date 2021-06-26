@@ -25,6 +25,7 @@
         <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
         <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
         <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
+        <asp:Button ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
         <div>
         </div>
         <asp:ListView ID="lvProductos" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3" DataKeyNames="ID_Producto">
@@ -37,7 +38,7 @@
                     <br />
                     Precio_Venta:&nbsp;<asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
-                    <asp:Button ID="Button1" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Button" />
+                    <asp:Button ID="Button1" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Seleccionar" />
                     <br />
                 </td>
             </AlternatingItemTemplate>

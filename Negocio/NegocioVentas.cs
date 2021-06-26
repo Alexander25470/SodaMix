@@ -13,9 +13,9 @@ namespace Negocio
     {
 
         DaoVentas dao = new DaoVentas();
-        public DataTable obtenerTablaVentas()
+        public DataTable obtenerTablaVentas(string id = null)
         {
-            return dao.obtenerTablaVenta();
+            return dao.obtenerTablaVenta(id);
 
         }
 
