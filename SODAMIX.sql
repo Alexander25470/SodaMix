@@ -193,14 +193,17 @@ BEGIN
 	VALUES (@PU, @IDPRODUCTO, @CANTIDAD, @IDVENTA)
 END
 
-Create PROCEDURE SP_AGREGAR_VENTA(
+CREATE PROCEDURE SP_AGREGAR_VENTA(
 	@IDMETODOPAGO INT,
 	@PRECIOTOTAL MONEY,
 	@IDUSUARIO INT
 )
 AS
 BEGIN
-	insert into [Venta](ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) 
+	declare @IDVENTA int
+	insert into [VENTA](ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) 
 	values(@IDMETODOPAGO,@PRECIOTOTAL,GETDATE(),@IDUSUARIO,1)	
-	RETURN @@IDENTITY
+	set @IDVENTA = @@IDENTITY
+	RETURN @IDVENTA
 END
+

@@ -53,25 +53,24 @@ namespace Dao
 
         public int agregarVenta(Carrito carrito, string idusuario)
         {
+            int idVenta = -1;
             SqlConnection conexion = ad.ObtenerConexion();
             SqlCommand cmd = new SqlCommand("SP_AGREGAR_VENTA", conexion);
-            cmd.Parameters.Add("@IDMETODOPAGO", SqlDbType.Int).Value = 0;
             double total = 0;
             foreach (ItemCarrito i in carrito._articulos) {
                 total += i.Cant * i.Producto.Precio_Venta;
             }
+            cmd.Parameters.Add("@IDMETODOPAGO", SqlDbType.Int).Value = 0;
             cmd.Parameters.Add("@PRECIOTOTAL", SqlDbType.Money).Value = total;
             cmd.Parameters.Add("@IDUSUARIO", SqlDbType.Int).Value = idusuario;
-            var identity = cmd.Parameters.Add("@@IDENTITY", SqlDbType.Int);
-
-
-            identity.Direction = ParameterDirection.ReturnValue;
-            int idVenta = Convert.ToInt32(identity.Value);
+            SqlParameter parm = new SqlParameter("@IDVENTA", SqlDbType.Int);
+            parm.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parm);
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
             conexion.Close();
-
+            idVenta= Convert.ToInt32(cmd.Parameters["@IDVENTA"].Value);
             return idVenta;
         }
     }

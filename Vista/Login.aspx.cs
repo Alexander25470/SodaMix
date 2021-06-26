@@ -30,6 +30,7 @@ namespace Vista
                 String username = tbxUser.Text;
                 String pass = tbxPass.Text;
                 Usuario user = negocioUsuario.login(username, pass);
+
                 Session["usuario"] = user;
                 Response.Redirect("Productos.aspx");
             }

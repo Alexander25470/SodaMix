@@ -60,6 +60,7 @@ namespace Dao
                 user.FechaNacimiento = tblUsuarios["FechaNacimiento"].ToString();
                 user.Pass = tblUsuarios["Pass"].ToString();
                 user.Estado = tblUsuarios["Estado"].ToString();
+                user.Id= tblUsuarios["ID_Usuario"].ToString();
                 return user;
             }
             catch (Exception e)
