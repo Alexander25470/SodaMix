@@ -84,11 +84,19 @@ namespace Vista
             {
                 lbl_productosElegidos.Text = "Aun no has agregado productos.";
             }
-            gvCompra.DataSource = table;
-            gvCompra.DataBind();
+            
 
-            ddlMetodoPago.DataSource = negMP.obtenerTablaMediosDePago();
-            ddlMetodoPago.DataBind();
+            if (!IsPostBack)
+            {
+                gvCompra.DataSource = table;
+                gvCompra.DataBind();
+                ddlMetodoPago.DataSource = negMP.obtenerTablaMediosDePago();
+                ddlMetodoPago.DataTextField = "Descripcion";
+                ddlMetodoPago.DataValueField = "ID_Metodo_Pago";
+                ddlMetodoPago.DataBind();
+
+            }
+            
 
         }
 
@@ -116,7 +124,8 @@ namespace Vista
             NegocioVentas venta = new NegocioVentas();
             Usuario user = (Usuario)Session["usuario"];
             Session["carrito"] = new Carrito();
-            venta.cargarVenta(carrito, user.Id);
+            DropDownList test = ddlMetodoPago; 
+            venta.cargarVenta(carrito, user.Id, ddlMetodoPago.SelectedValue.ToString());
             Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
             Response.Redirect("Productos.aspx");
         }

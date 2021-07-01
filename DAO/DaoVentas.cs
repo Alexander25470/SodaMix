@@ -57,7 +57,7 @@ namespace Dao
             return ad.ObtenerTabla(query, "Venta", con);
         }
 
-        public int agregarVenta(Carrito carrito, string idusuario)
+        public int agregarVenta(Carrito carrito, string idusuario, string idMetodoPago)
         {
             int idVenta = -1;
             SqlConnection conexion = ad.ObtenerConexion();
@@ -67,7 +67,7 @@ namespace Dao
             {
                 total += i.Cant * i.Producto.Precio_Venta;
             }
-            cmd.Parameters.Add("@IDMETODOPAGO", SqlDbType.Int).Value = 0;
+            cmd.Parameters.Add("@IDMETODOPAGO", SqlDbType.Int).Value = idMetodoPago;
             cmd.Parameters.Add("@PRECIOTOTAL", SqlDbType.Money).Value = total;
             cmd.Parameters.Add("@IDUSUARIO", SqlDbType.Int).Value = idusuario;
             SqlParameter parm = new SqlParameter("@IDVENTA", SqlDbType.Int);
