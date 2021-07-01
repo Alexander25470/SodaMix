@@ -13,12 +13,6 @@ namespace Dao
     public class DaoUsuario
     {
         AccesoDatos ad = new AccesoDatos();
-        //public void agregarUsuario(Usuario user)
-        //{
-        //    string agregarSucursal = $@"INSERT INTO USUARIO (ID_TIPO, Nombre, Apellido, DNI, Telefono, FechaNacimiento, Email, Username, Pass, Estado)VALUES('{1}', '{user.Nombre}', '{user.Apellido}', '{user.Dni}', '{user.Telefono}', '{user.FechaNacimiento}', '{user.Email}', '{user.UserName}', '{user.Pass}', '{user.Estado}')";
-        //    SqlConnection conexion = ad.ObtenerConexion();
-        //    ad.ejecutarConsulta(agregarSucursal, conexion);
-        //}
 
         public void agregarUsuario(Usuario user)
         {
