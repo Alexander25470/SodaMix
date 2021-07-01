@@ -124,7 +124,7 @@ namespace Vista
             NegocioVentas venta = new NegocioVentas();
             Usuario user = (Usuario)Session["usuario"];
             Session["carrito"] = new Carrito();
-            DropDownList test = ddlMetodoPago; 
+
             venta.cargarVenta(carrito, user.Id, ddlMetodoPago.SelectedValue.ToString());
             Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
             Response.Redirect("Productos.aspx");

@@ -99,6 +99,7 @@ CREATE TABLE DETALLE_VENTA
     ID_Venta int foreign key references VENTA(ID_Venta)not null,
     Cantidad int not null,
     Precio money not null,
+	PrecioCompra money not null,
 )
 GO
 
@@ -111,11 +112,14 @@ INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,1,'userTest','userTest','11111112','11 1111-1112','01-01-1999','user@test.com','userTest','123456','0')
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111113','11 1111-1113','01-01-1999','user@test.com','user','123456','1')
 SET IDENTITY_INSERT USUARIO OFF
+GO
+
 
 insert into TIPO_PRODUCTO values (0, 'tipo 1', 'producto tipo 1')
 insert into TIPO_PRODUCTO values (1, 'tipo 2', 'producto tipo 2')
 insert into TIPO_PRODUCTO values (2, 'tipo 3', 'producto tipo 3')
 insert into TIPO_PRODUCTO values (3, 'tipo 4', 'producto tipo 4')
+GO
 
 
 SET IDENTITY_INSERT [PRODUCTO] ON
@@ -126,6 +130,7 @@ INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Sto
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(4,'Produto 5','producto 5',1,100,100,100,'~/Imagenes/5.jpg',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(5,'Produto 6','producto 6',1,100,100,100,'~/Imagenes/6.jpg',1)
 SET IDENTITY_INSERT [PRODUCTO] OFF
+GO
 
 
 SET IDENTITY_INSERT [PROVINCIA] ON
@@ -133,6 +138,7 @@ INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(0,'Buenos Aires')
 INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(1,'CABA')
 INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(2,'Otra provincia')
 SET IDENTITY_INSERT [PROVINCIA] OFF
+GO
 
 
 SET IDENTITY_INSERT [CIUDADES] ON
@@ -143,24 +149,30 @@ SET IDENTITY_INSERT [CIUDADES] OFF
 INSERT INTO METODO_PAGO values(0, 'Efectivo')
 INSERT INTO METODO_PAGO values(1, 'Tarjeta de credito')
 INSERT INTO METODO_PAGO values(2, 'Tarjeta de debito')
+GO
 
 
 SET IDENTITY_INSERT [DIRECCIONES] ON
 insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (0,2,0,'calle 120','1')
 insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (1,2,1,'calle 3qaw4r','0')
 SET IDENTITY_INSERT [DIRECCIONES] OFF
+GO
+
 
 SET IDENTITY_INSERT [Venta] ON
 insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(0,0,1000,'22/06/2021',2,1)
 insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(1,0,1000,'23/06/2021',2,1)
 SET IDENTITY_INSERT [Venta] OFF
+GO
+
 
 SET IDENTITY_INSERT [DETALLE_VENTA] ON
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(0,0,0,2,100)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(1,1,0,2,100)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(2,0,1,2,100)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio) values(3,1,1,2,100)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(0,0,0,2,100,999)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(1,1,0,2,100,999)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(2,0,1,2,100,999)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(3,1,1,2,100,999)
 SET IDENTITY_INSERT [DETALLE_VENTA] OFF
+GO
 
 
 create procedure SP_RegistrarUsuario
@@ -179,6 +191,8 @@ begin
 	VALUES
 		(1,@nombre,@apellido,@dni,@telefono,@fechaNacimiento,@email,@username,@pass,1)
 end
+GO
+
 
 CREATE PROCEDURE SP_AGREGAR_DETALLEVENTA(	
 	@IDPRODUCTO INT,
@@ -187,12 +201,16 @@ CREATE PROCEDURE SP_AGREGAR_DETALLEVENTA(
 )
 AS
 BEGIN
-	DECLARE @PU MONEY
-	SELECT @PU = Precio_Venta FROM PRODUCTO WHERE ID_Producto = @IDPRODUCTO 
-	INSERT INTO DETALLE_VENTA(PRECIO, ID_Producto, Cantidad, ID_Venta)
-	VALUES (@PU, @IDPRODUCTO, @CANTIDAD, @IDVENTA)
+	DECLARE @PrecioVenta MONEY
+	DECLARE @PrecioCompra MONEY
+	SELECT @PrecioVenta = Precio_Venta FROM PRODUCTO WHERE ID_Producto = @IDPRODUCTO 
+	SELECT @PrecioCompra = Precio_Compra FROM PRODUCTO WHERE ID_Producto = @PrecioCompra 
+	INSERT INTO DETALLE_VENTA(PRECIO, ID_Producto, Cantidad, ID_Venta,PrecioCompra)
+	VALUES (@PrecioVenta, @IDPRODUCTO, @CANTIDAD, @IDVENTA,@PrecioCompra)
 	UPDATE PRODUCTO set Stock = (Stock - @CANTIDAD) where ID_Producto = @IDPRODUCTO
 END
+GO
+
 
 create PROCEDURE SP_AGREGAR_VENTA(
 	@IDMETODOPAGO INT,
@@ -207,3 +225,20 @@ BEGIN
 	set @IDVENTA = @@IDENTITY
 	RETURN @IDVENTA
 END
+GO
+
+
+create procedure SP_GANANCIA_ENTRE_FECHAS
+@fechaInicio date,
+@fechaFin date
+as
+begin
+	declare @pasivo money
+	declare @activo money
+	declare @ganancia money
+	select @pasivo = sum(dv.PrecioCompra) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
+	select @activo = sum(dv.Precio) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
+	set @ganancia = @activo - @pasivo
+	return @ganancia
+end
+GO
