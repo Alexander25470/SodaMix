@@ -29,6 +29,10 @@
         </asp:DropDownList>
         <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" />
         <br />
+        <asp:Label ID="Label3" runat="server" Text="Metodo de pago"></asp:Label>
+        <asp:DropDownList ID="ddlMetodoPago" runat="server">
+        </asp:DropDownList>
+        <br />
         <br />
         <asp:Button ID="btnVaciarCarrito" runat="server" OnClick="btnVaciarCarrito_Click" Text="Vaciar Carrito" onClientClick="return confirmarVaciarCarrito();"/>
         <p>

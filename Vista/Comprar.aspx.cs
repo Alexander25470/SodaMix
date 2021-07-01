@@ -10,11 +10,13 @@ using Negocio;
 
 namespace Vista
 {
+    
     public partial class Comprar : System.Web.UI.Page
     {
         Carrito carrito;
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioMetodoPago negMP = new NegocioMetodoPago();
             if (Session["carrito"] == null)
             {
                 Session["carrito"] = new Carrito();
@@ -85,6 +87,8 @@ namespace Vista
             gvCompra.DataSource = table;
             gvCompra.DataBind();
 
+            ddlMetodoPago.DataSource = negMP.obtenerTablaMediosDePago();
+            ddlMetodoPago.DataBind();
 
         }
 
