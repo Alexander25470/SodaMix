@@ -51,7 +51,7 @@ namespace Vista
             Usuario usu = new Usuario();
 
             usu.Id= ((Label)GVClientes.Rows[e.RowIndex].FindControl("lbl_IDUsuario")).Text;
-            usu.TipoUsuario = ((Label)GVClientes.Rows[e.RowIndex].FindControl("lbl_TipoUsuario")).Text;
+            usu.TipoUsuario = ((Label)GVClientes.Rows[e.RowIndex].FindControl("lbl_idTipoUsuario")).Text;
             usu.Nombre = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxNombre")).Text;
             usu.Apellido = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxApellido")).Text;
             usu.Dni = ((TextBox)GVClientes.Rows[e.RowIndex].FindControl("tbxDNI")).Text;

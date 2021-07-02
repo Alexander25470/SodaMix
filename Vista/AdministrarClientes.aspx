@@ -42,6 +42,7 @@
                     <asp:TemplateField HeaderText="TIPO_USUARIO">
                         <ItemTemplate>
                             <asp:Label ID="lbl_TipoUsuario" runat="server" Text='<%# Bind("TipoUsuario") %>'></asp:Label>
+                            <asp:Label ID="lbl_idTipoUsuario" runat="server" Text='<%# Bind("ID_TIPO") %>' Visible="False"></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
