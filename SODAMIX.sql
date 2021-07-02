@@ -243,17 +243,44 @@ begin
 end
 GO
 
+-- trae cantidad vendida, ganancia y perdida de  cada producto
+create view VW_EstadisicasProductos
+as
+select
+	p.ID_Producto, p.Nombre, p.Stock,sum(dv.Cantidad) as cantidadVendida, sum(dv.Precio * dv.cantidad) as ingreso, sum(dv.PrecioCompra * dv.cantidad) as gastos
+from
+	VENTA v inner join DETALLE_VENTA dv on v.ID_Venta = dv.ID_Venta
+	inner join PRODUCTO p on dv.ID_Producto = p.ID_Producto
+group by
+	p.ID_Producto,p.Nombre, p.Stock
 
+
+-- trae cantidad vendida, ganancia y perdida de un producto especifico
 create procedure SP_EstadisticasProducto
 @idProducto int
 as
 begin
-select
-	sum(dv.Cantidad) as cantidadVendida, sum(dv.Precio * dv.cantidad) as ingreso, sum(dv.PrecioCompra * dv.cantidad) as gastos
-from
-	VENTA v inner join DETALLE_VENTA dv on v.ID_Venta = dv.ID_Venta
-where
-	dv.ID_Producto = @idProducto
+	select * from VW_EstadisicasProductos where ID_Producto=@idProducto
 end
 GO
 
+
+-- trae las mismas estadiscticas que VW_EstadisicasProductos pero filtradas por fecha
+create procedure SP_EstadisticasEntreFecha
+@fechaInicio date,
+@fechaFin date
+as
+begin
+select
+	p.ID_Producto, p.Nombre, p.Stock,sum(dv.Cantidad) as cantidadVendida, sum(dv.Precio * dv.cantidad) as ingreso, sum(dv.PrecioCompra * dv.cantidad) as gastos
+from
+	VENTA v inner join DETALLE_VENTA dv on v.ID_Venta = dv.ID_Venta
+	inner join PRODUCTO p on dv.ID_Producto = p.ID_Producto
+where
+	v.Fecha_Venta between @fechaInicio and @fechaFin
+group by
+	p.ID_Producto,p.Nombre, p.Stock
+end
+GO
+
+SP_EstadisticasEntreFecha '01-01-1999', '01-01-2023'
