@@ -39,6 +39,9 @@
                             <asp:Button class="btn btn-outline-success" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
                         </li>
                         <li class="nav-item">
+                            <asp:Button class="btn btn-outline-success" ID="btnEstadisticas" runat="server" OnClick="btnEstadisticas_Click" Text="Estadisticas" />
+                        </li>
+                        <li class="nav-item">
                             <asp:Button class="btn btn-outline-success" ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
                         </li>
                         <li class="nav-item">

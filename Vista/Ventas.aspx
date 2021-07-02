@@ -13,6 +13,9 @@
         .auto-style9 {
             margin-left: 34px;
         }
+        .auto-style10 {
+            margin-left: 0px;
+        }
     </style>
 </head>
 <body>
@@ -25,7 +28,8 @@
         <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
         <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
         <asp:Button ID="btn_Carrito" runat="server" OnClick="btn_Carrito_Click" Text="Ver carrito" />
-            <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
+        <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
+            <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CssClass="auto-style10" />
             <br />
             <asp:GridView ID="gvVentas" runat="server" AutoGenerateColumns="False">
                 <Columns>
@@ -56,7 +60,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="DetalleVenta">
                         <ItemTemplate>
-                            <asp:Button ID="btnVerDetalle" runat="server" CommandArgument='<%# bind("id_venta") %>' OnCommand="btnVerDetalle_Command" Text="Ver Detalle" />
+                            <asp:Button ID="btnVerDetalle" runat="server" CommandArgument='<%# Bind("id_venta") %>' OnCommand="btnVerDetalle_Command" Text="Ver Detalle" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

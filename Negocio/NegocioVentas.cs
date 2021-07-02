@@ -28,5 +28,21 @@ namespace Negocio
         {
             return dao.obtenerTablaFactura(ID);
         }
+
+        public DataTable obtenerEstadisticaVenta(string ID = null)
+        {
+            return dao.obtenerTEstadisticaVenta(ID);
+        }
+
+        public DataTable obtenerEstadisticaFechas(string FechaInicio, string FechaFin)
+        {
+            return dao.obtenerTEstadisticaFechas(FechaInicio,FechaFin);
+        }
+
+        public double obtenerGanancias(string FechaInicio, string FechaFin)
+        {
+            return dao.obtenerGananciasVentas(FechaInicio, FechaFin);
+        }
+
     }
 }

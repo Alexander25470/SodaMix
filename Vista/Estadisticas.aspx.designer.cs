@@ -11,7 +11,7 @@ namespace Vista
 {
 
 
-    public partial class AdministrarClientes
+    public partial class Estadisticas
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace Vista
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control tbx_busqueda.
+        /// Control tbx_buscarProducto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbx_busqueda;
+        protected global::System.Web.UI.WebControls.TextBox tbx_buscarProducto;
 
         /// <summary>
-        /// Control btn_Buscar.
+        /// Control btn_buscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Buscar;
+        protected global::System.Web.UI.WebControls.Button btn_buscar;
 
         /// <summary>
         /// Control lblNombreUsuario.
@@ -51,31 +51,31 @@ namespace Vista
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
         /// <summary>
-        /// Control btnAdmin.
+        /// Control btnAdminProductos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdmin;
+        protected global::System.Web.UI.WebControls.Button btnAdminProductos;
 
         /// <summary>
-        /// Control btn_Ventas.
+        /// Control btnAdminUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Ventas;
+        protected global::System.Web.UI.WebControls.Button btnAdminUsuarios;
 
         /// <summary>
-        /// Control btn_Estadisticas.
+        /// Control btn_Carrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Estadisticas;
+        protected global::System.Web.UI.WebControls.Button btn_Carrito;
 
         /// <summary>
         /// Control btnInicio.
@@ -87,21 +87,48 @@ namespace Vista
         protected global::System.Web.UI.WebControls.Button btnInicio;
 
         /// <summary>
-        /// Control btnCarrito.
+        /// Control tbx_FechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCarrito;
+        protected global::System.Web.UI.WebControls.TextBox tbx_FechaInicio;
 
         /// <summary>
-        /// Control GVClientes.
+        /// Control tbx_FechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVClientes;
+        protected global::System.Web.UI.WebControls.TextBox tbx_FechaFin;
+
+        /// <summary>
+        /// Control btn_Mostrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Mostrar;
+
+        /// <summary>
+        /// Control gv_Estadisticas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gv_Estadisticas;
+
+        /// <summary>
+        /// Control lbl_GastoTotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_GastoTotal;
     }
 }

@@ -32,6 +32,7 @@ namespace Vista
                     btnAdminProductos.Style.Add("display", "none");
                     btnAdminUsuarios.Style.Add("display", "none");
                     btn_Ventas.Style.Add("display", "none");
+                    btnEstadisticas.Style.Add("display", "none");
                 }
                 lvProductos.DataSource = neg.obtenerTablaProductos();
                 lvProductos.DataBind();
@@ -76,6 +77,11 @@ namespace Vista
         {
             Session["usuario"] = null;
             Response.Redirect("Login.aspx");
+        }
+
+        protected void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
         }
     }
 }

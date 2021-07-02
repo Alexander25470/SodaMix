@@ -22,8 +22,9 @@
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
         <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
         <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
-            <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" />
+        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" Width="61px" />
+        <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
+            <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" CssClass="auto-style1" />
         </div>
         <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>

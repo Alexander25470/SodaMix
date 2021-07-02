@@ -93,7 +93,10 @@ namespace Vista
         {
             Response.Redirect("Alteracion_Productos.aspx");
         }
-
+        protected void btn_Estadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
+        }
         protected void btn_Ventas_Click(object sender, EventArgs e)
         {
             Response.Redirect("Ventas.aspx");

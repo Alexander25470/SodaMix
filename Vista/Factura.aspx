@@ -17,6 +17,7 @@
         <asp:Button ID="btn_Carrito" runat="server" OnClick="btn_Carrito_Click" Text="Ver carrito" />
             <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <asp:Button ID="btnVenta" runat="server" OnClick="btnVenta_Click" Text="Venta" />
+        <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
             <br />
             <br />
             <asp:GridView ID="gvFactura" runat="server">

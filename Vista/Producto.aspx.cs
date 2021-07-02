@@ -34,6 +34,7 @@ namespace Vista
                     btnAdminProductos.Style.Add("display", "none");
                     btnAdminUsuarios.Style.Add("display", "none");
                     btn_Ventas.Style.Add("display", "none");
+                    btn_Estadisticas.Style.Add("display", "none");
                 }
                 lbl_SubTotal.Text = "0";
             }
@@ -176,6 +177,11 @@ namespace Vista
             }
             
 
+        }
+
+        protected void btn_Estadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
         }
     }
 }

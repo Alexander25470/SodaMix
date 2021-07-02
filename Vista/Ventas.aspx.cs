@@ -43,7 +43,7 @@ namespace Vista
 
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdministrarClientes.aspx");
+            Response.Redirect("Alteracion_Productos.aspx");
         }
 
         protected void btnAdminUsuarios_Click(object sender, EventArgs e)
@@ -56,6 +56,10 @@ namespace Vista
         {
             Response.Redirect("Comprar.aspx");
         }
+        protected void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
+        }
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
@@ -67,6 +71,11 @@ namespace Vista
         {
             string id = ((Button)sender).CommandArgument;
             Response.Redirect("Factura.aspx?id=" + id);
+        }
+
+        protected void btn_Estadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
         }
     }
 }

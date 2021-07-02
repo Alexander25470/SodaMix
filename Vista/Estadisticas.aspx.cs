@@ -9,11 +9,12 @@ using Negocio;
 
 namespace Vista
 {
-    public partial class Factura : System.Web.UI.Page
+    public partial class Estadisticas : System.Web.UI.Page
     {
+        NegocioVentas neg = new NegocioVentas();
         protected void Page_Load(object sender, EventArgs e)
         {
-            NegocioVentas neg = new NegocioVentas();
+            
 
             if (!IsPostBack)
             {
@@ -29,12 +30,11 @@ namespace Vista
                 }
                 lblNombreUsuario.Text = usuario.Nombre;
 
-                string idFactura = Request.QueryString["id"];
+                gv_Estadisticas.DataSource = neg.obtenerEstadisticaVenta();
+                gv_Estadisticas.DataBind();
 
-                gvFactura.DataSource = neg.obtenerTablaFactura(idFactura);
-                gvFactura.DataBind();
+                lbl_GastoTotal.Text = "No se han seleccionado fechas";
             }
-
         }
 
         protected void btnInicio_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace Vista
 
         protected void btnAdmin_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdministrarClientes.aspx");
+            Response.Redirect("Alteracion_Productos.aspx");
         }
 
         protected void btnAdminUsuarios_Click(object sender, EventArgs e)
@@ -52,19 +52,27 @@ namespace Vista
             Response.Redirect("AdministrarClientes.aspx");
         }
 
+
         protected void btn_Carrito_Click(object sender, EventArgs e)
         {
             Response.Redirect("Comprar.aspx");
         }
 
-        protected void btnVenta_Click(object sender, EventArgs e)
+        protected void btn_buscar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ventas.aspx");
+            gv_Estadisticas.DataSource = neg.obtenerEstadisticaVenta(tbx_buscarProducto.Text);
+            gv_Estadisticas.DataBind();
+            tbx_buscarProducto.Text = "";
+            lbl_GastoTotal.Text = "No se han seleccionado fechas";
         }
 
-        protected void btn_Estadisticas_Click(object sender, EventArgs e)
+        protected void btn_Mostrar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Estadisticas.aspx");
+            gv_Estadisticas.DataSource = neg.obtenerEstadisticaFechas(tbx_FechaInicio.Text, tbx_FechaFin.Text);
+            gv_Estadisticas.DataBind();
+            lbl_GastoTotal.Text = Convert.ToString(neg.obtenerGanancias(tbx_FechaInicio.Text, tbx_FechaFin.Text));
+            tbx_FechaInicio.Text = "";
+            tbx_FechaFin.Text = "";
         }
     }
 }

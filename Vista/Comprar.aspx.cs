@@ -39,6 +39,7 @@ namespace Vista
                     btnAdminProductos.Style.Add("display", "none");
                     btnAdminUsuarios.Style.Add("display", "none");
                     btn_Ventas.Style.Add("display", "none");
+                    btn_Estadisticas.Style.Add("display", "none");
                 }
                 //lvProductos.DataSource = neg.obtenerTablaProductos();
                 //lvProductos.DataBind();
@@ -118,7 +119,10 @@ namespace Vista
         {
             Response.Redirect("Ventas.aspx");
         }
-
+        protected void btn_Estadisticas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
+        }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
             NegocioVentas venta = new NegocioVentas();

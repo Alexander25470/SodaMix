@@ -57,6 +57,29 @@ namespace Dao
             return ad.ObtenerTabla(query, "Venta", con);
         }
 
+        public DataTable obtenerTEstadisticaVenta(string ID = null)
+        {
+            SqlConnection con = ad.ObtenerConexion();
+            string query;
+            if (ID != null && ID != "")
+            {
+                query = $"exec SP_EstadisticasProducto {ID}";
+            }
+            else
+            {
+                query = "select * from VW_EstadisicasProductos";
+            }
+           
+            return ad.ObtenerTabla(query, "VW_EstadisicasProductos", con);
+        }
+
+        public DataTable obtenerTEstadisticaFechas(string FechaInicio, string FechaFin)
+        {
+            SqlConnection con = ad.ObtenerConexion();
+            string query = $"exec SP_EstadisticasEntreFecha '{FechaInicio}', '{FechaFin}'";
+            return ad.ObtenerTabla(query, "Venta", con);
+        }
+
         public int agregarVenta(Carrito carrito, string idusuario, string idMetodoPago)
         {
             int idVenta = -1;
@@ -94,6 +117,24 @@ namespace Dao
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
             conexion.Close();
+        }
+
+        public double obtenerGananciasVentas(string FechaInicio, string FechaFin)
+        {
+            double Ganancias = -1;
+            SqlConnection conexion = ad.ObtenerConexion();
+            SqlCommand cmd = new SqlCommand("SP_GANANCIA_ENTRE_FECHAS", conexion);
+            cmd.Parameters.Add("@fechaInicio", SqlDbType.Date).Value = FechaInicio;
+            cmd.Parameters.Add("@fechaFin", SqlDbType.Date).Value = FechaFin;
+            SqlParameter parm = new SqlParameter("@ganancia", SqlDbType.Money);
+            parm.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parm);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+            Ganancias = Convert.ToInt32(cmd.Parameters["@ganancia"].Value);
+            return Ganancias;
         }
     }
 }
