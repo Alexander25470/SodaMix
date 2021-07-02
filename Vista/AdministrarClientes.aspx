@@ -41,7 +41,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="TIPO_USUARIO">
                         <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("TipoUsuario") %>'></asp:Label>
+                            <asp:Label ID="lbl_TipoUsuario" runat="server" Text='<%# Bind("TipoUsuario") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
