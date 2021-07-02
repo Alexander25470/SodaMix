@@ -88,6 +88,7 @@
                     <td class="auto-style9">
                         <asp:TextBox ID="tbx_FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
                         <asp:Label ID="lblFecha" runat="server"></asp:Label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbx_FechaNacimiento" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo2">Seleccione fecha</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>
