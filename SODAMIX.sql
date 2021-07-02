@@ -1,4 +1,4 @@
-CREATE DATABASE SODAMIX
+﻿CREATE DATABASE SODAMIX
 GO
 USE SODAMIX
 GO
@@ -109,26 +109,32 @@ insert into TIPO_USER values (1, 'user')
 
 SET IDENTITY_INSERT [USUARIO] ON
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(0,0,'admin','admin','11111111','11 1111-1111','01-01-1999','admin@admin.com','admin','123456','1')
-INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,1,'userTest','userTest','11111112','11 1111-1112','01-01-1999','user@test.com','userTest','123456','0')
-INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111113','11 1111-1113','01-01-1999','user@user.com','user','123456','1')
+INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,1,'usertest','usertest','11111113','11 1111-1113','01-01-1999','usertest@usertest.com','usertest','123456','0')
+INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111112','11 1111-1112','01-01-1999','user@user.com','user','123456','1')
 SET IDENTITY_INSERT USUARIO OFF
 GO
 
 
-insert into TIPO_PRODUCTO values (0, 'tipo 1', 'producto tipo 1')
-insert into TIPO_PRODUCTO values (1, 'tipo 2', 'producto tipo 2')
-insert into TIPO_PRODUCTO values (2, 'tipo 3', 'producto tipo 3')
-insert into TIPO_PRODUCTO values (3, 'tipo 4', 'producto tipo 4')
+insert into TIPO_PRODUCTO values (0, 'Gaseosa', 'Una bebida carbonatada, denominada gaseosa, refresco, fresco o soda, dependiendo del país, es una bebida saborizada, hecha con agua carbonatada, edulcorantes naturales como fructosa o sacarosa, o sintéticos como el ciclamato, acidulantes, colorantes, antioxidantes, estabilizadores de acidez y conservadores.')
+insert into TIPO_PRODUCTO values (1, 'Cerveza', 'La cerveza ​ es una bebida alcohólica, no destilada, de sabor amargo, que se fabrica con granos de cebada germinados u otros cereales cuyo almidón se fermenta en agua con levadura y se aromatiza a menudo con lúpulo, entre otras plantas.​​')
+insert into TIPO_PRODUCTO values (2, 'Vino', 'El vino es una bebida obtenida de la uva, mediante la fermentación alcohólica de su mosto o zumo.​ La fermentación se produce por la acción metabólica de levaduras, que transforman los azúcares naturales del fruto en etanol y gas en forma de dióxido de carbono. ')
+insert into TIPO_PRODUCTO values (3, 'Agua Mineral', 'El agua mineral es agua que contiene minerales u otras sustancias disueltas que le dan un valor terapéutico. Sales, compuestos sulfurados y gases están entre las sustancias que pueden estar disueltas en el agua. El agua mineral puede ser preparada o puede producirse naturalmente.')
 GO
 
 
 SET IDENTITY_INSERT [PRODUCTO] ON
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(0,'Produto 1','producto 1',1,100,100,100,'~/Imagenes/1.jpg',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(1,'Produto 2','producto 2',1,100,100,100,'~/Imagenes/2.jpg',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(2,'Produto 3','producto 3',1,100,100,100,'~/Imagenes/3.jpg',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(3,'Produto 4','producto 4',1,100,100,100,'~/Imagenes/4.jpg',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(4,'Produto 5','producto 5',1,100,100,100,'~/Imagenes/5.jpg',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(5,'Produto 6','producto 6',1,100,100,100,'~/Imagenes/6.jpg',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(0,'Coca Cola','Gaseosa de Coca Cola, 2.25L',0,341,95,195,'~/Imagenes/Coca.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(1,'Pepsi','Gaseosa de Pepsi, 2.25L',0,201,30,130,'~/Imagenes/Pepsi.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(2,'Fanta','Gaseosa de Fanta sabor naranja, 2.25L',0,153,96,196,'~/Imagenes/Fanta.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(3,'Brahma','Cerveza en Lata de Brahma. 473 ML',1,13,30,60,'~/Imagenes/Brahma.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(4,'Heineken','Cerveza en Lata de Heineken. 473 ML',1,36,64,128,'~/Imagenes/Heineken.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(5,'Stella Artois','Cerveza en Lata Stella. 473 ML',1,31,43,86,'~/Imagenes/Stella Artois.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(6,'Termidor','Vino en Caja. 1L',2,32,97,194,'~/Imagenes/Termidor.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(7,'Toro','Vino en Botella de vidrio. 700 ML',2,16,85,170,'~/Imagenes/Toro.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(8,'Dadá','Vino en Botella de vidrio. 750 ML',2,35,150,314,'~/Imagenes/Dada.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(9,'VillaVicencio','Agua en Botella de plástico. 2L',3,60,90,160,'~/Imagenes/Villavicencio.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(10,'Kin','Agua en Botella de plástico. 2.25L',3,25,30,75,'~/Imagenes/Kin.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(11,'Villa Del Sur','Agua en Botella de plástico. 2.5L',3,50,40,85,'~/Imagenes/Villadelsur.png',1)
 SET IDENTITY_INSERT [PRODUCTO] OFF
 GO
 
@@ -136,15 +142,58 @@ GO
 SET IDENTITY_INSERT [PROVINCIA] ON
 INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(0,'Buenos Aires')
 INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(1,'CABA')
-INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(2,'Otra provincia')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(2,'Catamarca')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(3,'Chaco')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(4,'Chubut')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(5,'Córdoba')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(6,'Corrientes')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(7,'Entre Ríos')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(8,'Formosa')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(9,'Jujuy')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(10,'La Pampa')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(11,'La Rioja')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(12,'Mendoza')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(13,'Misiones')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(14,'Neuquén')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(15,'Río Negro')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(16,'Salta')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(17,'San Juan')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(18,'San Luis')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(19,'Santa Cruz')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(20,'Santa Fe')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(21,'Santiago Del Estero')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(22,'Tierra del Fuego')
+INSERT INTO [PROVINCIA]([ID_Provincia],[Nombre]) values(23,'Tucumán')
 SET IDENTITY_INSERT [PROVINCIA] OFF
 GO
 
 
 SET IDENTITY_INSERT [CIUDADES] ON
-INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre]) values(0,0,'Pacheco')
-INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre]) values(1,0,'Otra ciudad')
-SET IDENTITY_INSERT [CIUDADES] OFF
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre]) values(0, 0,'La Plata')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(1, 1,'Belgrano')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(2, 2,'San Fernando del Valle de Catamarca')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(3, 3,'Resistencia')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(4, 4,'Rawson')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(5, 5,'Córdoba')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(6, 6,'Corrientes')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(7, 7,'Paraná')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(8, 8,'Formosa')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(9, 9,'San Salvador de Jujuy')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(10, 10,'Santa Rosa')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(11, 11,'La Rioja')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(12, 12,'Mendoza')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(13, 13,'Posadas')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(14, 14,'Neuquén')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(15, 15,'Viedma')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(16, 16,'Salta')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(17, 17,'San Juan')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(18, 18,'San Luis')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(19, 19,'Rio Gallegos')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(20, 20,'Santa Fe')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(21, 21,'Santiago Del Estero')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre])	values(22, 22,'Ushuaia')
+INSERT INTO [CIUDADES]([ID_Ciudad],[ID_Provincia],[Nombre]) values(23, 23,'San Miguel de Tucumán')
+SET IDENTITY_INSERT [CIUDADES] OFF							
 
 INSERT INTO METODO_PAGO values(0, 'Efectivo')
 INSERT INTO METODO_PAGO values(1, 'Tarjeta de credito')
@@ -153,8 +202,8 @@ GO
 
 
 SET IDENTITY_INSERT [DIRECCIONES] ON
-insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (0,2,0,'calle 120','1')
-insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (1,2,1,'calle 3qaw4r','0')
+insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (0,2,0,'Sarmiento 953','1')
+insert into [DIRECCIONES](ID_Direccion,ID_Usuario,ID_Ciudad,Direccion,Piso) values (1,2,1,'Escobar 953','0')
 SET IDENTITY_INSERT [DIRECCIONES] OFF
 GO
 
@@ -244,7 +293,7 @@ end
 GO
 
 -- trae cantidad vendida, ganancia y perdida de  cada producto
-create view VW_EstadisicasProductos
+create view VW_EstadisticasProductos
 as
 select
 	p.ID_Producto, p.Nombre, p.Stock,sum(dv.Cantidad) as cantidadVendida, sum(dv.Precio * dv.cantidad) as ingreso, sum(dv.PrecioCompra * dv.cantidad) as gastos
@@ -253,14 +302,14 @@ from
 	inner join PRODUCTO p on dv.ID_Producto = p.ID_Producto
 group by
 	p.ID_Producto,p.Nombre, p.Stock
-
+GO
 
 -- trae cantidad vendida, ganancia y perdida de un producto especifico
 create procedure SP_EstadisticasProducto
 @idProducto int
 as
 begin
-	select * from VW_EstadisicasProductos where ID_Producto=@idProducto
+	select * from VW_EstadisticasProductos where ID_Producto=@idProducto
 end
 GO
 
@@ -281,6 +330,3 @@ where
 group by
 	p.ID_Producto,p.Nombre, p.Stock
 end
-GO
-
-SP_EstadisticasEntreFecha '01-01-1999', '01-01-2023'

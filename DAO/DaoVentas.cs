@@ -67,10 +67,10 @@ namespace Dao
             }
             else
             {
-                query = "select * from VW_EstadisicasProductos";
+                query = "select * from VW_EstadisticasProductos";
             }
            
-            return ad.ObtenerTabla(query, "VW_EstadisicasProductos", con);
+            return ad.ObtenerTabla(query, "VW_EstadisticasProductos", con);
         }
 
         public DataTable obtenerTEstadisticaFechas(string FechaInicio, string FechaFin)
