@@ -204,7 +204,7 @@ BEGIN
 	DECLARE @PrecioVenta MONEY
 	DECLARE @PrecioCompra MONEY
 	SELECT @PrecioVenta = Precio_Venta FROM PRODUCTO WHERE ID_Producto = @IDPRODUCTO 
-	SELECT @PrecioCompra = Precio_Compra FROM PRODUCTO WHERE ID_Producto = @PrecioCompra 
+	SELECT @PrecioCompra = Precio_Compra FROM PRODUCTO WHERE ID_Producto = @IDPRODUCTO 
 	INSERT INTO DETALLE_VENTA(PRECIO, ID_Producto, Cantidad, ID_Venta,PrecioCompra)
 	VALUES (@PrecioVenta, @IDPRODUCTO, @CANTIDAD, @IDVENTA,@PrecioCompra)
 	UPDATE PRODUCTO set Stock = (Stock - @CANTIDAD) where ID_Producto = @IDPRODUCTO
@@ -242,3 +242,6 @@ begin
 	return @ganancia
 end
 GO
+
+
+select * from PRODUCTO
