@@ -17,11 +17,11 @@ CREATE TABLE USUARIO
     ID_TIPO int not null foreign key references TIPO_USER(ID_TIPO),
     Nombre varchar(255) not null,
     Apellido varchar(255)not null,
-    DNI varchar(20)not null,
-    Telefono varchar(20)not null,
+    DNI varchar(20)not null unique,
+    Telefono varchar(20)not null unique,
     FechaNacimiento date not null,
-    Email varchar(100)not null,
-    Username VARCHAR(100) not null,
+    Email varchar(100)not null unique,
+    Username VARCHAR(100) not null unique,
     Pass varchar (100)not null,
     Estado bit default (1)not null,
 )
@@ -110,7 +110,7 @@ insert into TIPO_USER values (1, 'user')
 SET IDENTITY_INSERT [USUARIO] ON
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(0,0,'admin','admin','11111111','11 1111-1111','01-01-1999','admin@admin.com','admin','123456','1')
 INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(1,1,'userTest','userTest','11111112','11 1111-1112','01-01-1999','user@test.com','userTest','123456','0')
-INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111113','11 1111-1113','01-01-1999','user@test.com','user','123456','1')
+INSERT INTO USUARIO([ID_Usuario],[ID_TIPO],[Nombre],[Apellido],[DNI],[Telefono],[FechaNacimiento],[Email],[Username],[Pass],[Estado])VALUES(2,1,'user','user','11111113','11 1111-1113','01-01-1999','user@user.com','user','123456','1')
 SET IDENTITY_INSERT USUARIO OFF
 GO
 

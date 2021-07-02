@@ -87,6 +87,7 @@
                     <td class="auto-style8">Fecha de Nacimiento:</td>
                     <td class="auto-style9">
                         <asp:TextBox ID="tbx_FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:Label ID="lblFecha" runat="server"></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>
@@ -102,7 +103,7 @@
                     <td class="auto-style3">Usuario</td>
                     <td class="auto-style4">
                         <asp:TextBox ID="tbx_Usuario" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNombre2" runat="server" ControlToValidate="tbx_Usuario" ErrorMessage="Ingrese el usuario" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="tbx_Usuario" ErrorMessage="Ingrese el usuario" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style4"></td>
                 </tr>
@@ -127,7 +128,7 @@
                         <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Login"  onClientClick="return confirmarIrLogin();"/>
                     </td>
                     <td>
-                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" onClientClick="return confirmarRegistro();"/>
+                        <asp:Button ID="btn_Aceptar" runat="server" Text="Aceptar" OnClick="btn_Aceptar_Click" ValidationGroup="grupo2" onClientClick="if(Page_ClientValidate('grupo2'))return confirmarRegistro();"/>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
