@@ -167,10 +167,10 @@ GO
 
 
 SET IDENTITY_INSERT [DETALLE_VENTA] ON
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(0,0,0,2,100,999)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(1,1,0,2,100,999)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(2,0,1,2,100,999)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(3,1,1,2,100,999)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(0,0,0,2,100,50)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(1,1,0,2,100,50)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(2,0,1,2,100,50)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(3,1,1,2,100,50)
 SET IDENTITY_INSERT [DETALLE_VENTA] OFF
 GO
 
@@ -244,4 +244,16 @@ end
 GO
 
 
-select * from PRODUCTO
+create procedure SP_EstadisticasProducto
+@idProducto int
+as
+begin
+select
+	sum(dv.Cantidad) as cantidadVendida, sum(dv.Precio * dv.cantidad) as ingreso, sum(dv.PrecioCompra * dv.cantidad) as gastos
+from
+	VENTA v inner join DETALLE_VENTA dv on v.ID_Venta = dv.ID_Venta
+where
+	dv.ID_Producto = @idProducto
+end
+GO
+
