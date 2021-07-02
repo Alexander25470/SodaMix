@@ -87,7 +87,6 @@
                     <td class="auto-style8">Fecha de Nacimiento:</td>
                     <td class="auto-style9">
                         <asp:TextBox ID="tbx_FechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:Label ID="lblFecha" runat="server"></asp:Label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbx_FechaNacimiento" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo2">Seleccione fecha</asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style9"></td>
@@ -111,7 +110,7 @@
                 <tr>
                     <td class="auto-style3">Contraseña:</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="tbx_Pass" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tbx_Pass" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombre3" runat="server" ControlToValidate="tbx_Pass" EnableTheming="True" ErrorMessage="Ingrese contraseña" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style4"></td>
@@ -119,7 +118,7 @@
                 <tr>
                     <td class="auto-style2">Repetir Contraseña:</td>
                     <td>
-                        <asp:TextBox ID="tbx_PassRepetida" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tbx_PassRepetida" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="tbx_Pass" ControlToValidate="tbx_PassRepetida" ErrorMessage="Las password no coinciden" ValidationGroup="grupo2"></asp:CompareValidator>
                     </td>
                     <td>&nbsp;</td>

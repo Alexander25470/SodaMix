@@ -31,8 +31,14 @@ namespace Vista
                 user.UserName = tbx_Usuario.Text;
                 user.Telefono = tbx_Telefono.Text;
                 user.Pass = tbx_Pass.Text;
-                negocio.registrarUsuario(user);
-                Response.Write("<script language=javascript>alert('Te has registrado con exito.')</script>");
+                try
+                {
+                    negocio.registrarUsuario(user);
+                    Response.Write("<script language=javascript>alert('Te has registrado con exito.')</script>");
+                } catch
+                {
+                    Response.Write("<script language=javascript>alert('Error al registrar.')</script>");
+                }
                 tbx_Nombre.Text = "";
                 tbx_Apellido.Text = "";
                 tbx_Dni.Text = "";
@@ -41,6 +47,7 @@ namespace Vista
                 tbx_Usuario.Text = "";
                 tbx_Telefono.Text = "";
                 tbx_Pass.Text = "";
+                tbx_PassRepetida.Text = "";
             }
             
             
