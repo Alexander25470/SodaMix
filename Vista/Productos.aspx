@@ -18,50 +18,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">SODAMIX</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            Usuario: <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btnEstadisticas" runat="server" OnClick="btnEstadisticas_Click" Text="Estadisticas" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
-                        </li>
-                        <li class="nav-item">
-                            <asp:Button class="btn btn-outline-success" ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <asp:Label ID="lblSearch" runat="server" Text="Buscar producto:"></asp:Label>
-                        <asp:TextBox class="form-control me-2" ID="tbxSearch" runat="server"></asp:TextBox>
-                        <asp:Button class="btn btn-outline-success" ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" />
-                    </div>
-                </div>
-            </div>
-        </nav>
+
+
+            Usuario: <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+            <asp:Button class="btn btn-outline-success" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+            <asp:Button class="btn btn-outline-success" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+            <asp:Button class="btn btn-outline-success" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
+            <asp:Button class="btn btn-outline-success" ID="btnEstadisticas" runat="server" OnClick="btnEstadisticas_Click" Text="Estadisticas" />
+            <asp:Button class="btn btn-outline-success" ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
+            <asp:Button class="btn btn-outline-success" ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
+        <asp:Label ID="lblSearch" runat="server" Text="Buscar producto:"></asp:Label>
+        <asp:TextBox ID="tbxSearch" runat="server"></asp:TextBox>
+        <asp:Button class="btn btn-outline-success" ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" />
+
         <div>
         </div>
         <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataKeyNames="ID_Producto">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
-                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' Width="200" Height="200" />
                     <br />
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
@@ -83,7 +58,7 @@
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
-                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
+                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' Width="200" Height="200" />
                     <br />
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <br />
@@ -114,7 +89,7 @@
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
-                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' />
+                    <asp:TextBox ID="Img_URLTextBox" runat="server" Text='<%# Bind("Img_URL") %>' Width="200" Height="200" />
                     <br />
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <br />
@@ -124,7 +99,7 @@
             </InsertItemTemplate>
             <ItemTemplate>
                 <td runat="server" class="auto-style2">
-                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' />
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' Width="200" Height="200" />
                     <br />
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
