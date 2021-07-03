@@ -8,24 +8,21 @@
         <link href="./bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet" />
         <script src="./bootstrap-5.0.2/js/bootstrap.min.js" ></script>
         <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
-        <style type="text/css">
-            .auto-style1 {
-                margin-left: 0px;
-            }
-        </style>
 </head>
 <body>
     <form id="form1" runat="server">
-            <div class="row d-flex justify-content-between">
+    <div class="row d-flex justify-content-between navbar-light" style="background-color: #e3f2fd;">
         <div class="col-auto">
             Usuario:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
         </div>
         <div class="col-auto">
-            <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
-            <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-            <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" Width="61px" />
-            <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
-            <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" CssClass="auto-style1" />
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <asp:Button class="btn btn-outline-primary" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+                <asp:Button class="btn btn-outline-primary" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+                <asp:Button class="btn btn-outline-primary" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas"/>
+                <asp:Button class="btn btn-outline-primary" ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas"/>
+                <asp:Button class="btn btn-outline-primary" ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio"/>
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-center">
