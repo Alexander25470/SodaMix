@@ -5,27 +5,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Producto</title>
-    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
-    <style type="text/css">
-        .auto-style1 {
-            margin-left: 0px;
-        }
-    </style>
+        <link href="./bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="./bootstrap-5.0.2/js/bootstrap.min.js" ></script>
+        <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
+        <style type="text/css">
+            .auto-style1 {
+                margin-left: 0px;
+            }
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="lblTitulo" runat="server" Text="Nombre producto"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btn_VerCarrito" runat="server" CssClass="auto-style1" OnClick="btn_VerCarrito_Click" Text="Ver Carrito" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Usuario:&nbsp;
-        <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-        <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
-        <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" Width="61px" />
-        <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
+            <div class="row d-flex justify-content-between">
+        <div class="col-auto">
+            Usuario:<asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+        </div>
+        <div class="col-auto">
+            <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+            <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+            <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" Width="61px" />
+            <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
             <asp:Button ID="btn_Inicio" runat="server" OnClick="btn_Inicio_Click" Text="Inicio" CssClass="auto-style1" />
         </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="container text-center">
+        <h1><asp:Label ID="lblTitulo" runat="server" Text="Nombre producto"></asp:Label></h1>
+        <br />
         <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>
             <asp:Label ID="Label4" runat="server" Text="Cantidad en el carrito: "></asp:Label>
@@ -56,6 +62,9 @@
             Subtotal:
             <asp:Label ID="lbl_SubTotal" runat="server"></asp:Label>
         </p>
+
+        </div>
+     </div>
     </form>
 </body>
 </html>
