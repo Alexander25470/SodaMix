@@ -11,20 +11,25 @@
 <body>
     <form id="form1" runat="server">
 
-
-            Usuario: <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-            <asp:Button class="btn btn-outline-success" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
-            <asp:Button class="btn btn-outline-success" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-            <asp:Button class="btn btn-outline-success" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
-            <asp:Button class="btn btn-outline-success" ID="btnEstadisticas" runat="server" OnClick="btnEstadisticas_Click" Text="Estadisticas" />
-            <asp:Button class="btn btn-outline-success" ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
-            <asp:Button class="btn btn-outline-success" ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
-        <asp:Label ID="lblSearch" runat="server" Text="Buscar producto:"></asp:Label>
-        <asp:TextBox ID="tbxSearch" runat="server"></asp:TextBox>
-        <asp:Button class="btn btn-outline-success" ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" />
-
-        <div>
+        <div class="row d-flex justify-content-between">
+            <div class="col-auto">
+                Usuario: <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+            </div>
+            <div class="col-auto">
+                <asp:Button class="btn btn-outline-success" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+                <asp:Button class="btn btn-outline-success" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+                <asp:Button class="btn btn-outline-success" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
+                <asp:Button class="btn btn-outline-success" ID="btnEstadisticas" runat="server" OnClick="btnEstadisticas_Click" Text="Estadisticas" />
+                <asp:Button class="btn btn-outline-success" ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
+                <asp:Button class="btn btn-outline-success" ID="btn_CerrarSesion" runat="server" OnClick="btn_CerrarSesion_Click" Text="Cerrar Sesion" />
+            </div>
+            <div class="col-auto">
+                <asp:Label ID="lblSearch" runat="server" Text="Buscar producto:"></asp:Label>
+                <asp:TextBox ID="tbxSearch" runat="server"></asp:TextBox>
+                <asp:Button class="btn btn-outline-success" ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" />
+            </div>
         </div>
+        <div class="container d-flex justify-content-center">
         <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataKeyNames="ID_Producto" OnPagePropertiesChanging="lvProductos_PagePropertiesChanging">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
@@ -142,6 +147,8 @@
             </SelectedItemTemplate>
 
         </asp:ListView>
+
+        </div>
     </form>
 </body>
 </html>
