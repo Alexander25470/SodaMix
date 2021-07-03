@@ -25,26 +25,28 @@
                 </div>
             </div>
         </div>
-        <asp:Label ID="lbl_productosElegidos" runat="server"></asp:Label>
-        <asp:GridView ID="gvCompra" runat="server" >
-        </asp:GridView>
-        <asp:Label ID="lblPrecioTotalTexto" runat="server" Text="Precio total:"></asp:Label>
-        <asp:Label ID="lblPrecioTotal" runat="server"></asp:Label>
-        <br />
-        <asp:Label ID="Label2" runat="server" Text="Enviar a"></asp:Label>
-        <asp:DropDownList ID="ddlDirecciones" runat="server">
-        </asp:DropDownList>
-        <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" OnClick="Button2_Click" />
-        <br />
-        <asp:Label ID="Label3" runat="server" Text="Metodo de pago"></asp:Label>
-        <asp:DropDownList ID="ddlMetodoPago" runat="server">
-        </asp:DropDownList>
-        <br />
-        <br />
-        <asp:Button ID="btnVaciarCarrito" runat="server" OnClick="btnVaciarCarrito_Click" Text="Vaciar Carrito" onClientClick="return confirmarVaciarCarrito();"/>
-        <p>
-            <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
-        </p>
+        <div class="text-center">
+            <asp:Label ID="lbl_productosElegidos" runat="server"></asp:Label>
+            <asp:GridView ID="gvCompra" runat="server" >
+            </asp:GridView>
+            <asp:Label ID="lblPrecioTotalTexto" runat="server" Text="Precio total:"></asp:Label>
+            <asp:Label ID="lblPrecioTotal" runat="server"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Enviar a"></asp:Label>
+            <asp:DropDownList ID="ddlDirecciones" runat="server">
+            </asp:DropDownList>
+            <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" OnClick="Button2_Click" />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Metodo de pago"></asp:Label>
+            <asp:DropDownList ID="ddlMetodoPago" runat="server">
+            </asp:DropDownList>
+            <br />
+            <br />
+            <asp:Button ID="btnVaciarCarrito" runat="server" OnClick="btnVaciarCarrito_Click" Text="Vaciar Carrito" onClientClick="return confirmarVaciarCarrito();"/>
+            <p>
+                <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
+            </p>
+        </div>
     </form>
 </body>
 </html>
