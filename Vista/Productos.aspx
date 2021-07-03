@@ -25,7 +25,7 @@
 
         <div>
         </div>
-        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataKeyNames="ID_Producto">
+        <asp:ListView ID="lvProductos" runat="server" GroupItemCount="3" DataKeyNames="ID_Producto" OnPagePropertiesChanging="lvProductos_PagePropertiesChanging">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
                     <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Img_URL") %>' Width="200" Height="200" />
@@ -114,7 +114,7 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server" style="">
-                            <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                            <asp:DataPager ID="lvProductosDataPager" runat="server" PageSize="6">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                     <asp:NumericPagerField />

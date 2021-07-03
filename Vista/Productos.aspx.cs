@@ -84,5 +84,11 @@ namespace Vista
             Response.Redirect("Estadisticas.aspx");
         }
 
+        protected void lvProductos_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            (lvProductos.FindControl("lvProductosDataPager") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            lvProductos.DataSource = neg.obtenerTablaProductos();
+            lvProductos.DataBind();
+        }
     }
 }
