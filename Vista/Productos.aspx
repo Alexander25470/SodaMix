@@ -40,7 +40,8 @@
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
-                    Precio_Venta:&nbsp;<asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    Precio_Venta: $
+                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
                     <asp:Button ID="Button1" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Seleccionar" />
                     <br />
@@ -53,7 +54,7 @@
                     Nombre:
                     <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
                     <br />
-                    Precio_Venta:
+                    Precio_Venta: $
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
@@ -84,7 +85,7 @@
                 <td runat="server" style="">Nombre:
                     <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
                     <br />
-                    Precio_Venta:
+                    Precio_Venta: $
                     <asp:TextBox ID="Precio_VentaTextBox" runat="server" Text='<%# Bind("Precio_Venta") %>' />
                     <br />
                     Img_URL:
@@ -103,7 +104,8 @@
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
-                    Precio_Venta: <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
+                    Precio_Venta: $
+                    <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
                     <asp:Button ID="btn_Seleccionar" runat="server" CommandArgument='<%# Eval("ID_Producto") %>' CommandName="id" OnCommand="Button1_Command" Text="Seleccionar" />
                     <br />
@@ -142,7 +144,7 @@
                     Nombre:
                     <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
-                    Precio_Venta:
+                    Precio_Venta: $
                     <asp:Label ID="Precio_VentaLabel" runat="server" Text='<%# Eval("Precio_Venta") %>' />
                     <br />
                     Img_URL:
