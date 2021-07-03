@@ -34,10 +34,6 @@
         <br />
         <asp:Image ID="imgProducto" runat="server" Height="200px" />
         <p>
-            <asp:Label ID="Label4" runat="server" Text="Cantidad en el carrito: "></asp:Label>
-            <asp:Label ID="lblCantidadActual" runat="server" Text="0"></asp:Label>
-        </p>
-        <p>
             <asp:Button ID="btn_Restar" runat="server" Text="-" OnClick="btn_Restar_Click" />
             <asp:Label ID="lbl_Cantidad" runat="server" Text="0"></asp:Label>
             <asp:Button ID="btn_Sumar" runat="server" Text="+" OnClick="btn_Sumar_Click" />
@@ -56,11 +52,14 @@
             <asp:Label ID="lblDescripcionProducto" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            Precio:<asp:Label ID="lbl_precio" runat="server" Text="Label"></asp:Label>
+            Precio: $<asp:Label ID="lbl_precio" runat="server" Text="Label"></asp:Label>
         </p>
         <p>
-            Subtotal:
-            <asp:Label ID="lbl_SubTotal" runat="server"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Cantidad en el carrito: "></asp:Label>
+            <asp:Label ID="lblCantidadActual" runat="server" Text="0"></asp:Label>
+        </p>
+        <p>
+            Subtotal: $<asp:Label ID="lbl_SubTotal" runat="server"></asp:Label>
         </p>
 
         </div>
