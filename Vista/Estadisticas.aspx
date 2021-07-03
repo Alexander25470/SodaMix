@@ -71,8 +71,8 @@
             </Columns>
         </asp:GridView>
         <p>
-            Gasto total entre las fechas seleccionadas:
-            <asp:Label ID="lbl_GastoTotal" runat="server"></asp:Label>
+            Ganancia total entre las fechas :
+            <asp:Label ID="lbl_GananciaTotal" runat="server"></asp:Label>
         </p>
     </form>
 </body>

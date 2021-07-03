@@ -33,7 +33,7 @@ namespace Vista
                 gv_Estadisticas.DataSource = neg.obtenerEstadisticaVenta();
                 gv_Estadisticas.DataBind();
 
-                lbl_GastoTotal.Text = "No se han seleccionado fechas";
+                lbl_GananciaTotal.Text = "No se han seleccionado fechas";
             }
         }
 
@@ -63,7 +63,7 @@ namespace Vista
         {
             gv_Estadisticas.DataSource = neg.obtenerEstadisticaFechas(tbx_FechaInicio.Text, tbx_FechaFin.Text);
             gv_Estadisticas.DataBind();
-            lbl_GastoTotal.Text = Convert.ToString(neg.obtenerGanancias(tbx_FechaInicio.Text, tbx_FechaFin.Text));
+            lbl_GananciaTotal.Text = Convert.ToString(neg.obtenerGanancias(tbx_FechaInicio.Text, tbx_FechaFin.Text));
             /*tbx_FechaInicio.Text = "";
             tbx_FechaFin.Text = "";*/
         }

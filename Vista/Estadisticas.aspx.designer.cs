@@ -123,12 +123,12 @@ namespace Vista
         protected global::System.Web.UI.WebControls.GridView gv_Estadisticas;
 
         /// <summary>
-        /// Control lbl_GastoTotal.
+        /// Control lbl_GananciaTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_GastoTotal;
+        protected global::System.Web.UI.WebControls.Label lbl_GananciaTotal;
     }
 }

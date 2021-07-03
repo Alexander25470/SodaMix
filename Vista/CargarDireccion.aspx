@@ -36,7 +36,7 @@
                         <asp:RegularExpressionValidator ID="rg_numeros" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Numero de direccion no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
         
         
-            <asp:RequiredFieldValidator ID="RFV_NumeroCalle" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Ingrese un Numero de Calle."></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RFV_NumeroCalle" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Ingrese un Numero de Calle." ValidationGroup="grupo2"></asp:RequiredFieldValidator>
         
         <p>
             <asp:Label ID="Label3" runat="server" Text="Piso"></asp:Label>
