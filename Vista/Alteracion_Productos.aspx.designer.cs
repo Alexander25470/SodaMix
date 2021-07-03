@@ -123,6 +123,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
+        /// Control RFV_Nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Nombre;
+
+        /// <summary>
         /// Control txtDesc.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
+
+        /// <summary>
+        /// Control RFV_Descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Descripcion;
 
         /// <summary>
         /// Control Ddl_TipoProd.
@@ -159,6 +177,24 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtStock;
 
         /// <summary>
+        /// Control RFV_Stock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_Stock;
+
+        /// <summary>
+        /// Control rg_Stock.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_Stock;
+
+        /// <summary>
         /// Control txtPrecioCompra.
         /// </summary>
         /// <remarks>
@@ -166,6 +202,24 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecioCompra;
+
+        /// <summary>
+        /// Control RFV_PrecioCompra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_PrecioCompra;
+
+        /// <summary>
+        /// Control rg_PrecioCompra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_PrecioCompra;
 
         /// <summary>
         /// Control txtPrecioVenta.
@@ -177,6 +231,24 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtPrecioVenta;
 
         /// <summary>
+        /// Control RFV_PrecioVenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_PrecioVenta;
+
+        /// <summary>
+        /// Control rg_PrecioVenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_PrecioVenta;
+
+        /// <summary>
         /// Control txtImgURL.
         /// </summary>
         /// <remarks>
@@ -186,13 +258,13 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox txtImgURL;
 
         /// <summary>
-        /// Control lblErrorAgregarProducto.
+        /// Control RFV_img.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorAgregarProducto;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_img;
 
         /// <summary>
         /// Control btn_aceptar.

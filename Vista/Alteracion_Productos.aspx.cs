@@ -22,6 +22,7 @@ namespace Vista
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
                 Usuario usuario = (Usuario)Session["usuario"];
@@ -42,8 +43,6 @@ namespace Vista
 
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-          
-
             gvProductos.PageIndex = e.NewPageIndex;
 
             cargarGridViewProductos();
@@ -51,8 +50,6 @@ namespace Vista
 
         protected void gvProductos_RowEditing(object sender, GridViewEditEventArgs e)
         {
-           
-
             gvProductos.EditIndex = e.NewEditIndex;
 
             cargarGridViewProductos();
@@ -60,7 +57,6 @@ namespace Vista
 
         protected void gvProductos_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            
             gvProductos.EditIndex = -1;
 
             cargarGridViewProductos();
@@ -126,39 +122,26 @@ namespace Vista
         protected void btn_aceptar_Click(object sender, EventArgs e)
         {
             Entidades.Producto prod = new Entidades.Producto();
-            if(txtNombre.Text =="" ||
-                txtDesc.Text == "" ||
-                txtStock.Text == "" ||
-                txtPrecioCompra.Text == "" ||
-                txtPrecioVenta.Text == "" ||
-                txtImgURL.Text == ""
-                ){
-                lblErrorAgregarProducto.Text = "Campos vacios";
-                return;
-            }
-
-            try
-            {
-                prod.Stock = Convert.ToInt32(txtStock.Text);
-                prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
-                prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
-            }
-            catch
-            {
-                lblErrorAgregarProducto.Text = "Algun campo numerico tiene letras";
-                return;
-            }
+            
             prod.Nombre = txtNombre.Text;
             prod.Descripcion = txtDesc.Text;
             prod.Tipo_Producto = Convert.ToInt32(Ddl_TipoProd.SelectedValue);
             prod.Img_URL = txtImgURL.Text;
             prod.Estado = 1;
+            prod.Stock = Convert.ToInt32(txtStock.Text);
+            prod.Precio_Compra = Convert.ToDouble(txtPrecioCompra.Text);
+            prod.Precio_Venta = Convert.ToDouble(txtPrecioVenta.Text);
 
             neg.AgregarProducto(prod);
 
             cargarGridViewProductos();
-            lblErrorAgregarProducto.Text="";
 
+            txtNombre.Text = "";
+            txtDesc.Text = "";
+            txtStock.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
+            txtImgURL.Text = "";
         }
 
         protected void btn_buscar_Click(object sender, EventArgs e)

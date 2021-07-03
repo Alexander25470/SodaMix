@@ -138,15 +138,23 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Nombre:</td>
-                    <td>
+                    <td class="auto-style5">Nombre:</td>
+                    <td class="auto-style6">
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_Nombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese un Nombre" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Descripcion:</td>
                     <td>
                         <asp:TextBox ID="txtDesc" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_Descripcion" runat="server" ControlToValidate="txtDesc" ErrorMessage="Ingrese una descripcion" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
                     </td>
                 </tr>
                 <tr>
@@ -161,31 +169,55 @@
                     <td class="auto-style5">Stock:</td>
                     <td class="auto-style6">
                         <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_Stock" runat="server" ControlToValidate="txtStock" ErrorMessage="Ingrese stock" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
+                        <asp:RegularExpressionValidator ID="rg_Stock" runat="server" ControlToValidate="txtStock" ErrorMessage="Ingresar solo numeros" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+        
+        
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Compra:</td>
                     <td>
                         <asp:TextBox ID="txtPrecioCompra" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_PrecioCompra" runat="server" ControlToValidate="txtPrecioCompra" ErrorMessage="Ingrese precio compra" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
+                        <asp:RegularExpressionValidator ID="rg_PrecioCompra" runat="server" ControlToValidate="txtPrecioCompra" ErrorMessage="Ingresar solo numeros" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+        
+        
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Precio Venta:</td>
                     <td>
                         <asp:TextBox ID="txtPrecioVenta" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_PrecioVenta" runat="server" ControlToValidate="txtPrecioVenta" ErrorMessage="Ingrese precio venta" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
+                        <asp:RegularExpressionValidator ID="rg_PrecioVenta" runat="server" ControlToValidate="txtPrecioVenta" ErrorMessage="Ingresar solo numeros" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+        
+        
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Img URL:</td>
                     <td>
                         <asp:TextBox ID="txtImgURL" runat="server"></asp:TextBox>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_img" runat="server" ControlToValidate="txtImgURL" ErrorMessage="Ingrese una imagen" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+        
                     </td>
                 </tr>
             </table>
-            <asp:Label ID="lblErrorAgregarProducto" runat="server"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" />
+            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" ValidationGroup="grupo2" />
         </div>
     </form>
 </body>

@@ -58,14 +58,19 @@ namespace Vista
             Response.Redirect("Comprar.aspx");
         }
 
-
         protected void btn_Mostrar_Click(object sender, EventArgs e)
         {
             gv_Estadisticas.DataSource = neg.obtenerEstadisticaFechas(tbx_FechaInicio.Text, tbx_FechaFin.Text);
             gv_Estadisticas.DataBind();
             lbl_GananciaTotal.Text = Convert.ToString(neg.obtenerGanancias(tbx_FechaInicio.Text, tbx_FechaFin.Text));
-            /*tbx_FechaInicio.Text = "";
-            tbx_FechaFin.Text = "";*/
+        }
+
+        protected void btn_VaciarFecha_Click(object sender, EventArgs e)
+        {
+            tbx_FechaInicio.Text = "";
+            tbx_FechaFin.Text = "";
+
+            Response.Redirect("Estadisticas.aspx");
         }
     }
 }

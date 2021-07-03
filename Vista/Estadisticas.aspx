@@ -29,11 +29,12 @@
             <br />
             Fecha de inicio:
                         <asp:TextBox ID="tbx_FechaInicio" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_FechaIni" runat="server" ControlToValidate="tbx_FechaInicio" ErrorMessage="Debes ingresar una fecha de inicio."></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RFV_FechaIni" runat="server" ControlToValidate="tbx_FechaInicio" ErrorMessage="Debes ingresar una fecha de inicio." ValidationGroup="grupo"></asp:RequiredFieldValidator>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecha de fin:
                         <asp:TextBox ID="tbx_FechaFin" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RFV_FechaFin" runat="server" ControlToValidate="tbx_FechaFin" ErrorMessage="Debe ingresar una fecha de fin."></asp:RequiredFieldValidator>
-                        <asp:Button ID="btn_Mostrar" runat="server" CssClass="auto-style10" OnClick="btn_Mostrar_Click" Text="Mostrar" />
+                        <asp:RequiredFieldValidator ID="RFV_FechaFin" runat="server" ControlToValidate="tbx_FechaFin" ErrorMessage="Debe ingresar una fecha de fin." ValidationGroup="grupo"></asp:RequiredFieldValidator>
+                        <asp:Button ID="btn_Mostrar" runat="server" CssClass="auto-style10" OnClick="btn_Mostrar_Click" Text="Mostrar" ValidationGroup="grupo" />
+                        <asp:Button ID="btn_VaciarFecha" runat="server" CssClass="auto-style10" OnClick="btn_VaciarFecha_Click" Text="Vaciar Fechas" />
             <br />
         </div>
         <asp:GridView ID="gv_Estadisticas" runat="server" AutoGenerateColumns="False">
