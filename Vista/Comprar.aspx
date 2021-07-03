@@ -25,7 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
             <asp:Label ID="lbl_productosElegidos" runat="server"></asp:Label>
             <asp:GridView ID="gvCompra" runat="server" >
             </asp:GridView>
@@ -46,7 +45,6 @@
             <p>
                 <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
             </p>
-        </div>
     </form>
 </body>
 </html>
