@@ -5,25 +5,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-
-        .auto-style1 {
-            margin-left: 0px;
-        }
-    </style>
+    <link href="./bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="./bootstrap-5.0.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <p>
-            Usuario:&nbsp;
-        <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-        <asp:Button ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
-        <asp:Button ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
-        <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
-        <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
-            <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CssClass="auto-style1" />
-            </p>
-        <div>
+        <div class="row d-flex justify-content-between navbar-light" style="background-color: #e3f2fd;">
+            <div class="col-auto">
+                Usuario: <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+            </div>
+            <div class="col-auto">
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <asp:Button class="btn btn-outline-primary" ID="btnAdminProductos" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
+                    <asp:Button class="btn btn-outline-primary" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
+                    <asp:Button class="btn btn-outline-primary" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
+                    <asp:Button class="btn btn-outline-primary" ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
+                    <asp:Button class="btn btn-outline-primary" ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CssClass="auto-style1" />
+                </div>
+            </div>
         </div>
         <asp:Label ID="Label1" runat="server" Text="Calle"></asp:Label>
         <asp:TextBox ID="tbx_Calle" runat="server"></asp:TextBox>
