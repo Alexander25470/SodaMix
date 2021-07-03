@@ -58,13 +58,6 @@ namespace Vista
             Response.Redirect("Comprar.aspx");
         }
 
-        protected void btn_buscar_Click(object sender, EventArgs e)
-        {
-            gv_Estadisticas.DataSource = neg.obtenerEstadisticaVenta(tbx_buscarProducto.Text);
-            gv_Estadisticas.DataBind();
-            tbx_buscarProducto.Text = "";
-            lbl_GastoTotal.Text = "No se han seleccionado fechas";
-        }
 
         protected void btn_Mostrar_Click(object sender, EventArgs e)
         {
