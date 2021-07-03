@@ -131,13 +131,28 @@ namespace Vista
         }
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            NegocioVentas venta = new NegocioVentas();
-            Usuario user = (Usuario)Session["usuario"];
-            Session["carrito"] = new Carrito();
-
-            venta.cargarVenta(carrito, user.Id, ddlMetodoPago.SelectedValue.ToString());
-            Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
-            Response.Redirect("Productos.aspx");
+            int cant = 0;
+            foreach (ItemCarrito ic in carrito._articulos)
+            {
+                if (ic.Cant > 0)
+                {
+                    cant++;
+                }
+            }
+            if (cant == 0)
+            {
+                Response.Write("<script language=javascript>alert('No hay articulos!')</script>");
+            }
+            else
+            {
+                NegocioVentas venta = new NegocioVentas();
+                Usuario user = (Usuario)Session["usuario"];
+                Session["carrito"] = new Carrito();
+                venta.cargarVenta(carrito, user.Id, ddlMetodoPago.SelectedValue.ToString());
+                Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
+                Response.Redirect("Productos.aspx");
+            }
+            
         }
 
         protected void btnVaciarCarrito_Click(object sender, EventArgs e)
