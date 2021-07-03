@@ -96,6 +96,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.TextBox tbx_FechaInicio;
 
         /// <summary>
+        /// Control RFV_FechaIni.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_FechaIni;
+
+        /// <summary>
         /// Control tbx_FechaFin.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace Vista
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_FechaFin;
+
+        /// <summary>
+        /// Control RFV_FechaFin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_FechaFin;
 
         /// <summary>
         /// Control btn_Mostrar.

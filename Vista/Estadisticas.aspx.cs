@@ -14,7 +14,7 @@ namespace Vista
         NegocioVentas neg = new NegocioVentas();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
             if (!IsPostBack)
             {
@@ -71,8 +71,8 @@ namespace Vista
             gv_Estadisticas.DataSource = neg.obtenerEstadisticaFechas(tbx_FechaInicio.Text, tbx_FechaFin.Text);
             gv_Estadisticas.DataBind();
             lbl_GastoTotal.Text = Convert.ToString(neg.obtenerGanancias(tbx_FechaInicio.Text, tbx_FechaFin.Text));
-            tbx_FechaInicio.Text = "";
-            tbx_FechaFin.Text = "";
+            /*tbx_FechaInicio.Text = "";
+            tbx_FechaFin.Text = "";*/
         }
     }
 }

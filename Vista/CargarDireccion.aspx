@@ -26,17 +26,25 @@
         </div>
         <asp:Label ID="Label1" runat="server" Text="Calle"></asp:Label>
         <asp:TextBox ID="tbx_Calle" runat="server"></asp:TextBox>
+        <br />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbx_Calle" ErrorMessage="Ingrese una calle" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
         <p>
             <asp:Label ID="Label2" runat="server" Text="Numero"></asp:Label>
             <asp:TextBox ID="tbx_Numero" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="rg_numeros" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Numero de direccion no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
         </p>
+        
+                        <asp:RegularExpressionValidator ID="rg_numeros" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Numero de direccion no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+        
+        
+            <asp:RequiredFieldValidator ID="RFV_NumeroCalle" runat="server" ControlToValidate="tbx_Numero" ErrorMessage="Ingrese un Numero de Calle."></asp:RequiredFieldValidator>
+        
         <p>
             <asp:Label ID="Label3" runat="server" Text="Piso"></asp:Label>
             <asp:TextBox ID="tbx_Piso" runat="server"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="rg_numeros0" runat="server" ControlToValidate="tbx_Piso" ErrorMessage="Numero de piso no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
         </p>
+        
+                        <asp:RegularExpressionValidator ID="rg_numeros0" runat="server" ControlToValidate="tbx_Piso" ErrorMessage="Numero de piso no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+        
         <p>
             <asp:Label ID="Label5" runat="server" Text="Provincia"></asp:Label>
             <asp:DropDownList ID="ddlProvincias" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincias_SelectedIndexChanged">
