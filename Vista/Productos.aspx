@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Producto</title>
     <link href="./bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="./bootstrap-5.0.2/js/bootstrap.min.js" ></script>
 </head>
@@ -121,6 +121,7 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server" style="">
+                            <div class="text-center mt-2">
                             <asp:DataPager ID="lvProductosDataPager" runat="server" PageSize="6">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
@@ -128,6 +129,8 @@
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                                 </Fields>
                             </asp:DataPager>
+
+                            </div>
                         </td>
                     </tr>
                 </table>
