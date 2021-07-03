@@ -76,6 +76,7 @@ namespace Vista
         protected void btn_CerrarSesion_Click(object sender, EventArgs e)
         {
             Session["usuario"] = null;
+            Session["carrito"] = null;
             Response.Redirect("Login.aspx");
         }
 
