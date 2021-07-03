@@ -21,7 +21,7 @@
                     <asp:Button class="btn btn-outline-primary" ID="btnAdminUsuarios" runat="server" OnClick="btnAdminUsuarios_Click" Text="Administrar Usuarios" />
                     <asp:Button class="btn btn-outline-primary" ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
                     <asp:Button class="btn btn-outline-primary" ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
-                    <asp:Button class="btn btn-outline-primary" ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CssClass="auto-style1" />
+                    <asp:Button class="btn btn-outline-primary" ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio"/>
                 </div>
             </div>
         </div>
