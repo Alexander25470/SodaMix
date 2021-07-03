@@ -17,6 +17,7 @@ namespace Vista
         protected void Page_Load(object sender, EventArgs e)
         {
             NegocioMetodoPago negMP = new NegocioMetodoPago();
+            NegocioDirecciones negD = new NegocioDirecciones();
             if (Session["carrito"] == null)
             {
                 Session["carrito"] = new Carrito();
@@ -96,6 +97,11 @@ namespace Vista
                 ddlMetodoPago.DataValueField = "ID_Metodo_Pago";
                 ddlMetodoPago.DataBind();
 
+                ddlDirecciones.DataSource = negD.obtenerTablaDirecciones(usuario.Id);
+                ddlDirecciones.DataTextField = "Direccion";
+                ddlDirecciones.DataValueField = "ID_Direccion";
+                ddlDirecciones.DataBind();
+
             }
             
 
@@ -138,6 +144,11 @@ namespace Vista
         {
             Session["carrito"] = new Carrito();
             Response.Redirect("Comprar.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CargarDireccion.aspx");
         }
     }
 }

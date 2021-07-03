@@ -83,5 +83,6 @@ namespace Vista
         {
             Response.Redirect("Estadisticas.aspx");
         }
+
     }
 }
