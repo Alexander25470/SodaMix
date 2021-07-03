@@ -47,7 +47,7 @@ namespace Vista
                 lblTitulo.Text= prod.Nombre;
                 lblDescripcionProducto.Text = prod.Descripcion;
                 lblNombreProducto.Text = prod.Nombre;
-                lbl_precio.Text = prod.Precio_Venta.ToString();
+                lbl_precio.Text = " $"+prod.Precio_Venta.ToString();
             }
 
             if (Session["carrito"] == null)
