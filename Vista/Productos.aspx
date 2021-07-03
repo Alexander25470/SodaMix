@@ -5,14 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 86px;
-        }
-        .auto-style2 {
-            height: 80px;
-        }
-    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
@@ -48,7 +40,7 @@
                 </td>
             </AlternatingItemTemplate>
             <EditItemTemplate>
-                <td runat="server" style="">ID_Producto:
+                 <td runat="server" style="">ID_Producto:
                     <asp:Label ID="ID_ProductoLabel1" runat="server" Text='<%# Eval("ID_Producto") %>' />
                     <br />
                     Nombre:
@@ -113,7 +105,7 @@
             <LayoutTemplate>
                 <table runat="server">
                     <tr runat="server">
-                        <td runat="server" class="auto-style1">
+                        <td runat="server">
                             <table id="groupPlaceholderContainer" runat="server" border="0" style="">
                                 <tr id="groupPlaceholder" runat="server">
                                 </tr>
@@ -122,7 +114,14 @@
                     </tr>
                     <tr runat="server">
                         <td runat="server" style="">
-                            &nbsp;</td>
+                            <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                    <asp:NumericPagerField />
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                </Fields>
+                            </asp:DataPager>
+                        </td>
                     </tr>
                 </table>
             </LayoutTemplate>
@@ -141,6 +140,7 @@
                     <br />
                 </td>
             </SelectedItemTemplate>
+
         </asp:ListView>
     </form>
 </body>
