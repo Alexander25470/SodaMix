@@ -387,3 +387,6 @@ where
 group by
 	p.ID_Producto,p.Nombre, p.Stock
 end
+
+
+

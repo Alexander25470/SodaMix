@@ -162,6 +162,7 @@
                     <asp:Label ID="lblIdProducto" runat="server" Text='<%# Bind("ID_Producto") %>'></asp:Label>
                 </EmptyDataTemplate>
             </asp:GridView>
+            <br />
             <asp:Label ID="lblErrorEditarProducto" runat="server"></asp:Label>
             <br />
             <table class="auto-style1">

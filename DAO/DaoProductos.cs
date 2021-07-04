@@ -21,7 +21,9 @@ namespace Dao
 
         public bool ActualizarProducto(Producto prod)
         {
-            string query = "UPDATE PRODUCTO SET Nombre = '" + prod.Nombre + "', Descripcion = '" + prod.Descripcion + "',Tipo_Producto = " + prod.Tipo_Producto + ", Stock = " + prod.Stock + ", Precio_Compra =" + prod.Precio_Compra + ", Precio_Venta = " + prod.Precio_Venta + ", Img_URL = '" + prod.Img_URL + "',Estado = " + prod.Estado + " WHERE Id_Producto = " + prod.ID_Producto;
+            string precioCompra = prod.Precio_Compra.ToString().Replace(',', '.');
+            string precioVenta = prod.Precio_Venta.ToString().Replace(',', '.');
+            string query = "UPDATE PRODUCTO SET Nombre = '" + prod.Nombre + "', Descripcion = '" + prod.Descripcion + "',Tipo_Producto = " + prod.Tipo_Producto + ", Stock = " + prod.Stock + ", Precio_Compra =" + precioCompra + ", Precio_Venta = " + precioVenta + ", Img_URL = '" + prod.Img_URL + "',Estado = " + prod.Estado + " WHERE Id_Producto = " + prod.ID_Producto;
             SqlConnection con = ad.ObtenerConexion();
             int FilasInsertadas = ad.ejecutarConsulta(query, con);
             if (FilasInsertadas == 1)
@@ -42,7 +44,9 @@ namespace Dao
         }
         public bool AgregarProducto(Producto prod)
         {
-            string query = $@"INSERT INTO PRODUCTO(Nombre,Descripcion,Tipo_Producto,Stock,Precio_Compra,Precio_Venta,Img_URL)VALUES('{prod.Nombre}','{prod.Descripcion }','{prod.Tipo_Producto}','{prod.Stock}','{prod.Precio_Compra}','{prod.Precio_Venta}','{prod.Img_URL}')";
+            string precioCompra = prod.Precio_Compra.ToString().Replace(',', '.');
+            string precioVenta = prod.Precio_Venta.ToString().Replace(',', '.');
+            string query = $@"INSERT INTO PRODUCTO(Nombre,Descripcion,Tipo_Producto,Stock,Precio_Compra,Precio_Venta,Img_URL)VALUES('{prod.Nombre}','{prod.Descripcion }','{prod.Tipo_Producto}','{prod.Stock}','{precioCompra}','{precioVenta}','{prod.Img_URL}')";
             SqlConnection con = ad.ObtenerConexion();
             int FilasInsertadas = ad.ejecutarConsulta(query, con);
             if (FilasInsertadas == 1)
