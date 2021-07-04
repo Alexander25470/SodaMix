@@ -35,7 +35,7 @@
             <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
             <br />
         </div>
-            <asp:GridView ID="GVClientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CssClass="auto-style3" OnRowCancelingEdit="GVClientes_RowCancelingEdit" OnRowEditing="GVClientes_RowEditing" OnRowUpdating="GVClientes_RowUpdating">
+            <asp:GridView ID="GVClientes" runat="server" AutoGenerateColumns="False" CssClass="auto-style3" OnRowCancelingEdit="GVClientes_RowCancelingEdit" OnRowEditing="GVClientes_RowEditing" OnRowUpdating="GVClientes_RowUpdating">
                 <Columns>
                     <asp:TemplateField HeaderText="ID_Usuario">
                         <ItemTemplate>
