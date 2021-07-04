@@ -67,7 +67,8 @@
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Nombre" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RFV_Nombre" runat="server" ControlToValidate="txt_Nombre" ErrorMessage="Ingrese un Nombre." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
@@ -76,6 +77,7 @@
                     <asp:TemplateField HeaderText="Descripcion">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_Descripcion" runat="server" Text='<%# Bind("Descripcion") %>' Width="193px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RFV_Descripcion" runat="server" ControlToValidate="txt_Descripcion" ErrorMessage="Ingrese una descripcion." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Descripcion" runat="server" Text='<%# Bind("Descripcion") %>'></asp:Label>
@@ -93,6 +95,10 @@
                     <asp:TemplateField HeaderText="Stock">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:TextBox>
+                            <br />
+                            <asp:RegularExpressionValidator ID="REV_Stock" runat="server" ControlToValidate="txt_Stock" ErrorMessage="Stock INCORRECTO." ValidationExpression="^\d+$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RFV_Stock" runat="server" ControlToValidate="txt_Stock" ErrorMessage="Ingrese el STOCK." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:Label>
@@ -101,6 +107,9 @@
                     <asp:TemplateField HeaderText="Precio_Compra">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_PrecioCompra" runat="server" Text='<%# Bind("Precio_Compra") %>'></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RFV_PrecioCompra" runat="server" ControlToValidate="txt_PrecioCompra" ErrorMessage="Ingrese precio Compra." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
+                            <br />
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_PrecioCompra" runat="server" Text='<%# Bind("Precio_Compra") %>'></asp:Label>
@@ -109,6 +118,8 @@
                     <asp:TemplateField HeaderText="Precio_Venta">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_PrecioVenta" runat="server" Text='<%# Bind("Precio_Venta") %>'></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RFV_PrecioVenta" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrece Precio Venta." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Precio_Venta" runat="server" Text='<%# Bind("Precio_Venta") %>'></asp:Label>
@@ -117,6 +128,8 @@
                     <asp:TemplateField HeaderText="Img_URL">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_imgURL" runat="server" Text='<%# Bind("Img_URL") %>'></asp:TextBox>
+                            <br />
+                            <asp:RequiredFieldValidator ID="RFV_Img" runat="server" ControlToValidate="txt_imgURL" ErrorMessage="Ingrese la URL de la imagen." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_imgURL" runat="server" Text='<%# Bind("Img_URL") %>'></asp:Label>
@@ -133,7 +146,7 @@
                     <asp:TemplateField HeaderText="editar">
                         <EditItemTemplate>
                             <asp:Button ButtonType="Button" runat="server" CommandName="Update" Text="Editar" CausesValidation="True" ValidationGroup="grupo1" />
-                            <asp:Button ButtonType="Button" runat="server" CommandName="Cancel" Text="Cancelar" CausesValidation="True" ValidationGroup="grupo1" />
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Cancel" Text="Cancelar" CausesValidation="True" />
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Button ButtonType="Button" runat="server" CommandName="Edit" Text="Editar" CausesValidation="False" />
