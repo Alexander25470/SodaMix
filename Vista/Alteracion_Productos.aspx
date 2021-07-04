@@ -63,7 +63,6 @@
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Nombre" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
