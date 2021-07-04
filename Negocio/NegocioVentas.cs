@@ -13,9 +13,9 @@ namespace Negocio
     {
 
         DaoVentas dao = new DaoVentas();
-        public DataTable obtenerTablaVentas(string id = null)
+        public DataTable obtenerTablaVentas(string DNI = null)
         {
-            return dao.obtenerTablaVenta(id);
+            return dao.obtenerTablaVenta(DNI);
 
         }
         public int cargarVenta(Carrito carrito, string idusuario, string idMetodoPago)

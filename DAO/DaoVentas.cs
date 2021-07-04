@@ -43,10 +43,10 @@ namespace Dao
             throw new NotImplementedException();
         }
 
-        public DataTable obtenerTablaVenta(string ID = null)
+        public DataTable obtenerTablaVenta(string DNI = null)
         {
             SqlConnection con = ad.ObtenerConexion();
-            string query = "select v.*,U.DNI as DNIUsuario, D.Direccion as Direccion, M.Descripcion as MetodoPago from Venta v inner join USUARIO U on U.ID_Usuario = v.ID_Usuario inner join DIRECCIONES D on D.ID_Direccion = v.ID_Direccion inner join METODO_PAGO M on M.ID_Metodo_Pago = v.ID_Metodo_Pago" + (ID == null ? "" : $" where ID_Venta Like '%{ ID }%'");
+            string query = "select v.*,U.DNI as DNIUsuario, D.Direccion as Direccion, M.Descripcion as MetodoPago from Venta v inner join USUARIO U on U.ID_Usuario = v.ID_Usuario inner join DIRECCIONES D on D.ID_Direccion = v.ID_Direccion inner join METODO_PAGO M on M.ID_Metodo_Pago = v.ID_Metodo_Pago" + (DNI == null ? "" : $" where U.DNI Like '%{ DNI }%' or ID_Venta Like '%{ DNI }%'");
             return ad.ObtenerTabla(query, "Venta", con);
         }
 
