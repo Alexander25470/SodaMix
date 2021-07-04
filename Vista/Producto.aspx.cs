@@ -150,7 +150,7 @@ namespace Vista
                 lbl_Agregado.Text = "Has agregado " + car._articulos[posInCarrito].CantAgregar.ToString() + " " + car._articulos[posInCarrito].Producto.Nombre + " al carrito";
                 car._articulos[posInCarrito].CantAgregar =0;
                 lbl_Cantidad.Text = car._articulos[posInCarrito].CantAgregar.ToString();
-                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToInt32(lbl_precio.Text));
+                lbl_SubTotal.Text = Convert.ToString(car._articulos[posInCarrito].Cant * Convert.ToDouble(lbl_precio.Text));
                 lblCantidadActual.Text = car._articulos[posInCarrito].Cant.ToString();
             }
             else
