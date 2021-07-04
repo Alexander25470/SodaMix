@@ -84,8 +84,12 @@ namespace Vista
             try
             {
                 prod.Stock = Convert.ToInt32(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_Stock")).Text);
-                prod.Precio_Venta = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text);
-                prod.Precio_Compra = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text);
+                string precioVenta = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioVenta")).Text;
+                precioVenta.Replace(",", ".");
+                prod.Precio_Venta = Convert.ToDouble(precioVenta);
+                string precioCompra = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioCompra")).Text;
+                precioCompra.Replace(",", ".");
+                prod.Precio_Compra = Convert.ToDouble(precioCompra);
                 
             }
             catch
