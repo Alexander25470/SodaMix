@@ -65,8 +65,8 @@ namespace Dao
                 prod.Descripcion = tblUsuarios["Descripcion"].ToString();
                 prod.Tipo_Producto = Convert.ToInt32(tblUsuarios["Tipo_Producto"]);
                 prod.Stock = Convert.ToInt32(tblUsuarios["Stock"]);
-                prod.Precio_Compra = Convert.ToInt32(tblUsuarios["Precio_Compra"]);
-                prod.Precio_Venta = Convert.ToInt32(tblUsuarios["Precio_venta"]);
+                prod.Precio_Compra = Convert.ToDouble(tblUsuarios["Precio_Compra"]);
+                prod.Precio_Venta = Convert.ToDouble(tblUsuarios["Precio_venta"]);
                 prod.Img_URL = tblUsuarios["Img_URL"].ToString();
                 prod.Estado = Convert.ToInt32(tblUsuarios["Estado"]);
                 return prod;
