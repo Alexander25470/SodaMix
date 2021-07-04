@@ -72,7 +72,7 @@
                     <td>
                         <asp:TextBox ID="tbx_Dni" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombre1" runat="server" ControlToValidate="tbx_Dni" ErrorMessage="Ingrese el DNI" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="rg_numerosDni" runat="server" ControlToValidate="tbx_Dni" ErrorMessage="Telefono no valido" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="rg_numerosDni" runat="server" ControlToValidate="tbx_Dni" ErrorMessage="DNI No valido." ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
