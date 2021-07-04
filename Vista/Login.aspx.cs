@@ -30,9 +30,15 @@ namespace Vista
                 String username = tbxUser.Text;
                 String pass = tbxPass.Text;
                 Usuario user = negocioUsuario.login(username, pass);
-
-                Session["usuario"] = user;
-                Response.Redirect("Productos.aspx");
+                if(user == null)
+                {
+                    Response.Write("<script language=javascript>alert('Credenciales invalidas.')</script>");
+                }
+                else
+                {
+                    Session["usuario"] = user;
+                    Response.Redirect("Productos.aspx");
+                }
             }
         }
 

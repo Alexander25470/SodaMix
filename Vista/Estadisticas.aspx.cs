@@ -32,8 +32,7 @@ namespace Vista
 
                 gv_Estadisticas.DataSource = neg.obtenerEstadisticaVenta();
                 gv_Estadisticas.DataBind();
-
-                lbl_GananciaTotal.Text = "No se han seleccionado fechas";
+                lbl_GananciaTotal.Text = Convert.ToString(neg.obtenerGananciasTotales());
             }
         }
 

@@ -41,8 +41,12 @@ namespace Negocio
 
         public double obtenerGanancias(string FechaInicio, string FechaFin)
         {
-            return dao.obtenerGananciasVentas(FechaInicio, FechaFin);
+            return dao.obtenerGananciasVentasEntrefechas(FechaInicio, FechaFin);
         }
 
+        public double obtenerGananciasTotales()
+        {
+            return dao.obtenerGanancias();
+        }
     }
 }

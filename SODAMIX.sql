@@ -209,23 +209,23 @@ GO
 
 
 SET IDENTITY_INSERT [Venta] ON
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(0,0,1000,'22/06/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(1,0,1000,'23/06/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(2,0,1000,'15/01/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(3,0,1000,'23/02/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(4,0,1000,'23/03/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(5,0,1000,'23/04/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(6,0,1000,'23/05/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(7,0,1000,'23/06/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(8,0,1000,'23/07/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(9,0,1000,'23/08/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(10,0,1000,'23/09/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(11,0,1000,'23/10/2020',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(12,0,1000,'23/12/2020',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(13,0,1000,'23/05/2020',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(14,0,1000,'23/03/2020',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(15,0,1000,'04/07/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(16,0,1000,'01/02/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(0,0,400,'22/06/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(1,0,400,'23/06/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(2,0,400,'15/01/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(3,0,400,'23/02/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(4,0,400,'23/03/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(5,0,400,'23/04/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(6,0,400,'23/05/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(7,0,400,'23/06/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(8,0,400,'23/07/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(9,0,400,'23/08/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(10,0,400,'23/09/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(11,0,400,'23/10/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(12,0,400,'23/12/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(13,0,400,'23/05/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(14,0,400,'23/03/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(15,0,400,'04/07/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(16,0,400,'01/02/2021',2,1)
 SET IDENTITY_INSERT [Venta] OFF
 GO
 
@@ -329,8 +329,21 @@ begin
 	declare @pasivo money
 	declare @activo money
 	declare @ganancia money
-	select @pasivo = sum(dv.PrecioCompra) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
-	select @activo = sum(dv.Precio) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
+	select @pasivo = sum(dv.PrecioCompra* dv.cantidad) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
+	select @activo = sum(dv.Precio* dv.cantidad) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta where v.Fecha_Venta between @fechaInicio and @fechaFin
+	set @ganancia = @activo - @pasivo
+	return @ganancia
+end
+GO
+
+create procedure SP_GANANCIA_TOTAL
+as
+begin
+	declare @pasivo money
+	declare @activo money
+	declare @ganancia money
+	select @pasivo = sum(dv.PrecioCompra* dv.cantidad) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta
+	select @activo = sum(dv.Precio* dv.cantidad) from VENTA v inner join DETALLE_VENTA dv on dv.ID_Venta = v.ID_Venta
 	set @ganancia = @activo - @pasivo
 	return @ganancia
 end

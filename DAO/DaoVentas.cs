@@ -119,13 +119,29 @@ namespace Dao
             conexion.Close();
         }
 
-        public double obtenerGananciasVentas(string FechaInicio, string FechaFin)
+        public double obtenerGananciasVentasEntrefechas(string FechaInicio, string FechaFin)
         {
             double Ganancias = -1;
             SqlConnection conexion = ad.ObtenerConexion();
             SqlCommand cmd = new SqlCommand("SP_GANANCIA_ENTRE_FECHAS", conexion);
             cmd.Parameters.Add("@fechaInicio", SqlDbType.Date).Value = FechaInicio;
             cmd.Parameters.Add("@fechaFin", SqlDbType.Date).Value = FechaFin;
+            SqlParameter parm = new SqlParameter("@ganancia", SqlDbType.Money);
+            parm.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parm);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+            Ganancias = Convert.ToInt32(cmd.Parameters["@ganancia"].Value);
+            return Ganancias;
+        }
+
+        public double obtenerGanancias()
+        {
+            double Ganancias = -1;
+            SqlConnection conexion = ad.ObtenerConexion();
+            SqlCommand cmd = new SqlCommand("SP_GANANCIA_TOTAL", conexion);
             SqlParameter parm = new SqlParameter("@ganancia", SqlDbType.Money);
             parm.Direction = ParameterDirection.ReturnValue;
             cmd.Parameters.Add(parm);
