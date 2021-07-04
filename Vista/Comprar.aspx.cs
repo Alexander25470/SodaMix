@@ -149,8 +149,7 @@ namespace Vista
                 Usuario user = (Usuario)Session["usuario"];
                 Session["carrito"] = new Carrito();
                 venta.cargarVenta(carrito, user.Id, ddlMetodoPago.SelectedValue.ToString());
-                Response.Write("<script language=javascript>alert('¡Gracias por tu compra!')</script>");
-                Response.Redirect("Productos.aspx");
+                Response.Write(@"<script language=javascript>(()=>{alert('¡Gracias por tu compra!.\nRecibiras tus productos en los proximos 3 dias.');window.location.href = 'Productos.aspx';})()</script>");
             }
         }
 
