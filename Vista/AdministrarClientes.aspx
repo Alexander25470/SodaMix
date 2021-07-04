@@ -24,14 +24,17 @@
     <form id="form1" runat="server">
         <div>
             Buscar Cliente por DNI:<asp:TextBox ID="tbx_busqueda" runat="server" CssClass="auto-style1"></asp:TextBox>
-            <asp:Button ID="btn_Buscar" runat="server" CssClass="auto-style2" OnClick="btn_Buscar_Click" Text="Buscar" Width="84px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:&nbsp;
+            <asp:Button ID="btn_Buscar" runat="server" CssClass="auto-style2" OnClick="btn_Buscar_Click" Text="Buscar" Width="84px" ValidationGroup="grupo2" />
+            &nbsp;&nbsp;<asp:RegularExpressionValidator ID="rg_numeros" runat="server" ControlToValidate="tbx_busqueda" ErrorMessage="El DNI debe ser numerico." ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usuario:&nbsp;
         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
         <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Editar Productos" />
         <asp:Button ID="btn_Ventas" runat="server" OnClick="btn_Ventas_Click" Text="Ventas" />
         <asp:Button ID="btn_Estadisticas" runat="server" OnClick="btn_Estadisticas_Click" Text="Estadisticas" Width="85px" />
         <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" CssClass="auto-style4" />
             <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver carrito" />
+            <br />
+        </div>
             <asp:GridView ID="GVClientes" runat="server" AutoGenerateColumns="False" AutoGenerateEditButton="True" CssClass="auto-style3" OnRowCancelingEdit="GVClientes_RowCancelingEdit" OnRowEditing="GVClientes_RowEditing" OnRowUpdating="GVClientes_RowUpdating">
                 <Columns>
                     <asp:TemplateField HeaderText="ID_Usuario">
@@ -119,7 +122,6 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-        </div>
     </form>
 </body>
 </html>
