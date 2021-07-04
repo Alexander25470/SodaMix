@@ -108,6 +108,8 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_PrecioCompra" runat="server" Text='<%# Bind("Precio_Compra") %>'></asp:TextBox>
                             <br />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_PrecioCompra" ErrorMessage="Ingrese un numero decimal." ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
+                            <br />
                             <asp:RequiredFieldValidator ID="RFV_PrecioCompra" runat="server" ControlToValidate="txt_PrecioCompra" ErrorMessage="Ingrese precio Compra." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                             <br />
                         </EditItemTemplate>
@@ -118,6 +120,8 @@
                     <asp:TemplateField HeaderText="Precio_Venta">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_PrecioVenta" runat="server" Text='<%# Bind("Precio_Venta") %>'></asp:TextBox>
+                            <br />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrese un numero decimal." ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                             <br />
                             <asp:RequiredFieldValidator ID="RFV_PrecioVenta" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrece Precio Venta." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
