@@ -12,3 +12,6 @@ let confirmarIrCarrito = () => confirm(textoRelleno + "ver el carrito?");
 let confirmarIrLogin = () => confirm(textoRelleno + "ir al login?");
 let confirmarIrRegistro = () => confirm(textoRelleno + "ir al registro?");
 let confirmarVaciarCarrito = () => confirm(textoRelleno + "vaciar el carrito?");
+let confirmarEditarProducto = () => confirm(textoRelleno + "actualizar los datos del producto?");
+let confirmarEditarCliente = () => confirm(textoRelleno + "actualizar la informacion del cliente?");
+let confirmarCargarProducto = () => confirm(textoRelleno + "cargar el nuevo producto?");

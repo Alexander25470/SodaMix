@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Administracion productos</title>
+    <script src="./scriptConfirmaciones.js" language="javascript" type="text/javascript"></script>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -121,7 +122,7 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_PrecioVenta" runat="server" Text='<%# Bind("Precio_Venta") %>'></asp:TextBox>
                             <br />
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrese un numero decimal." ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrese un numero decimal." ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                             <br />
                             <asp:RequiredFieldValidator ID="RFV_PrecioVenta" runat="server" ControlToValidate="txt_PrecioVenta" ErrorMessage="Ingrece Precio Venta." ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
@@ -149,7 +150,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="editar">
                         <EditItemTemplate>
-                            <asp:Button ButtonType="Button" runat="server" CommandName="Update" Text="Editar" CausesValidation="True" ValidationGroup="grupo1" />
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Update" Text="Editar" CausesValidation="True" ValidationGroup="grupo1" OnClientClick="if(Page_ClientValidate('grupo1'))return confirmarEditarProducto();"/>
                             <asp:Button ButtonType="Button" runat="server" CommandName="Cancel" Text="Cancelar" CausesValidation="True" />
                         </EditItemTemplate>
                         <ItemTemplate>
@@ -217,7 +218,7 @@
         
             <asp:RequiredFieldValidator ID="RFV_PrecioCompra" runat="server" ControlToValidate="txtPrecioCompra" ErrorMessage="Ingrese precio compra" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
         
-                        <asp:RegularExpressionValidator ID="rg_PrecioCompra" runat="server" ControlToValidate="txtPrecioCompra" ErrorMessage="Ingresar solo numeros" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="rg_PrecioCompra" runat="server" ControlToValidate="txtPrecioCompra" ErrorMessage="Ingresar solo numeros" ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
         
         
                     </td>
@@ -230,7 +231,7 @@
         
             <asp:RequiredFieldValidator ID="RFV_PrecioVenta" runat="server" ControlToValidate="txtPrecioVenta" ErrorMessage="Ingrese precio venta" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
         
-                        <asp:RegularExpressionValidator ID="rg_PrecioVenta" runat="server" ControlToValidate="txtPrecioVenta" ErrorMessage="Ingresar solo numeros" ValidationExpression="^\d+$" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="rg_PrecioVenta" runat="server" ControlToValidate="txtPrecioVenta" ErrorMessage="Ingresar solo numeros" ValidationExpression="\d+([\,\.]\d+)?" ValidationGroup="grupo2"></asp:RegularExpressionValidator>
         
         
                     </td>
@@ -248,7 +249,7 @@
             </table>
             <br />
             <br />
-            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" ValidationGroup="grupo2" />
+            <asp:Button ID="btn_aceptar" runat="server" CssClass="auto-style7" OnClick="btn_aceptar_Click" Text="Agregar" Width="140px" ValidationGroup="grupo2" OnClientClick="if(Page_ClientValidate('grupo2'))return confirmarCargarProducto();" />
         </div>
     </form>
 </body>
