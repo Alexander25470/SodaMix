@@ -78,6 +78,15 @@ namespace Vista
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre1;
 
         /// <summary>
+        /// rg_numerosDni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rg_numerosDni;
+
+        /// <summary>
         /// tbx_Telefono control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace Vista
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbx_Telefono;
+
+        /// <summary>
+        /// rfvTelefono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelefono;
 
         /// <summary>
         /// rg_numeros control.
