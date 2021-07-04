@@ -220,7 +220,12 @@ insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,
 insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(8,0,1000,'23/07/2021',2,1)
 insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(9,0,1000,'23/08/2021',2,1)
 insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(10,0,1000,'23/09/2021',2,1)
-insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(11,0,1000,'23/10/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(11,0,1000,'23/10/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(12,0,1000,'23/12/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(13,0,1000,'23/05/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(14,0,1000,'23/03/2020',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(15,0,1000,'04/07/2021',2,1)
+insert into [Venta](ID_Venta,ID_Metodo_Pago,Precio_Total,Fecha_Venta,ID_Usuario,ID_Direccion) values(16,0,1000,'01/02/2021',2,1)
 SET IDENTITY_INSERT [Venta] OFF
 GO
 
@@ -259,7 +264,7 @@ insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Preci
 insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(30,6,15,2,100,50)
 insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(31,7,15,2,100,50)
 insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(32,8,16,2,100,50)
-insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(32,9,16,2,100,50)
+insert into [DETALLE_VENTA](ID_Detalle_Venta,ID_Producto,ID_Venta,Cantidad,Precio,PrecioCompra) values(33,9,16,2,100,50)
 SET IDENTITY_INSERT [DETALLE_VENTA] OFF
 GO
 
