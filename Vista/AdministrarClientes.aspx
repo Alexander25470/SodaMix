@@ -51,6 +51,7 @@
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
                             <asp:TextBox ID="tbxNombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxNombre" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
@@ -118,6 +119,15 @@
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:CheckBox ID="cbxEstado" runat="server" Checked='<%# Bind("Estado") %>' Enabled="False" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="editar">
+                        <EditItemTemplate>
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Update" Text="Editar" CausesValidation="True" ValidationGroup="grupo1" />
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Cancel" Text="Cancelar" CausesValidation="True" ValidationGroup="grupo1" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Edit" Text="Editar" CausesValidation="False" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
