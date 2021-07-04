@@ -36,6 +36,8 @@
             </asp:DropDownList>
             <asp:Button ID="Button2" runat="server" Text="Cargar otra direccion" OnClick="Button2_Click" />
             <br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlDirecciones" ErrorMessage="Elija una direccion a la que enviar sus productos." ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+            <br />
             <asp:Label ID="Label3" runat="server" Text="Metodo de pago"></asp:Label>
             <asp:DropDownList ID="ddlMetodoPago" runat="server">
             </asp:DropDownList>
@@ -43,7 +45,7 @@
             <br />
             <asp:Button ID="btnVaciarCarrito" runat="server" OnClick="btnVaciarCarrito_Click" Text="Vaciar Carrito" onClientClick="return confirmarVaciarCarrito();"/>
             <p>
-                <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="return confirmarCompra();" OnClick="btnComprar_Click"/>
+                <asp:Button ID="btnComprar" runat="server" Text="Comprar" onClientClick="if(Page_ClientValidate('grupo2'))return confirmarCompra();" OnClick="btnComprar_Click" ValidationGroup="grupo2"/>
             </p>
     </form>
 </body>

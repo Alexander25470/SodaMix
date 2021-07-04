@@ -80,6 +80,9 @@ namespace Vista
                 else
                 {
                     lbl_productosElegidos.Text = "Aun no has agregado productos.";
+                    btnComprar.Enabled = false;
+                    btnVaciarCarrito.Enabled = false;
+
                 }
             }
             else
