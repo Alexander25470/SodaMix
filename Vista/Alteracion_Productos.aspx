@@ -14,6 +14,7 @@
             width: 146px;
             font-size: x-large;
             text-align: center;
+            height: 56px;
         }
         .auto-style4 {
             width: 146px;
@@ -39,6 +40,9 @@
         .auto-style10 {
             margin-left: 0px;
         }
+        .auto-style11 {
+            height: 56px;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +57,7 @@
         <asp:Button ID="btnAdmin" runat="server" OnClick="btnAdmin_Click" Text="Administrar Clientes" CssClass="auto-style10" />
         <asp:Button ID="btnInicio" runat="server" OnClick="btnInicio_Click" Text="Inicio" />
             <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Ver Carrito" />
-            <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID_Producto" PageSize="14" OnPageIndexChanging="gvProductos_PageIndexChanging" AutoGenerateEditButton="True" OnRowCancelingEdit="gvProductos_RowCancelingEdit" OnRowDeleting="gvProductos_RowDeleting" OnRowEditing="gvProductos_RowEditing" OnRowUpdating="gvProductos_RowUpdating">
+            <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID_Producto" PageSize="14" OnPageIndexChanging="gvProductos_PageIndexChanging" OnRowCancelingEdit="gvProductos_RowCancelingEdit" OnRowDeleting="gvProductos_RowDeleting" OnRowEditing="gvProductos_RowEditing" OnRowUpdating="gvProductos_RowUpdating">
                 <Columns>
                     <asp:TemplateField HeaderText="ID_Producto">
                         <ItemTemplate>
@@ -63,6 +67,7 @@
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Nombre" ErrorMessage="RequiredFieldValidator" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_Nombre" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
@@ -125,6 +130,15 @@
                             <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("Estado") %>' Enabled="False" />
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="editar">
+                        <EditItemTemplate>
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Update" Text="Editar" CausesValidation="True" ValidationGroup="grupo1" />
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Cancel" Text="Cancelar" CausesValidation="True" ValidationGroup="grupo1" />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Button ButtonType="Button" runat="server" CommandName="Edit" Text="Editar" CausesValidation="False" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <EmptyDataTemplate>
                     <asp:Label ID="lblIdProducto" runat="server" Text='<%# Bind("ID_Producto") %>'></asp:Label>
@@ -135,7 +149,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style3"><strong>Agregar Producto</strong></td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11"></td>
                 </tr>
                 <tr>
                     <td class="auto-style5">Nombre:</td>
