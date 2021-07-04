@@ -123,14 +123,14 @@ GO
 
 
 SET IDENTITY_INSERT [PRODUCTO] ON
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(0,'Coca Cola','Gaseosa de Coca Cola, 2.25L',0,341,95,195,'~/Imagenes/Coca.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(0,'Coca Cola','Gaseosa de Coca Cola, 2.25L',0,341,95,195.50,'~/Imagenes/Coca.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(1,'Pepsi','Gaseosa de Pepsi, 2.25L',0,201,30,130,'~/Imagenes/Pepsi.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(2,'Fanta','Gaseosa de Fanta sabor naranja, 2.25L',0,153,96,196,'~/Imagenes/Fanta.png',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(3,'Brahma','Cerveza en Lata de Brahma. 473 ML',1,13,30,60,'~/Imagenes/Brahma.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(3,'Brahma','Cerveza en Lata de Brahma. 473 ML',1,13,30,60.50,'~/Imagenes/Brahma.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(4,'Heineken','Cerveza en Lata de Heineken. 473 ML',1,36,64,128,'~/Imagenes/Heineken.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(5,'Stella Artois','Cerveza en Lata Stella. 473 ML',1,31,43,86,'~/Imagenes/Stella Artois.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(6,'Termidor','Vino en Caja. 1L',2,32,97,194,'~/Imagenes/Termidor.png',1)
-INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(7,'Toro','Vino en Botella de vidrio. 700 ML',2,16,85,170,'~/Imagenes/Toro.png',1)
+INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(7,'Toro','Vino en Botella de vidrio. 700 ML',2,16,85,170.50,'~/Imagenes/Toro.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(8,'Dadá','Vino en Botella de vidrio. 750 ML',2,35,150,314,'~/Imagenes/Dada.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(9,'VillaVicencio','Agua en Botella de plástico. 2L',3,60,90,160,'~/Imagenes/Villavicencio.png',1)
 INSERT INTO [PRODUCTO]([ID_Producto],[Nombre],[Descripcion],[Tipo_Producto],[Stock],[Precio_Compra],[Precio_Venta],[Img_URL],[Estado])VALUES(10,'Kin','Agua en Botella de plástico. 2.25L',3,25,30,75,'~/Imagenes/Kin.png',1)
