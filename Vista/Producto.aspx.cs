@@ -72,7 +72,8 @@ namespace Vista
                     }
                 }
 
-                
+                lbl_SubTotal.Text = (car._articulos[posInCarrito].Cant * car._articulos[posInCarrito].Producto.Precio_Venta).ToString();
+
                 if (!IsPostBack)
                 {
                     ((Carrito)Session["carrito"])._articulos[posInCarrito].CantAgregar = 0;
