@@ -34,7 +34,7 @@ namespace Vista
                     btn_Ventas.Style.Add("display", "none");
                     btnEstadisticas.Style.Add("display", "none");
                 }
-                lvProductos.DataSource = neg.obtenerTablaProductos();
+                lvProductos.DataSource = neg.obtenerTablaProductosInicio();
                 lvProductos.DataBind();
             }
         }
@@ -42,7 +42,7 @@ namespace Vista
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             //SqlDataSource1.SelectCommand = "SELECT [ID_Producto],[Nombre], [Precio_Venta],[Img_URL] FROM [PRODUCTO] where [Nombre] LIKE ('%" + tbxSearch.Text + "%')";
-            lvProductos.DataSource = neg.obtenerTablaProductos(tbxSearch.Text);
+            lvProductos.DataSource = neg.obtenerTablaProductosInicio(tbxSearch.Text);
             lvProductos.DataBind();
             tbxSearch.Text = null;
         }

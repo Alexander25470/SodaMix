@@ -23,6 +23,11 @@ namespace Negocio
             return dao.EliminarProducto(prod);
         }
 
+        public DataTable obtenerTablaProductosInicio(string nombreProducto = null)
+        {
+            return dao.obtenerTablaProductosInicio(nombreProducto);
+        }
+
         public DataTable obtenerTablaProductos(string nombreProducto = null)
         {
             return dao.obtenerTablaProductos(nombreProducto);

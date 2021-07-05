@@ -18,6 +18,12 @@ namespace Dao
             string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto "+ (nombreProducto == null ?"":$" where p.Nombre Like '%{nombreProducto}%' or tp.Nombre Like '%{nombreProducto}%'");
             return ad.ObtenerTabla(query, "PRODUCTO", con);
         }
+        public DataTable obtenerTablaProductosInicio(string nombreProducto = null)
+        {
+            SqlConnection con = ad.ObtenerConexion();
+            string query = "Select p.*, tp.nombre as nombreTipoProducto from PRODUCTO p inner join tipo_producto tp on p.tipo_producto = tp.id_tipoproducto " + (nombreProducto == null ? "" : $" where p.Nombre Like '%{nombreProducto}%' or tp.Nombre Like '%{nombreProducto}%' where p.Estado = 1");
+            return ad.ObtenerTabla(query, "PRODUCTO", con);
+        }
 
         public bool ActualizarProducto(Producto prod)
         {
