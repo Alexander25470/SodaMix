@@ -34,7 +34,7 @@ namespace Vista
                 try
                 {
                     negocio.registrarUsuario(user);
-                    Response.Write("<script language=javascript>alert('Te has registrado con exito.')</script>");
+                    Response.Write(@"<script language=javascript>(()=>{alert('Te has registrado con exito.');window.location.href = 'Login.aspx';})()</script>");
                 } catch
                 {
                     Response.Write("<script language=javascript>alert('Error al registrar.')</script>");
